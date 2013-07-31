@@ -1,0 +1,24 @@
+  <!-- EVENTVIEW - START -->
+  <screen name="EventView" position="0,0" size="1280,720" title="Eventview" flags="wfNoBorder">
+    <eLabel position="60,65" size="1177,2" backgroundColor="white" zPosition="2" />
+    <widget name="epg_description" position="210,136" size="1025,476" font="Regular; 28" backgroundColor="background" foregroundColor="undcdcdc" transparent="1" valign="top" />
+    <widget name="duration" position="1125,85" size="110,35" zPosition="1" halign="right" font="Nmsbd; 28" backgroundColor="background" transparent="1" foregroundColor="unf0b400" />
+    <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
+    <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
+    <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
+    <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
+    <widget position="240,640" size="200,36" name="key_red" font="Nmsbd;19" halign="center" valign="center" backgroundColor="un9f1313" transparent="1" zPosition="3" />
+    <widget position="440,640" size="200,36" name="key_green" font="Nmsbd;19" halign="center" valign="center" backgroundColor="un1f771f" transparent="1" zPosition="3" />
+    <widget position="640,640" size="200,36" name="key_yellow" font="Nmsbd;19" halign="center" valign="center" backgroundColor="una08500" transparent="1" zPosition="3" />
+    <widget position="840,640" size="200,36" name="key_blue" font="Nmsbd;19" halign="center" valign="center" backgroundColor="un18188b" transparent="1" zPosition="3" />
+    <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
+    <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Nmsbd; 28" halign="right" transparent="1" backgroundColor="background" foregroundColor="un99ff">
+      <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
+    </widget>
+    <widget name="datetime" position="210,86" zPosition="1" size="450,35" font="Nmsbd; 28" backgroundColor="background" transparent="1" foregroundColor="unf0b400" />
+    <widget name="channel" position="60,25" size="605,35" font="Nmsbd; 28" halign="left" transparent="1" zPosition="2" />
+    <widget alphatest="blend" position="80,91" render="Picon" size="100,60" source="Title" transparent="1" zPosition="1">
+      <convert type="inHDRefString">CurrentRef</convert>
+    </widget>
+  </screen>
+  <!-- EVENTVIEW - STOP -->

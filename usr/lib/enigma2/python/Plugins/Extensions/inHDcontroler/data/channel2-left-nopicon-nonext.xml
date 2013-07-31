@@ -1,0 +1,28 @@
+    <widget source="ServiceEvent" render="Label" position="737,153" zPosition="1" size="500,32" font="Nmsbd; 26" valign="top" foregroundColor="unf0b400" backgroundColor="background" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="737,114" zPosition="1" size="70,30" font="Nmsbd; 24" backgroundColor="background" transparent="1">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="810,114" zPosition="1" size="90,30" font="Nmsbd; 24" backgroundColor="background" transparent="1">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format:- %H:%M</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="737,190" zPosition="1" size="500,425" font="Regular; 24" foregroundColor="undcdcdc" backgroundColor="background" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="907,124" zPosition="3" size="318,10" borderWidth="1" borderColor="un1a58a5" transparent="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
+    <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
+    <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
+    <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
+    <widget position="240,640" size="200,36" name="key_red" font="Nmsbd;19" halign="center" valign="center" backgroundColor="un9f1313" transparent="1" zPosition="3" />
+    <widget position="440,640" size="200,36" name="key_green" font="Nmsbd;19" halign="center" valign="center" backgroundColor="un1f771f" transparent="1" zPosition="3" />
+    <widget position="640,640" size="200,36" name="key_yellow" font="Nmsbd;19" halign="center" valign="center" backgroundColor="una08500" transparent="1" zPosition="3" />
+    <widget position="840,640" size="200,36" name="key_blue" font="Nmsbd;19" halign="center" valign="center" backgroundColor="un18188b" transparent="1" zPosition="3" />
+  </screen>
+  <!-- CHANNEL SELECTION - STOP -->

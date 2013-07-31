@@ -1,0 +1,117 @@
+<skin>
+  <!-- infinityHD for NBOX -->
+  <!-- based on dreamTV-HD Skin by Kerni and infinityHD for newnigma-->
+  <!-- HEADER - START -->
+  <output id="0">
+    <resolution xres="1280" yres="720" bpp="32" />
+  </output>
+  <colors>
+    <color name="background" value="#25000000" />
+    <color name="background1" value="#25080808" />
+    <color name="background2" value="#2538454e" />
+    <color name="background3" value="#2548555e" />
+    <color name="black" value="#00000000" />
+    <color name="blue" value="#006565ff" />
+    <color name="crypt_back" value="#25000000" />
+    <color name="crypt_ecm" value="#00bcb5e6" />
+    <color name="crypt_emm" value="#0c1a58a5" />
+    <color name="dark" value="#00294a6b" />
+    <color name="darkgrey" value="#00666666" />
+    <color name="foreground" value="#00dddddd" />
+    <color name="green" value="#00389416" />
+    <color name="grey" value="#00999999" />
+    <color name="listback" value="#254f7497" />
+    <color name="listbox" value="#0075a6ff" />
+    <color name="menu" value="#00062748" />
+    <color name="rds_text_bg" value="#00003258" />
+    <color name="red" value="#00ff2525" />
+    <color name="rssviewtop" value="#00005050" />
+    <color name="transparent" value="#ffffffff" />
+    <color name="transparent2" value="#ff000000" />
+    <color name="transpBlack" value="#30000000" />
+    <color name="transpWhite" value="#77ffffff" />
+    <color name="transpyellow" value="#33bab329" />
+    <color name="un18188b" value="#0018188b" />
+    <color name="un1a58a5" value="#001a58a5" />
+    <color name="un1f771f" value="#001f771f" />
+    <color name="un20000000" value="#20000000" />
+    <color name="un202020" value="#00202020" />
+    <color name="un232a33" value="#00232a33" />
+    <color name="un25062748" value="#25062748" />
+    <color name="un251357a3" value="#251357a3" />
+    <color name="un252b4247" value="#252b4247" />
+    <color name="un25344452" value="#25344452" />
+    <color name="un253658a4" value="#253658a4" />
+    <color name="un254f7497" value="#254f7497" />
+    <color name="un263c59" value="#00263c59" />
+    <color name="un302c2c39" value="#302c2c39" />
+    <color name="un333333" value="#00333333" />
+    <color name="un3366cc" value="#003366cc" />
+    <color name="un353e575e" value="#353e575e" />
+    <color name="un41000000" value="#41000000" />
+    <color name="un44000000" value="#44000000" />
+    <color name="un4da539" value="#004da539" />
+    <color name="un6224f" value="#0006224f" />
+    <color name="un777777" value="#00777777" />
+    <color name="un800000" value="#00800000" />
+    <color name="un80808" value="#00080808" />
+    <color name="un808888" value="#00808888" />
+    <color name="un99ff" value="#000099ff" />
+    <color name="un9f1313" value="#009f1313" />
+    <color name="una08500" value="#00a08500" />
+    <color name="unb67a2" value="#000b67a2" />
+    <color name="unbbbbbb" value="#00bbbbbb" />
+    <color name="unc0c0c0" value="#00c0c0c0" />
+    <color name="unc3c3c9" value="#00c3c3c9" />
+    <color name="uncccccc" value="#00cccccc" />
+    <color name="und21c31" value="#00d21c31" />
+    <color name="undcaaaa" value="#00dcaaaa" />
+    <color name="undcdcdc" value="#00dcdcdc" />
+    <color name="unf0b400" value="#00f0b400" />
+    <color name="unf0f0f0" value="#00f0f0f0" />
+    <color name="unff0000" value="#00ff0000" />
+    <color name="unff000000" value="#ff000000" />
+    <color name="unff6600" value="#00ff6600" />
+    <color name="white" value="#00ffffff" />
+    <color name="yellow" value="#00bab329" />
+    <color name="yellow1" value="#00cc9329" />
+  </colors>
+  <windowstyle type="skinned" id="0">
+    <title offset="20,10" font="Nmsbd;24" />
+    <color name="Background" color="un41000000" />
+    <color name="LabelForeground" color="white" />
+    <color name="ListboxBackground" color="transpBlack" />
+    <color name="ListboxForeground" color="white" />
+    <color name="ListboxSelectedBackground" color="un251357a3" />
+    <color name="ListboxSelectedForeground" color="white" />
+    <color name="ListboxMarkedBackground" color="un253658a4" />
+    <color name="ListboxMarkedForeground" color="unff0000" />
+    <color name="ListboxMarkedAndSelectedBackground" color="un253658a4" />
+    <color name="ListboxMarkedAndSelectedForeground" color="un800000" />
+    <color name="WindowTitleForeground" color="white" />
+    <color name="WindowTitleBackground" color="transpBlack" />
+    <borderset name="bsWindow">
+      <pixmap pos="bpTopLeft" filename="infinityHD-nbox/general/b_tl.png" />
+      <pixmap pos="bpTop" filename="infinityHD-nbox/general/b_t.png" />
+      <pixmap pos="bpTopRight" filename="infinityHD-nbox/general/b_tr.png" />
+      <pixmap pos="bpLeft" filename="infinityHD-nbox/general/b_l.png" />
+      <pixmap pos="bpRight" filename="infinityHD-nbox/general/b_r.png" />
+      <pixmap pos="bpBottomLeft" filename="infinityHD-nbox/general/b_bl.png" />
+      <pixmap pos="bpBottom" filename="infinityHD-nbox/general/b_b.png" />
+      <pixmap pos="bpBottomRight" filename="infinityHD-nbox/general/b_br.png" />
+    </borderset>
+  </windowstyle>
+  <windowstyle type="skinned" id="1">
+    <color name="Background" color="black" />
+    <color name="LabelForeground" color="white" />
+    <color name="ListboxBackground" color="black" />
+    <color name="ListboxForeground" color="white" />
+    <color name="ListboxSelectedBackground" color="black" />
+    <color name="ListboxSelectedForeground" color="white" />
+    <color name="ListboxMarkedBackground" color="black" />
+    <color name="ListboxMarkedForeground" color="white" />
+    <color name="ListboxMarkedAndSelectedBackground" color="black" />
+    <color name="ListboxMarkedAndSelectedForeground" color="white" />
+    <color name="WindowTitleForeground" color="white" />
+    <color name="WindowTitleBackground" color="black" />
+  </windowstyle>

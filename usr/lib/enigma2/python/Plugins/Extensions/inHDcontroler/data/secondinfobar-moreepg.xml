@@ -1,0 +1,46 @@
+  <!-- SECOND INFOBAR - START -->
+  <screen flags="wfNoBorder" name="SecondInfoBar" position="center,center" size="1280,720" title="InfoBar">
+    <!-- Start EPG -->
+    <eLabel text="Now:" position="67,85" size="140,32" font="Nmsbd; 26" halign="left" foregroundColor="unf0b400" backgroundColor="background" transparent="1" valign="top" />
+    <widget position="309,85" size="610,32" source="session.Event_Now" render="Label" font="Nmsbd; 26" valign="top" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="unf0b400">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Label" position="212,127" size="998,225" font="Regular; 24" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="undcdcdc" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel text="Next:" position="67,373" size="140,32" font="Nmsbd; 26" halign="left" foregroundColor="un99ff" backgroundColor="background" transparent="1" valign="top" />
+    <widget position="310,373" size="750,32" source="session.Event_Next" render="Label" font="Nmsbd; 26" valign="top" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="un99ff">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Next" render="Label" position="212,412" size="998,225" font="Regular; 24" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="undcdcdc" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <!-- Stop EPG -->
+    <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
+    <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Nmsbd; 28" halign="right" transparent="1" backgroundColor="background" foregroundColor="un99ff">
+      <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
+    </widget>
+    <widget position="60,25" size="652,35" source="session.CurrentService" render="Label" font="Nmsbd; 28" valign="center" halign="left" noWrap="1" backgroundColor="black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <eLabel position="60,65" size="1177,2" backgroundColor="white" zPosition="2" />
+    <widget position="212,85" size="90,32" source="session.Event_Now" render="Label" font="Nmsbd; 26" valign="top" backgroundColor="un41000000" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" foregroundColor="unf0b400">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget position="1066,85" size="145,32" source="session.Event_Now" render="Label" font="Nmsbd; 26" valign="top" backgroundColor="un41000000" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" foregroundColor="unf0b400">
+      <convert type="EventTime">Remaining</convert>
+      <convert type="RemainingToText">InMinutes</convert>
+    </widget>
+    <widget position="212,373" size="90,32" source="session.Event_Next" render="Label" font="Nmsbd; 26" valign="top" backgroundColor="un41000000" foregroundColor="un99ff" transparent="1" halign="left">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget position="1066,373" size="145,32" source="session.Event_Next" render="Label" font="Nmsbd; 26" valign="top" backgroundColor="un41000000" foregroundColor="un99ff" halign="right" transparent="1">
+      <convert type="EventTime">Duration</convert>
+      <convert type="ClockToText">InMinutes</convert>
+    </widget>
+    <widget source="session.Event_Now" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="932,96" size="150,7" transparent="1" borderWidth="1" borderColor="un1a58a5" zPosition="3">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <eLabel position="60,665" size="1177,2" backgroundColor="white" zPosition="2" />

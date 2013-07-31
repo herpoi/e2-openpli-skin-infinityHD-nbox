@@ -1,0 +1,21 @@
+    <!-- FOOTER - START -->
+    <!-- Footer - Signal -->
+    <eLabel text="SNR:" position="858,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="un353e575e" transparent="1">
+      <convert type="FrontendInfo">SNR</convert>
+    </widget>
+    <eLabel text="AGC:" position="968,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="1022,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="un353e575e" transparent="1">
+      <convert type="FrontendInfo">AGC</convert>
+    </widget>
+    <eLabel text="BER:" position="1078,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Nmsbd; 17" valign="center" backgroundColor="un353e575e" transparent="1" zPosition="2">
+      <convert type="FrontendInfo">BER</convert>
+    </widget>
+    <!-- Footer - Sat -->
+    <widget source="session.CurrentService" render="Label" position="90,675" size="770,22" font="Nmsbd; 18" backgroundColor="transpBlack" transparent="1" halign="left" valign="center" zPosition="3">
+      <convert type="PliExtraInfo">ServiceInfo</convert>
+    </widget>
+    <!-- FOOTER - STOP -->
+  </screen>
+  <!-- INFOBAR/SECOND INFOBAR - STOP -->

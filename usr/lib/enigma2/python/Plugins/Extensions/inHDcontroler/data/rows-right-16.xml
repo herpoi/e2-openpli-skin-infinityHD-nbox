@@ -1,0 +1,2 @@
+    <widget position="581,82" size="656,532" name="list" scrollbarMode="showOnDemand" transparent="1" serviceItemHeight="33" colorServiceDescription="undcdcdc" foregroundColorMarkedSelected="unf0b400" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white" colorEventProgressbarBorderSelected="white" serviceNumberFont="Nmsbd;27" serviceNameFont="Nmsbd;27" serviceInfoFont="Regular;25" zPosition="2" />
+    
