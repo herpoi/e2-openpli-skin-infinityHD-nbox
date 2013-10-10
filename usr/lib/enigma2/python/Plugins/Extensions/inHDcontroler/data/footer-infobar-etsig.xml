@@ -1,30 +1,30 @@
-    <!-- FOOTER - START -->
+    <!--/* FOOTER ECM SIGNAL -->
     <!-- Footer - Signal -->
-    <eLabel text="SNR:" position="858,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
-    <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="un353e575e" transparent="1">
+    <eLabel text="SNR:" position="858,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="greytext" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="transpblack2" transparent="1">
       <convert type="FrontendInfo">SNR</convert>
     </widget>
-    <eLabel text="AGC:" position="968,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
-    <widget source="session.FrontendStatus" render="Label" position="1022,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="un353e575e" transparent="1">
+    <eLabel text="AGC:" position="968,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="greytext" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="1022,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="transpblack2" transparent="1">
       <convert type="FrontendInfo">AGC</convert>
     </widget>
-    <eLabel text="BER:" position="1078,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
-    <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Nmsbd; 17" valign="center" backgroundColor="un353e575e" transparent="1" zPosition="2">
+    <eLabel text="BER:" position="1078,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="greytext" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Nmsbd; 17" valign="center" backgroundColor="transpblack2" transparent="1" zPosition="2">
       <convert type="FrontendInfo">BER</convert>
     </widget>
     <!-- Footer - Tuner -->
-    <eLabel text="Tuner:" position="720,675" size="60,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
-    <widget source="session.TunerInfo" render="FixedLabel" position="780,675" size="22,22" backgroundColor="transpBlack" transparent="1" zPosition="2" text="A" foregroundColor="unf0b400" font="Nmsbd; 17" halign="center">
+    <eLabel text="Tuner:" position="720,675" size="60,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="greytext" transparent="1" />
+    <widget source="session.TunerInfo" render="FixedLabel" position="780,675" size="22,22" backgroundColor="transpBlack" transparent="1" zPosition="2" text="A" foregroundColor="yellowtext" font="Nmsbd; 17" halign="center">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">1</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.TunerInfo" render="FixedLabel" position="800,675" size="22,22" backgroundColor="transpBlack" transparent="1" zPosition="2" text="B" foregroundColor="unf0b400" font="Nmsbd; 17" halign="center">
+    <widget source="session.TunerInfo" render="FixedLabel" position="800,675" size="22,22" backgroundColor="transpBlack" transparent="1" zPosition="2" text="B" foregroundColor="yellowtext" font="Nmsbd; 17" halign="center">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">2</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.TunerInfo" render="FixedLabel" position="820,675" size="22,22" backgroundColor="transpBlack" transparent="1" zPosition="2" text="C" foregroundColor="unf0b400" font="Nmsbd; 17" halign="center">
+    <widget source="session.TunerInfo" render="FixedLabel" position="820,675" size="22,22" backgroundColor="transpBlack" transparent="1" zPosition="2" text="C" foregroundColor="yellowtext" font="Nmsbd; 17" halign="center">
       <convert type="TunerInfo">TunerUseMask</convert>
       <convert type="ValueBitTest">4</convert>
       <convert type="ConditionalShowHide" />
@@ -45,10 +45,10 @@
       <convert type="ConditionalShowHide" />
     </widget>
     <!-- Footer - ECM -->
-    <eLabel text="ECM:" position="95,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="unbbbbbb" transparent="1" />
+    <eLabel text="ECM:" position="95,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="transpBlack" foregroundColor="greytext" transparent="1" />
     <widget source="session.CurrentService" render="Label" position="145,675" size="545, 22" zPosition="3" font="Nmsbd; 17" halign="left" noWrap="1" backgroundColor="transpBlack" transparent="1" valign="bottom">
       <convert type="DMCHDCaidDisplay">Default</convert>
     </widget>
-    <!-- FOOTER - STOP -->
+    <!-- FOOTER ECM SIGNAL */-->
   </screen>
-  <!-- INFOBAR/SECOND INFOBAR - STOP -->
+  <!-- INFOBAR/SECOND INFOBAR */-->

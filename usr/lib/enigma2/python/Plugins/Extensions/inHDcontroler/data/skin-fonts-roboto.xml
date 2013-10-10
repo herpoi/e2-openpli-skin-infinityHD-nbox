@@ -8,9 +8,9 @@
   </fonts>
   <subtitles>
     <sub name="Subtitle_TTX" font="Nmsbd;30" shadowColor="#40101010" shadowOffset="3,3" />
-    <sub name="Subtitle_Regular" font="Nmsbd;30" foregroundColor="undcdcdc" shadowColor="#40101010" shadowOffset="3,3" />
-    <sub name="Subtitle_Bold" font="Nmsbd;30" foregroundColor="undcdcdc" shadowColor="#40101010" shadowOffset="3,3" />
-    <sub name="Subtitle_Italic" font="Nmsbd;30" foregroundColor="undcaaaa" shadowColor="#40101010" shadowOffset="3,3" />
+    <sub name="Subtitle_Regular" font="Nmsbd;30" foregroundColor="subgrey" shadowColor="#40101010" shadowOffset="3,3" />
+    <sub name="Subtitle_Bold" font="Nmsbd;30" foregroundColor="subgrey" shadowColor="#40101010" shadowOffset="3,3" />
+    <sub name="Subtitle_Italic" font="Nmsbd;30" foregroundColor="subgreyred" shadowColor="#40101010" shadowOffset="3,3" />
   </subtitles>
   <!-- FONTS - STOP -->
   <!-- HEADER - STOP -->

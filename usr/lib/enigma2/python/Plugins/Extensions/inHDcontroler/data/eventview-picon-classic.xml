@@ -1,8 +1,8 @@
-  <!--/* EVENTVIEW NOPICON -->
+  <!--/* EVENTVIEW PICON -->
   <screen name="EventView" position="0,0" size="1280,720" title="Eventview" flags="wfNoBorder">
     <eLabel position="60,65" size="1177,2" backgroundColor="white" zPosition="2" />
-    <widget name="epg_description" position="63,130" size="1170,476" font="Regular; 28" backgroundColor="background" foregroundColor="subgrey" transparent="1" valign="top" />
-    <widget name="duration" position="1123,80" size="110,35" zPosition="1" halign="right" font="Nmsbd; 28" backgroundColor="background" transparent="1" foregroundColor="yellowtext" />
+    <widget name="epg_description" position="210,130" size="1025,476" font="Regular; 28" backgroundColor="background" foregroundColor="subgrey" transparent="1" valign="top" />
+    <widget name="duration" position="1125,80" size="110,35" zPosition="1" halign="right" font="Nmsbd; 28" backgroundColor="background" transparent="1" foregroundColor="yellowtext" />
     <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
     <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
     <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
@@ -15,7 +15,10 @@
     <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Nmsbd; 28" halign="right" transparent="1" backgroundColor="background" foregroundColor="bluelight">
       <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
     </widget>
-    <widget name="datetime" position="63,80" zPosition="1" size="450,35" font="Nmsbd; 28" backgroundColor="background" transparent="1" foregroundColor="yellowtext" />
+    <widget name="datetime" position="210,80" zPosition="1" size="450,35" font="Nmsbd; 28" backgroundColor="background" transparent="1" foregroundColor="yellowtext" />
     <widget name="channel" position="60,25" size="605,35" font="Nmsbd; 28" halign="left" transparent="1" zPosition="2" />
+    <widget alphatest="blend" position="77,82" render="Picon" size="100,60" source="Title" transparent="1" zPosition="1">
+      <convert type="inHDRefString">CurrentRef</convert>
+    </widget>
   </screen>
-  <!-- EVENTVIEW NOPICON */-->
+  <!-- EVENTVIEW PICON */-->

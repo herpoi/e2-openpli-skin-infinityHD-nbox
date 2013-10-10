@@ -51,13 +51,13 @@ from os import system
 
 config.plugins.inHD  = ConfigSubsection()
 config.plugins.inHD.Infobar = ConfigSelection(default="classic", choices = [
-				("classic", _("Classic")),
-				("nopicon-classic", _("Classic No Picon")),
-				("nopicon-bigclock", _("BigClock No Picon")),
-				("bigpicon", _("Big Picon")),
-				("bigpicon-classic", _("Big Picon Classic")),
-				("updown", _("Up Down")),
-				("nopicon-updown", _("Up Down No Picon"))		
+        ("bigpicon-classic", _("BigPicon Classic ")),
+				("picon-classic", _("Picon Classic")),
+				("bigpicon-updown", _("Big Picon Up Down")),
+				("picon-updown", _("Picon Up Down")),
+				("nopicon-classic", _("No Picon Classic")),
+				("nopicon-bigclock", _("No Picon BigClock")),
+				("nopicon-updown", _("No Picon Up Down"))		
 				])
 config.plugins.inHD.SecondInfobar = ConfigSelection(default="moreepg", choices = [
 				("classic", _("Classic")),
@@ -78,25 +78,25 @@ config.plugins.inHD.ChannelSelectionnext = ConfigSelection(default="no", choices
 				("no", _("No"))
 				])		
 config.plugins.inHD.Rows = ConfigSelection(default="14", choices = [
-				("14", _("14")),
-				("16", _("16")),
-				("19", _("19"))
+				("rows14", _("14")),
+				("rows16", _("16")),
+				("rows19", _("19"))
 				])		
 config.plugins.inHD.EpgSelection = ConfigSelection(default="right", choices = [
-				("right", _("Right")),
-				("right-bigpicon", _("Right Big Picon")),
-				("right-nopicon", _("Right No Picon")),
-				("left", _("Left")),
-				("left-bigpicon", _("Left Big Picon")),
-				("left-nopicon", _("Left No Picon")),
-				("up", _("Up")),
-				("up-bigpicon", _("Up Big Picon")),
-				("up-nopicon", _("Up No Picon"))
+				("picon-right", _("Picon Right")),
+				("bigpicon-right", _("Big Picon Right")),
+				("nopicon-right", _("No Picon Right")),
+				("picon-left", _("Picon Left")),
+				("bigpicon-left", _("Big Picon Left")),
+				("nopicon-left", _("No Picon Left")),
+				("picon-up", _("Picon Up")),
+				("bigpicon-up", _("Big Picon Up")),
+				("nopicon-up", _("No Picon Up"))
 				])
 config.plugins.inHD.Eventview = ConfigSelection(default="classic", choices = [
-				("classic", _("Classic")),
+				("picon-classic", _("Picon Classic")),
 				("bigpicon", _("Big Picon")),
-				("nopicon", _("No Picon")),
+				("nopicon", _("No Picon"))
 				])
 config.plugins.inHD.NumberZap = ConfigSelection(default="center", choices = [
 				("center", _("Center")),
@@ -117,6 +117,7 @@ config.plugins.inHD.SecondInfobarFooter = ConfigSelection(default="satsig", choi
 				])		
 config.plugins.inHD.Font = ConfigSelection(default="ubuntu", choices = [
         ("ubuntu", _("Ubuntu")),
+        ("aller", _("Aller")),
         ("roboto", _("Roboto"))
         ])
 
@@ -140,7 +141,7 @@ class inHDsetup(ConfigListScreen, Screen):
     </screen>"""
 
 	def __init__(self, session):
-		self.release = "-release1.3"
+		self.release = "-git"
 		Screen.__init__(self, session)
 		self.session = session
 		self.datei = "/usr/local/share/enigma2/infinityHD-nbox/skin.xml"
@@ -231,28 +232,17 @@ class inHDsetup(ConfigListScreen, Screen):
 
 			skn_file = self.daten + "channel1-"
 			if config.plugins.inHD.ChannelSelectionnext.value=="yes":
-				skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Picon.value + ".xml"	
+				skn_file = skn_file + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + ".xml"	
 			else:	
-				skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Picon.value + "-nonext.xml"
+				skn_file = skn_file + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + "-nonext.xml"
 			skFile = open(skn_file, "r")
 			file_lines = skFile.readlines()
 			skFile.close()
 			for x in file_lines:
 				skin_lines.append(x)	
 
-			skn_file = self.daten + "rows-"
-			skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Rows.value + ".xml"	
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)	
-				
 			skn_file = self.daten + "channel2-"
-			if config.plugins.inHD.ChannelSelectionnext.value=="yes":
-				skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Picon.value + ".xml"	
-			else:	
-				skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Picon.value + "-nonext.xml"
+			skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Rows.value + ".xml"	
 			skFile = open(skn_file, "r")
 			file_lines = skFile.readlines()
 			skFile.close()
