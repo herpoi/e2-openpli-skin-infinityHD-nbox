@@ -71,7 +71,7 @@ config.plugins.inHD.Side = ConfigSelection(default="right", choices = [
 config.plugins.inHD.Picon = ConfigSelection(default="Classic", choices = [
 				("bigpicon", _("Big Picon")),
 				("nopicon", _("No Picon")),
-				("classic", _("Classic"))
+				("picon", _("Classic"))
 				])				
 config.plugins.inHD.ChannelSelectionnext = ConfigSelection(default="no", choices = [
 				("yes", _("Yes")),
