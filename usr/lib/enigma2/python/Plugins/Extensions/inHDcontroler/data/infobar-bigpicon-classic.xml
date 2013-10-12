@@ -8,7 +8,7 @@
       <convert type="inHDClockToText">Format:%A</convert>
     </widget>
     <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Nmsbd; 21" halign="right" backgroundColor="black" transparent="1" valign="top" foregroundColor="greyclock">
-      <convert type="inHDClockToText">Format:%d.%m</convert>
+      <convert type="inHDClockToText">Format:%d %B</convert>
     </widget>
     <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
     <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1131,544" zPosition="3" size="36,36" alphatest="on">

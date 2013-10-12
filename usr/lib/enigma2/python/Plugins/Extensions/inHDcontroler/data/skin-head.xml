@@ -6,7 +6,7 @@
     <resolution xres="1280" yres="720" bpp="32" />
   </output>
   <colors>
-    <color name="background" value="#25000000" />
+    <color name="background" value="#41000000" />
     <color name="black" value="#00000000" />
     <color name="blue" value="#006565ff" />
     <color name="blueback" value="#0018188b" />
@@ -30,7 +30,7 @@
     <color name="subgreyred" value="#00dcaaaa" />
     <color name="transparent" value="#ffffffff" />
     <color name="transparent2" value="#ff000000" />
-    <color name="transpBlack" value="#30000000" />
+    <color name="transpBlack" value="#41000000" />
     <color name="transpblack2" value="#41000000" />
     <color name="white" value="#00ffffff" />
     <color name="yellow" value="#00bab329" />

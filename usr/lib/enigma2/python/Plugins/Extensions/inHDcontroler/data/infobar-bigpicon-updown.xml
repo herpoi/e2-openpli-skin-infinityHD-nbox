@@ -77,5 +77,5 @@
       <convert type="inHDClockToText">Format:%A</convert>
     </widget>
     <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Nmsbd; 21" halign="right" backgroundColor="black" transparent="1" valign="top" foregroundColor="greyclock">
-      <convert type="inHDClockToText">Format:%d.%m</convert>
+      <convert type="inHDClockToText">Format:%d %B</convert>
     </widget>
