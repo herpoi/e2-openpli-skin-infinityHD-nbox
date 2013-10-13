@@ -1270,16 +1270,16 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <widget source="key_yellow" render="Label" position="650,525" size="200,36" font="Nmsbd;20" halign="center" valign="center" backgroundColor="yellowback" transparent="1" zPosition="3" />
     <widget name="InfoTextBorder" position="0,0" size="0,0" />
   </screen>
-  <screen name="NimSelection" position="340,134" size="600,422" title="Choose Tuner">
-    <eLabel position="0,0" size="600,2" backgroundColor="grey" zPosition="5" />
-    <widget source="nimlist" render="Listbox" position="0,0" size="600,420" transparent="1">
+  <screen name="NimSelection" position="240,134" size="800,422" title="Choose Tuner">
+    <eLabel position="0,0" size="800,2" backgroundColor="grey" zPosition="5" />
+    <widget source="nimlist" render="Listbox" position="0,0" size="800,420" transparent="1">
       <convert type="TemplatedMultiContent">
 				{"template": [
-						MultiContentEntryText(pos = (10, 5), size = (360, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
-						MultiContentEntryText(pos = (50, 37), size = (320, 30), font = 1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is a description of the nim settings,
+						MultiContentEntryText(pos = (10, 5), size = (780, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
+						MultiContentEntryText(pos = (50, 37), size = (740, 50), font = 1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is a description of the nim settings,
 					],
 				 "fonts": [gFont("Nmsbd", 22), gFont("Nmsbd", 18)],
-				 "itemHeight": 70
+				 "itemHeight": 90
 				}
 			</convert>
     </widget>
