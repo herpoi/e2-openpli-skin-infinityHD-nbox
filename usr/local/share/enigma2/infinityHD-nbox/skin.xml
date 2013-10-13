@@ -790,19 +790,19 @@
     <widget name="Adapter" position="160,20" size="400,25" zPosition="10" font="Nmsbd;22" transparent="1" />
     <eLabel position="20,55" size="740,2" backgroundColor="grey" />
     <widget name="config" position="20,70" size="740,375" scrollbarMode="showOnDemand" transparent="1" />
-    <widget name="introduction2" position="20,472" size="740,30" zPosition="10" font="Nmsbd;24" halign="center" transparent="1" />
+    <widget source="introduction2" render="Label" position="20,472" size="740,30" zPosition="10" font="Nmsbd;24" halign="center" transparent="1" />
     <eLabel position="780,0" size="2,518" backgroundColor="grey" />
-    <widget name="introduction" position="790,20" size="300,25" font="Nmsbd;22" halign="center" />
-    <widget name="IPtext" position="790,60" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
-    <widget name="IP" position="790,90" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
-    <widget name="Netmasktext" position="790,130" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
-    <widget name="Mask" position="790,160" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
-    <widget name="Gatewaytext" position="790,200" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
-    <widget name="Gateway" position="790,230" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
-    <widget name="DNS1text" position="790,270" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
-    <widget name="DNS1" position="790,300" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
-    <widget name="DNS2text" position="790,340" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
-    <widget name="DNS2" position="790,370" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
+    <widget source="introduction" render="Label" position="790,20" size="300,25" font="Nmsbd;22" halign="center" />
+    <widget source="IPtext" render="Label" position="790,60" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
+    <widget source="IP" render="Label" position="790,90" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
+    <widget source="Netmasktext" render="Label" position="790,130" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
+    <widget source="Mask" render="Label" position="790,160" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
+    <widget source="Gatewaytext" render="Label" position="790,200" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
+    <widget source="Gateway" render="Label" position="790,230" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
+    <widget source="DNS1text" render="Label" position="790,270" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
+    <widget source="DNS1" render="Label" position="790,300" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
+    <widget source="DNS2text" render="Label" position="790,340" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" foregroundColor="transpBlack" backgroundColor="grey" />
+    <widget source="DNS2" render="Label" position="790,370" size="300,22" zPosition="1" font="Nmsbd;20" halign="center" />
     <eLabel position="0,518" size="1100,2" backgroundColor="grey" />
     <widget name="HelpWindow" position="180,400" zPosition="1" size="1,1" transparent="1" alphatest="on" />
     <widget name="VKeyIcon" pixmap="skin_default/buttons/key_text.png" position="30,370" zPosition="10" size="35,25" transparent="1" alphatest="on" />
