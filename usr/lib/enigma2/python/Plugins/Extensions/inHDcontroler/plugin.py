@@ -50,7 +50,7 @@ from os import system
 
 
 config.plugins.inHD  = ConfigSubsection()
-config.plugins.inHD.Infobar = ConfigSelection(default="classic", choices = [
+config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choices = [
         ("bigpicon-classic", _("BigPicon Classic ")),
 				("picon-classic", _("Picon Classic")),
 				("bigpicon-updown", _("Big Picon Up Down")),
@@ -68,7 +68,7 @@ config.plugins.inHD.Side = ConfigSelection(default="right", choices = [
 				("right", _("Right")),
 				("left", _("Left"))
 				])				
-config.plugins.inHD.Picon = ConfigSelection(default="Classic", choices = [
+config.plugins.inHD.Picon = ConfigSelection(default="bigpicon", choices = [
 				("bigpicon", _("Big Picon")),
 				("nopicon", _("No Picon")),
 				("picon", _("Classic"))
@@ -77,12 +77,12 @@ config.plugins.inHD.ChannelSelectionnext = ConfigSelection(default="no", choices
 				("yes", _("Yes")),
 				("no", _("No"))
 				])		
-config.plugins.inHD.Rows = ConfigSelection(default="14", choices = [
+config.plugins.inHD.Rows = ConfigSelection(default="rows14", choices = [
 				("rows14", _("14")),
 				("rows16", _("16")),
 				("rows19", _("19"))
 				])		
-config.plugins.inHD.EpgSelection = ConfigSelection(default="right", choices = [
+config.plugins.inHD.EpgSelection = ConfigSelection(default="bigpicon-right", choices = [
 				("picon-right", _("Picon Right")),
 				("bigpicon-right", _("Big Picon Right")),
 				("nopicon-right", _("No Picon Right")),
@@ -93,7 +93,7 @@ config.plugins.inHD.EpgSelection = ConfigSelection(default="right", choices = [
 				("bigpicon-up", _("Big Picon Up")),
 				("nopicon-up", _("No Picon Up"))
 				])
-config.plugins.inHD.Eventview = ConfigSelection(default="classic", choices = [
+config.plugins.inHD.Eventview = ConfigSelection(default="bigpicon", choices = [
 				("picon-classic", _("Picon Classic")),
 				("bigpicon", _("Big Picon")),
 				("nopicon", _("No Picon"))
@@ -115,7 +115,7 @@ config.plugins.inHD.SecondInfobarFooter = ConfigSelection(default="satsig", choi
 				("etsig", _("ECM/Tuner/Signal")),
 				("satsig", _("Sat Info/Signal"))
 				])		
-config.plugins.inHD.Font = ConfigSelection(default="ubuntu", choices = [
+config.plugins.inHD.Font = ConfigSelection(default="aller", choices = [
         ("ubuntu", _("Ubuntu")),
         ("aller", _("Aller")),
         ("roboto", _("Roboto"))
