@@ -5,14 +5,14 @@
     <widget position="230,30" size="965,32" source="session.Event_Now" render="Label" font="Nmsbd; 26" valign="top" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="yellowtext">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Now" render="Label" position="230,67" size="965,185" font="Regular; 24" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
+    <widget source="session.Event_Now" render="Label" position="230,67" size="965,185" font="Regular; 23" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <eLabel text="Next:" position="85,260" size="140,32" font="Nmsbd; 26" halign="left" foregroundColor="bluelight" backgroundColor="background" transparent="1" valign="top" />
     <widget position="230,260" size="965,32" source="session.Event_Next" render="Label" font="Nmsbd; 26" valign="top" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="bluelight">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Next" render="Label" position="230,297" size="965,185" font="Regular; 24" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
+    <widget source="session.Event_Next" render="Label" position="230,297" size="965,185" font="Regular; 23" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <eLabel position="67,488" size="1144,2" backgroundColor="bluestripe" />
