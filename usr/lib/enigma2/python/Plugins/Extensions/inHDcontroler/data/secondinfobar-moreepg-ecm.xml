@@ -5,14 +5,14 @@
     <widget position="309,85" size="610,32" source="session.Event_Now" render="Label" font="Nmsbd; 26" valign="top" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="yellowtext">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Now" render="Label" position="212,127" size="998,215" font="Regular; 24" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
+    <widget source="session.Event_Now" render="Label" position="212,127" size="998,215" font="Regular; 23" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <eLabel text="Next:" position="67,363" size="140,32" font="Nmsbd; 26" halign="left" foregroundColor="bluelight" backgroundColor="background" transparent="1" valign="top" />
     <widget position="310,363" size="750,32" source="session.Event_Next" render="Label" font="Nmsbd; 26" valign="top" noWrap="1" backgroundColor="background" transparent="1" foregroundColor="bluelight">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Next" render="Label" position="212,402" size="998,215" font="Regular; 24" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
+    <widget source="session.Event_Next" render="Label" position="212,402" size="998,215" font="Regular; 23" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <!-- Stop EPG -->
