@@ -109,14 +109,14 @@ config.plugins.inHD.InfobarFooter = ConfigSelection(default="ctsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
 				("etsig", _("ECM/Tuner/Signal")),
 				("ecminfo", _("ECM Only")),
-				("satsig", _("Sat Info/Signal")),
-				("ecmsatsig", _("ECM/Sat Info/Signal"))
+				("satsig", _("Sat Info/Signal"))
 				])		
 config.plugins.inHD.SecondInfobarFooter = ConfigSelection(default="satsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
 				("etsig", _("ECM/Tuner/Signal")),
 				("ecminfo", _("ECM Only")),
-				("satsig", _("Sat Info/Signal"))
+				("satsig", _("Sat Info/Signal")),
+				("ecmsatsig", _("ECM/Sat Info/Signal"))
 				])		
 config.plugins.inHD.Font = ConfigSelection(default="aller", choices = [
         ("ubuntu", _("Ubuntu")),
