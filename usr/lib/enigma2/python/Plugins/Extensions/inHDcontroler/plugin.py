@@ -108,17 +108,20 @@ config.plugins.inHD.NumberZap = ConfigSelection(default="center", choices = [
 config.plugins.inHD.InfobarFooter = ConfigSelection(default="ctsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
 				("etsig", _("ECM/Tuner/Signal")),
+				("ecminfo", _("ECM Only")),
 				("satsig", _("Sat Info/Signal"))
 				])		
 config.plugins.inHD.SecondInfobarFooter = ConfigSelection(default="satsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
 				("etsig", _("ECM/Tuner/Signal")),
+				("ecminfo", _("ECM Only")),
 				("satsig", _("Sat Info/Signal"))
 				])		
 config.plugins.inHD.Font = ConfigSelection(default="aller", choices = [
         ("ubuntu", _("Ubuntu")),
         ("aller", _("Aller")),
-        ("roboto", _("Roboto"))
+        ("roboto", _("Roboto")),
+        ("cool", _("Cool"))
         ])
 
 def main(session, **kwargs):
@@ -211,7 +214,7 @@ class inHDsetup(ConfigListScreen, Screen):
 			skFile.close()
 			for x in infobarfooter_lines:
 				skin_lines.append(x)
-				
+			
 			secondinfobar_file = self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + ".xml"
 			skFile = open(secondinfobar_file, "r")
 			secondinfobar_lines = skFile.readlines()

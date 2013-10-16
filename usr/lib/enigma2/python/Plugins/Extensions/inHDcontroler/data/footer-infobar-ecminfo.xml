@@ -1,0 +1,9 @@
+    <!--/* FOOTER ECM SIGNAL -->
+    <!-- Footer - ECM -->
+    <eLabel text="ECM:" position="90,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="backgrounds" foregroundColor="greytext" transparent="1" />
+    <widget source="session.CurrentService" render="Label" position="145,675" size="1040, 22" zPosition="3" font="Nmsbd; 18" halign="left" noWrap="1" backgroundColor="background" transparent="1" valign="bottom">
+      <convert type="DMCHDCaidDisplay">Default</convert>
+    </widget>
+    <!-- FOOTER ECM SIGNAL */-->
+  </screen>
+  <!-- INFOBAR/SECOND INFOBAR */-->
