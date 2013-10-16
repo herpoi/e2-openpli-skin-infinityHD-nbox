@@ -109,7 +109,8 @@ config.plugins.inHD.InfobarFooter = ConfigSelection(default="ctsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
 				("etsig", _("ECM/Tuner/Signal")),
 				("ecminfo", _("ECM Only")),
-				("satsig", _("Sat Info/Signal"))
+				("satsig", _("Sat Info/Signal")),
+				("ecmsatsig", _("ECM/Sat Info/Signal"))
 				])		
 config.plugins.inHD.SecondInfobarFooter = ConfigSelection(default="satsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
@@ -215,7 +216,11 @@ class inHDsetup(ConfigListScreen, Screen):
 			for x in infobarfooter_lines:
 				skin_lines.append(x)
 			
-			secondinfobar_file = self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + ".xml"
+			
+			if config.plugins.inHD.SecondInfobarFooter.value=="ecmsatsig":
+				secondinfobar_file = self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + "-ecm.xml"
+			else: 
+				secondinfobar_file = self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + ".xml"
 			skFile = open(secondinfobar_file, "r")
 			secondinfobar_lines = skFile.readlines()
 			skFile.close()

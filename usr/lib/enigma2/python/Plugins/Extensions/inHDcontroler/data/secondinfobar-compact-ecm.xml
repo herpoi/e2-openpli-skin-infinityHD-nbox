@@ -1,0 +1,20 @@
+  <!--/* SECOND INFOBAR COMPACT -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="center,0" size="1280,720" title="InfoBar">
+    <ePixmap position="0,405" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
+    <widget position="152,450" size="472,28" source="session.Event_Now" render="Label" font="Nmsbd; 24" valign="bottom" noWrap="1" backgroundColor="transpblack2" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="yellowtext">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget position="787,450" size="427,28" source="session.Event_Next" render="Label" font="Nmsbd; 24" valign="bottom" noWrap="1" backgroundColor="transpblack2" foregroundColor="bluelight" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <eLabel position="center,455" size="2,175" backgroundColor="bluestripe" />
+    <eLabel position="67,450" size="130,28" font="Nmsbd; 24" halign="left" foregroundColor="yellowtext" backgroundColor="background" transparent="1" valign="bottom" text="Now:" />
+    <widget source="session.Event_Now" render="Label" position="67,484" size="557,153" font="Regular; 22" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <eLabel position="657,450" size="130,28" font="Nmsbd; 24" halign="left" foregroundColor="bluelight" backgroundColor="background" transparent="1" valign="bottom" text="Next:" />
+    <widget source="session.Event_Next" render="Label" position="657,484" size="557,153" font="Regular; 22" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+  </screen>
+  <!-- SECOND INFOBAR COMPACT */-->
