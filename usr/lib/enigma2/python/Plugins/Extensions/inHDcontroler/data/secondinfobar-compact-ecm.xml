@@ -1,4 +1,4 @@
-<!--/* SECOND INFOBAR COMPACT -->
+  <!--/* SECOND INFOBAR COMPACT -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="center,0" size="1280,720" title="InfoBar">
     <ePixmap position="0,465" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
     <widget position="152,510" size="472,28" source="session.Event_Now" render="Label" font="Nmsbd; 24" valign="bottom" noWrap="1" backgroundColor="transpblack2" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="yellowtext">
@@ -16,4 +16,4 @@
     <widget source="session.Event_Next" render="Label" position="657,544" size="557,153" font="Regular; 22" zPosition="1" backgroundColor="background" transparent="1" foregroundColor="subgrey" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
-<!-- SECOND INFOBAR COMPACT */-->
+  <!-- SECOND INFOBAR COMPACT */-->

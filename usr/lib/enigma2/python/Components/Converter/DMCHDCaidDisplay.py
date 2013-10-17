@@ -24,10 +24,18 @@ from Components.Element import cached
 from Poll import Poll
 
 class DMCHDCaidDisplay(Poll, Converter, object):
+	ECMFull=0
+	ECMShort=1
+
 	def __init__(self, type):
 		Poll.__init__(self)
 		Converter.__init__(self, type)
-		self.type = type
+		# self.type = type
+		if type == "ShortECM":
+			self.type = self.ECMShort
+		else:
+			self.type = self.ECMFull
+		
 		self.systemCaids = {
 			"06" : "I",
 			"01" : "S",
@@ -79,68 +87,132 @@ class DMCHDCaidDisplay(Poll, Converter, object):
 	@cached
 	def getText(self):
 		textvalue = ""
-		service = self.source.service
-		if service:
-			info = service and service.info()
-			if info:
-				if info.getInfoObject(iServiceInformation.sCAIDs):
-					ecm_info = self.ecmfile()
-					if ecm_info:
-						# caid
-						caid = ecm_info.get("caid", "")
-						caid = caid.lstrip("0x")
-						caid = caid.upper()
-						caid = caid.zfill(4)
-						caid = "CAID: %s" % caid
-						# hops
-						hops = ecm_info.get("hops", None)
-						hops = "HOPS: %s" % hops
-						# prov
-						prov = ecm_info.get("prov", "")
-						prov = prov.lstrip("0x")
-						prov = prov.upper()
-						prov = prov.zfill(6)
-						prov = "Prov: %s" % prov
-						# reader
-						reader = ecm_info.get("reader", None)
-					        reader = "Reader: %s" % reader
-						# ecm time	
-						ecm_time = ecm_info.get("ecm time", None)
-						if ecm_time:
-							if "msec" in ecm_time:
-								ecm_time = "ECM: %s" % ecm_time						
-							else:
-								ecm_time = "ECM: %s s" % ecm_time
-						# address
-						address = ecm_info.get("address", "")								
-						# source	
-						using = ecm_info.get("using", "")
-						if using:
-							if using == "emu":
-								textvalue = "(EMU) %s - %s" % (caid, ecm_time)
-							elif using == "CCcam-s2s":
-								textvalue = "(NET) %s - %s - %s - %s" % (caid, address, hops, ecm_time)							
-							else:
-								textvalue = "%s - %s - %s - %s" % (caid, address, hops, ecm_time)		
-						else:
-							# mgcamd
-							source = ecm_info.get("source", None)
-							if source:
-								if source == "emu":
-									textvalue = "(EMU) %s" % (caid)
+		if self.type == self.ECMShort: # ShortECM
+			service = self.source.service
+			if service:
+				info = service and service.info()
+				if info:
+					if info.getInfoObject(iServiceInformation.sCAIDs):
+						ecm_info = self.ecmfile()
+						if ecm_info:
+							# caid
+							caid = ecm_info.get("caid", "")
+							caid = caid.lstrip("0x")
+							caid = caid.upper()
+							caid = caid.zfill(4)
+							caid = "CAID:%s" % caid
+							# hops
+							hops = ecm_info.get("hops", None)
+							# hops = "%s" % hops
+							# prov
+							prov = ecm_info.get("prov", "")
+							prov = prov.lstrip("0x")
+							prov = prov.upper()
+							prov = prov.zfill(6)
+							prov = "P:%s" % prov
+							# reader
+							reader = ecm_info.get("reader", None)
+							reader = "R:%s" % reader
+							# ecm time	
+							ecm_time = ecm_info.get("ecm time", None)
+							if ecm_time:
+								if "msec" in ecm_time:
+									ecm_time = "in %s" % ecm_time						
 								else:
-									textvalue = "%s - %s - %s - %s" % (caid, prov, source, ecm_time)
-							# oscam
-							oscsource = ecm_info.get("from", None)
-							if oscsource:
-									textvalue = "%s - %s - %s - Quelle: %s - %s - %s" % (caid, prov, reader, oscsource, hops, ecm_time)
-							# gbox
-							decode = ecm_info.get("decode", None)
-							if decode:
-								if decode == "Internal":
-									textvalue = "(EMU) %s" % (caid)
+									ecm_time = "in %s s" % ecm_time
+							# address
+							address = ecm_info.get("address", "")								
+							# source	
+							using = ecm_info.get("using", "")
+							if using:
+								if using == "emu":
+									textvalue = "(EMU) %s %s" % (caid, ecm_time)
+								elif using == "CCcam-s2s":
+									textvalue = "(NET) %s %s:%s %s" % (caid, address, hops, ecm_time)							
 								else:
-									textvalue = "%s - %s" % (caid, decode)
+									textvalue = "%s %s:%s %s" % (caid, address, hops, ecm_time)		
+							else:
+								# mgcamd
+								source = ecm_info.get("source", None)
+								if source:
+									if source == "emu":
+										textvalue = "(EMU) %s" % (caid)
+									else:
+										textvalue = "%s %s %s %s" % (caid, prov, source, ecm_time)
+								# oscam
+								oscsource = ecm_info.get("from", None)
+								if oscsource:
+									textvalue = "%s %s %s S:%s:%s %s" % (caid, prov, reader, oscsource, hops, ecm_time)
+								# gbox
+								decode = ecm_info.get("decode", None)
+								if decode:
+									if decode == "Internal":
+										textvalue = "(EMU) %s" % (caid)
+									else:
+										textvalue = "%s %s" % (caid, decode)
+		else: # Default
+			service = self.source.service
+			if service:
+				info = service and service.info()
+				if info:
+					if info.getInfoObject(iServiceInformation.sCAIDs):
+						ecm_info = self.ecmfile()
+						if ecm_info:
+							# caid
+							caid = ecm_info.get("caid", "")
+							caid = caid.lstrip("0x")
+							caid = caid.upper()
+							caid = caid.zfill(4)
+							caid = "CAID: %s" % caid
+							# hops
+							hops = ecm_info.get("hops", None)
+							hops = "Hops: %s" % hops
+							# prov
+							prov = ecm_info.get("prov", "")
+							prov = prov.lstrip("0x")
+							prov = prov.upper()
+							prov = prov.zfill(6)
+							prov = "Prov: %s" % prov
+							# reader
+							reader = ecm_info.get("reader", None)
+							reader = "Reader: %s" % reader
+							# ecm time	
+							ecm_time = ecm_info.get("ecm time", None)
+							if ecm_time:
+								if "msec" in ecm_time:
+									ecm_time = "ECM: %s" % ecm_time						
+								else:
+									ecm_time = "ECM: %s s" % ecm_time
+							# address
+							address = ecm_info.get("address", "")								
+							# source	
+							using = ecm_info.get("using", "")
+							if using:
+								if using == "emu":
+									textvalue = "(EMU) %s - %s" % (caid, ecm_time)
+								elif using == "CCcam-s2s":
+									textvalue = "(NET) %s - %s - %s - %s" % (caid, address, hops, ecm_time)							
+								else:
+									textvalue = "%s - %s - %s - %s" % (caid, address, hops, ecm_time)		
+							else:
+								# mgcamd
+								source = ecm_info.get("source", None)
+								if source:
+									if source == "emu":
+										textvalue = "(EMU) %s" % (caid)
+									else:
+										textvalue = "%s - %s - %s - %s" % (caid, prov, source, ecm_time)
+								# oscam
+								oscsource = ecm_info.get("from", None)
+								if oscsource:
+									textvalue = "%s - %s - %s - Source: %s - %s - %s" % (caid, prov, reader, oscsource, hops, ecm_time)
+								# gbox
+								decode = ecm_info.get("decode", None)
+								if decode:
+									if decode == "Internal":
+										textvalue = "(EMU) %s" % (caid)
+									else:
+										textvalue = "%s - %s" % (caid, decode)
 							
 		return textvalue 
 
