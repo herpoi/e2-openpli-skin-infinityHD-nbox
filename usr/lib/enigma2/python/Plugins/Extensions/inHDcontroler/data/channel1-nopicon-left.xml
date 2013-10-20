@@ -1,42 +1,42 @@
   <!--/* CHANNEL SELECTION NOPICON LEFT -->
   <screen name="ChannelSelection" position="center,center" size="1280,720" title="" flags="wfNoBorder">
     <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
-    <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Nmsbd; 28" halign="right" transparent="1" backgroundColor="background" foregroundColor="bluelight">
+    <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
       <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="737,77" zPosition="1" size="500,32" font="Nmsbd; 24" halign="left">
+    <widget source="ServiceEvent" render="Label" position="737,77" zPosition="1" size="500,32" font="Bold; 24" halign="left">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget font="Nmsbd; 28" halign="left" position="60,25" render="Label" size="652,35" source="Title" transparent="1" zPosition="2" />
-    <!--eLabel position="60,25" size="852,35" text="Channel Selection" halign="left" font="Nmsbd; 28" transparent="1" zPosition="2" /-->
-    <eLabel position="60,65" size="1177,2" backgroundColor="white" zPosition="2" />
-    <widget source="ServiceEvent" render="Label" position="737,153" zPosition="1" size="500,32" font="Nmsbd; 24" valign="top" foregroundColor="yellowtext" backgroundColor="background" transparent="1">
+    <widget font="Bold; 28" halign="left" position="60,25" render="Label" size="652,35" source="Title" transparent="1" zPosition="2" />
+    <!--eLabel position="60,25" size="852,35" text="Channel Selection" halign="left" font="Bold; 28" transparent="1" zPosition="2" /-->
+    <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
+    <widget source="ServiceEvent" render="Label" position="737,153" zPosition="1" size="500,32" font="Bold; 24" valign="top" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="737,114" zPosition="1" size="70,30" font="Nmsbd; 24" backgroundColor="background" transparent="1" halign="right">
+    <widget source="ServiceEvent" render="Label" position="737,114" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">
       </convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="810,114" zPosition="1" size="90,30" font="Nmsbd; 24" backgroundColor="background" transparent="1">
+    <widget source="ServiceEvent" render="Label" position="810,114" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:- %H:%M</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="737,190" zPosition="1" size="500,310" font="Regular; 24" foregroundColor="subgrey" backgroundColor="background" transparent="1" valign="top">
+    <widget source="ServiceEvent" render="Label" position="737,190" zPosition="1" size="500,310" font="ChSelDesc; 24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
-    <widget source="ServiceEvent" render="SingleEpgList" position="738,542" zPosition="1" size="500,77" font="Regular; 22" foregroundColor="subgrey" backgroundColor="background" noWrap="1" transparent="1" valign="top" />
+    <widget source="ServiceEvent" render="SingleEpgList" position="738,542" zPosition="1" size="500,77" font="Regular; 22" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" noWrap="1" transparent="1" valign="top" />
     <widget source="ServiceEvent" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="907,127" zPosition="3" size="318,3" transparent="1">
       <convert type="EventTime">Progress</convert>
     </widget>
-    <eLabel name="ProgressBack" position="907,128" size="318,1" backgroundColor="progressback" zPosition="2" />
+    <eLabel name="ProgressbarBack" position="907,128" size="318,1" backgroundColor="ProgressbarBack" zPosition="2" />
     <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
     <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
     <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
     <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
-    <widget position="240,640" size="200,36" name="key_red" font="Nmsbd;19" halign="center" valign="center" backgroundColor="redback" transparent="1" zPosition="3" />
-    <widget position="440,640" size="200,36" name="key_green" font="Nmsbd;19" halign="center" valign="center" backgroundColor="greenback" transparent="1" zPosition="3" />
-    <widget position="640,640" size="200,36" name="key_yellow" font="Nmsbd;19" halign="center" valign="center" backgroundColor="yellowback" transparent="1" zPosition="3" />
-    <widget position="840,640" size="200,36" name="key_blue" font="Nmsbd;19" halign="center" valign="center" backgroundColor="blueback" transparent="1" zPosition="3" />
-    <eLabel position="737,538" size="500,2" backgroundColor="bluestripe" />
-    <eLabel text="Next" position="737,504" size="500,32" font="Nmsbd; 26" halign="left" foregroundColor="yellowtext" backgroundColor="background" transparent="1" valign="top" />
+    <widget position="240,640" size="200,36" name="key_red" font="Bold;19" halign="center" valign="center" backgroundColor="KeyRedBack" transparent="1" zPosition="3" />
+    <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
+    <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
+    <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
+    <eLabel position="737,538" size="500,2" backgroundColor="Stripe" />
+    <eLabel text="Next" position="737,504" size="500,32" font="Bold; 26" halign="left" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1" valign="top" />

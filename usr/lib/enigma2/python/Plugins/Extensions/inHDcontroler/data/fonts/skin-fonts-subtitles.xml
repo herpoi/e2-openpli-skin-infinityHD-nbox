@@ -1,0 +1,10 @@
+  </fonts>
+  <subtitles>
+    <sub name="Subtitle_TTX" font="Bold;30" shadowColor="#40101010" shadowOffset="3,3" />
+    <sub name="Subtitle_Regular" font="Bold;30" foregroundColor="TextLightDimmed" shadowColor="#40101010" shadowOffset="3,3" />
+    <sub name="Subtitle_Bold" font="Bold;30" foregroundColor="TextLightDimmed" shadowColor="#40101010" shadowOffset="3,3" />
+    <sub name="Subtitle_Italic" font="Bold;30" foregroundColor="TextLightDimmed" shadowColor="#40101010" shadowOffset="3,3" />
+  </subtitles>
+  <!-- FONTS - STOP -->
+  <!-- HEADER - STOP -->
+  

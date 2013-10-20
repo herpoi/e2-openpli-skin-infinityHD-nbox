@@ -1,0 +1,96 @@
+<skin>
+  <!-- infinityHD for NBOX -->
+  <!-- based on dreamTV-HD Skin by Kerni and infinityHD for newnigma-->
+  <!--/* HEADER -->
+  <output id="0">
+    <resolution xres="1280" yres="720" bpp="32" />
+  </output>
+  <colors>
+	<!-- KOLORY OGOLNE -->
+    <color name="BackTransparent" value="#41000000" />
+    <color name="TextForeground" value="#00ffffff" />
+    <color name="TextHighlight" value="#00f0b400" />
+	<color name="TextHighlight2" value="#000099ff" />
+	<color name="TextHighlight3" value="#000099ff" />
+    <color name="TextLightDimmed" value="#00dcdcdc" />
+    <color name="TextDimmed" value="#00bbbbbb" />
+    <color name="ProgressbarFore" value="#000099ff" />
+    <color name="ProgressbarBack" value="#251357a3" />
+	<color name="ListSelectFore" value="#00ffffff" />
+    <color name="ListSelectBack" value="#251357a3" />
+    <color name="ListMarkFore" value="#00ff0000" />
+	<color name="ListMarkBack" value="#251357a3" />
+    <color name="ListMarkSelectFore" value="#00800000" />
+	<color name="ListMarkSelectBack" value="#251357a3" />
+    <color name="Stripe" value="#001a58a5" />
+    <color name="ClockCorner" value="#000099ff" />
+    <color name="ClockInfobar" value="#00cccccc" />
+	<color name="BigDateInfobar" value="#00a5a5a5" />
+
+	<!-- KOLORY LISTY KANALOW -->
+    <color name="CS_Event" value="#00999999" />
+	<color name="CS_EventSelect" value="#009fd00b" />
+	<color name="CS_Progress" value="#00ffffff" />
+	<color name="CS_ProgressSelect" value="#009fd00b" />
+	<color name="CS_ProgressBorder" value="#00ffffff" />
+	<color name="CS_ProgressBorderSelect" value="#009fd00b" />
+	<color name="CS_ServiceNotAvail" value="#003f3f3f" />
+	<color name="CS_Marked" value="#00ff0000" />
+	<color name="CS_MarkedSelect" value="#00f0b400" />
+	<color name="CS_MarkedBack" value="#251357a3" />
+	<color name="CS_MarkedBackSelect" value="#251357a3" />	
+	
+	<!-- DALEJ NIE MODYFIKOWAC -->
+    <color name="Transparent" value="#ffffffff" />
+    <color name="Black" value="#00000000" />
+    <color name="Grey" value="#00999999" />
+    <color name="DarkGrey" value="#00666666" />
+	
+    <color name="KeyRed" value="#00ff2525" />
+    <color name="KeyRedBack" value="#009f1313" />
+    <color name="KeyYellow" value="#00bab329" />
+    <color name="KeyYellowBack" value="#00a08500" />
+    <color name="KeyGreen" value="#00389416" />
+    <color name="KeyGreenBack" value="#001f771f" />
+    <color name="KeyBlue" value="#006565ff" />
+    <color name="KeyBlueBack" value="#0018188b" />
+  </colors>
+  <windowstyle type="skinned" id="0">
+    <title offset="20,10" font="Bold;24" />
+    <color name="Background" color="BackTransparent" />
+    <color name="LabelForeground" color="TextForeground" />
+    <color name="ListboxBackground" color="BackTransparent" />
+    <color name="ListboxForeground" color="TextForeground" />
+    <color name="ListboxSelectedBackground" color="ListSelectBack" />
+    <color name="ListboxSelectedForeground" color="ListSelectFore" />
+    <color name="ListboxMarkedBackground" color="ListMarkBack" />
+    <color name="ListboxMarkedForeground" color="ListMarkFore" />
+    <color name="ListboxMarkedAndSelectedBackground" color="ListMarkSelectBack" />
+    <color name="ListboxMarkedAndSelectedForeground" color="ListMarkSelectFore" />
+    <color name="WindowTitleForeground" color="TextForeground" />
+    <color name="WindowTitleBackground" color="BackTransparent" />
+    <borderset name="bsWindow">
+      <pixmap pos="bpTopLeft" filename="infinityHD-nbox/general/b_tl.png" />
+      <pixmap pos="bpTop" filename="infinityHD-nbox/general/b_t.png" />
+      <pixmap pos="bpTopRight" filename="infinityHD-nbox/general/b_tr.png" />
+      <pixmap pos="bpLeft" filename="infinityHD-nbox/general/b_l.png" />
+      <pixmap pos="bpRight" filename="infinityHD-nbox/general/b_r.png" />
+      <pixmap pos="bpBottomLeft" filename="infinityHD-nbox/general/b_bl.png" />
+      <pixmap pos="bpBottom" filename="infinityHD-nbox/general/b_b.png" />
+      <pixmap pos="bpBottomRight" filename="infinityHD-nbox/general/b_br.png" />
+    </borderset>
+  </windowstyle>
+  <windowstyle type="skinned" id="1">
+    <color name="Background" color="BackTransparent" />
+    <color name="LabelForeground" color="TextForeground" />
+    <color name="ListboxBackground" color="BackTransparent" />
+    <color name="ListboxForeground" color="TextForeground" />
+    <color name="ListboxSelectedBackground" color="ListSelectBack" />
+    <color name="ListboxSelectedForeground" color="ListSelectFore" />
+    <color name="ListboxMarkedBackground" color="ListMarkBack" />
+    <color name="ListboxMarkedForeground" color="ListMarkFore" />
+    <color name="ListboxMarkedAndSelectedBackground" color="ListMarkSelectBack" />
+    <color name="ListboxMarkedAndSelectedForeground" color="ListMarkSelectFore" />
+    <color name="WindowTitleForeground" color="TextForeground" />
+    <color name="WindowTitleBackground" color="BackTransparent" />
+  </windowstyle>

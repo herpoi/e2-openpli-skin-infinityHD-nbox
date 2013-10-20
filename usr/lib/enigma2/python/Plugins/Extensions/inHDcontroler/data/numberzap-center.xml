@@ -1,7 +1,7 @@
   <!--/* NUMBERZAP CENTER -->
   <screen name="NumberZap" position="440,242" size="400,135" flags="wfNoBorder">
-    <widget name="number" position="96,13" size="200,60" font="Nmsbd; 55" halign="center" valign="center" />
-    <widget name="servicename" position="15,82" size="360,33" font="Nmsbd; 31" valign="center" halign="center" foregroundColor="yellowtext">
+    <widget name="number" position="96,13" size="200,60" font="Bold; 55" halign="center" valign="center" />
+    <widget name="servicename" position="15,82" size="360,33" font="Bold; 31" valign="center" halign="center" foregroundColor="TextHighlight">
     </widget>
   </screen>
   <!-- NUMBERZAP CENTER */-->

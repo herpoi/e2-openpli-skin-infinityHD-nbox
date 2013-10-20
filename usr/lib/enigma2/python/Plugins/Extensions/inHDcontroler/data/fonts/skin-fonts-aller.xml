@@ -1,0 +1,5 @@
+  <!-- FONTS - START -->
+  <fonts>
+    <font filename="Aller_Rg.ttf" name="Regular" scale="100" />
+    <font filename="Aller_Bd.ttf" name="Bold" scale="100" />
+    <font filename="DroidSansMono.ttf" name="Console" scale="100" />

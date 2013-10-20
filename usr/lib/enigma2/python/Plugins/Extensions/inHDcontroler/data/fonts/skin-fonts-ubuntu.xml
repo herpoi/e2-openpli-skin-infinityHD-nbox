@@ -1,0 +1,5 @@
+  <!-- FONTS - START -->
+  <fonts>
+    <font filename="Ubuntu-R.ttf" name="Regular" scale="100" />
+    <font filename="Ubuntu-B.ttf" name="Bold" scale="100" />
+    <font filename="DroidSansMono.ttf" name="Console" scale="100" />

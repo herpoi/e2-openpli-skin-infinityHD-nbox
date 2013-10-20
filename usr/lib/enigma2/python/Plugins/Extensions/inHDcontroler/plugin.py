@@ -50,6 +50,10 @@ from os import system
 
 
 config.plugins.inHD  = ConfigSubsection()
+config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
+				("classic", _("Classic")),
+				("fresh", _("Fresh"))
+				])
 config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choices = [
         ("bigpicon-classic", _("BigPicon Classic ")),
 				("picon-classic", _("Picon Classic")),
@@ -67,7 +71,7 @@ config.plugins.inHD.SecondInfobar = ConfigSelection(default="moreepg", choices =
 config.plugins.inHD.Side = ConfigSelection(default="right", choices = [
 				("right", _("Right")),
 				("left", _("Left"))
-				])				
+				])
 config.plugins.inHD.Picon = ConfigSelection(default="bigpicon", choices = [
 				("bigpicon", _("Big Picon")),
 				("nopicon", _("No Picon")),
@@ -124,7 +128,62 @@ config.plugins.inHD.Font = ConfigSelection(default="aller", choices = [
         ("roboto", _("Roboto")),
         ("cool", _("Cool"))
         ])
-
+config.plugins.inHD.ChSelDesc = ConfigSelection(default="100", choices = [
+        ("80", _("80")),
+        ("85", _("85")),
+        ("90", _("90")),
+        ("95", _("95")),
+        ("100", _("100")),
+        ("105", _("105")),
+        ("110", _("110")),
+        ("115", _("115")),
+        ("120", _("120"))
+        ])
+config.plugins.inHD.EPGSelDesc = ConfigSelection(default="100", choices = [
+        ("80", _("80")),
+        ("85", _("85")),
+        ("90", _("90")),
+        ("95", _("95")),
+        ("100", _("100")),
+        ("105", _("105")),
+        ("110", _("110")),
+        ("115", _("115")),
+        ("120", _("120"))
+        ])
+config.plugins.inHD.EvDesc = ConfigSelection(default="100", choices = [
+        ("80", _("80")),
+        ("85", _("85")),
+        ("90", _("90")),
+        ("95", _("95")),
+        ("100", _("100")),
+        ("105", _("105")),
+        ("110", _("110")),
+        ("115", _("115")),
+        ("120", _("120"))
+        ])
+config.plugins.inHD.GraphDesc = ConfigSelection(default="100", choices = [
+        ("80", _("80")),
+        ("85", _("85")),
+        ("90", _("90")),
+        ("95", _("95")),
+        ("100", _("100")),
+        ("105", _("105")),
+        ("110", _("110")),
+        ("115", _("115")),
+        ("120", _("120"))
+        ])
+config.plugins.inHD.SIDesc = ConfigSelection(default="100", choices = [
+        ("80", _("80")),
+        ("85", _("85")),
+        ("90", _("90")),
+        ("95", _("95")),
+        ("100", _("100")),
+        ("105", _("105")),
+        ("110", _("110")),
+        ("115", _("115")),
+        ("120", _("120"))
+        ])
+		
 def main(session, **kwargs):
 	session.open(inHDsetup)
 
@@ -135,13 +194,13 @@ def Plugins(**kwargs):
 
 class inHDsetup(ConfigListScreen, Screen):
 	skin = """
-    <screen name="inHDsetup" position="center,center" size="730,600" title="infinityHD Controler 1.0">
-      <ePixmap position="92,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="on" />
+    <screen name="inHDsetup" position="center,center" size="780,600" title="infinityHD Controler GIT">
+      <ePixmap position="117,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="blend" transparent="1" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="49,570" size="120,26" text="Cancel" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="209,570" size="120,26" text="Save" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/red.png" position="10,567" size="30,30" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/green.png" position="170,567" size="30,30" />      
-      <widget name="config" position="15,212" scrollbarMode="showOnDemand" size="700,350" />
+      <widget name="config" position="15,187" scrollbarMode="showOnDemand" size="750,350" />
     </screen>"""
 
 	def __init__(self, session):
@@ -152,14 +211,20 @@ class inHDsetup(ConfigListScreen, Screen):
 		self.daten = "/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/"
 		list = []
 		list.append(getConfigListEntry(_("Font:"), config.plugins.inHD.Font))
+		list.append(getConfigListEntry(_("EPG font size on Channel Selection screen [%]:"), config.plugins.inHD.ChSelDesc))
+		list.append(getConfigListEntry(_("EPG font size on Second Infobar screen [%]:"), config.plugins.inHD.SIDesc))
+		list.append(getConfigListEntry(_("EPG font size on EPG Selection screen [%]:"), config.plugins.inHD.EPGSelDesc))
+		list.append(getConfigListEntry(_("EPG font size on Event View screen [%]:"), config.plugins.inHD.EvDesc))
+		list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen [%]:"), config.plugins.inHD.GraphDesc))
+		list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
 		list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
 		list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
 		list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
-		list.append(getConfigListEntry(_("Second Infobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
-		list.append(getConfigListEntry(_("Channel Side:"), config.plugins.inHD.Side))
-		list.append(getConfigListEntry(_("Channel Picon:"), config.plugins.inHD.Picon))
-		list.append(getConfigListEntry(_("Channel Rows:"), config.plugins.inHD.Rows))
-		list.append(getConfigListEntry(_("Show next events on channel selection screen:"), config.plugins.inHD.ChannelSelectionnext))
+		list.append(getConfigListEntry(_("Second Fnfobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
+		list.append(getConfigListEntry(_("Channel Selection side:"), config.plugins.inHD.Side))
+		list.append(getConfigListEntry(_("Channel Selection picon:"), config.plugins.inHD.Picon))
+		list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
+		list.append(getConfigListEntry(_("Show next events on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionnext))
 		list.append(getConfigListEntry(_("EPG Selection:"), config.plugins.inHD.EpgSelection))
 		list.append(getConfigListEntry(_("Event View:"), config.plugins.inHD.Eventview))
 		list.append(getConfigListEntry(_("Number Zap:"), config.plugins.inHD.NumberZap))
@@ -188,14 +253,56 @@ class inHDsetup(ConfigListScreen, Screen):
 			x[1].save()
 		try:
 			skin_lines = []
-			head_file = self.daten + "skin-head.xml"
+			head_file = self.daten + "skin-head-" + config.plugins.inHD.Colors.value + ".xml"
 			skFile = open(head_file, "r")
 			head_lines = skFile.readlines()
 			skFile.close()
 			for x in head_lines:
 				skin_lines.append(x)
 				
-			fonts_file = self.daten + "skin-fonts-" + config.plugins.inHD.Font.value + ".xml"
+			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + ".xml"
+			skFile = open(fonts_file, "r")
+			fonts_lines = skFile.readlines()
+			skFile.close()
+			for x in fonts_lines:
+			  skin_lines.append(x)
+				
+			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-chseldesc-" + config.plugins.inHD.ChSelDesc.value + ".xml"
+			skFile = open(fonts_file, "r")
+			fonts_lines = skFile.readlines()
+			skFile.close()
+			for x in fonts_lines:
+			  skin_lines.append(x)
+				
+			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-epgseldesc-" + config.plugins.inHD.EPGSelDesc.value + ".xml"
+			skFile = open(fonts_file, "r")
+			fonts_lines = skFile.readlines()
+			skFile.close()
+			for x in fonts_lines:
+			  skin_lines.append(x)
+				
+			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-evdesc-" + config.plugins.inHD.EvDesc.value + ".xml"
+			skFile = open(fonts_file, "r")
+			fonts_lines = skFile.readlines()
+			skFile.close()
+			for x in fonts_lines:
+			  skin_lines.append(x)
+				
+			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-graphdesc-" + config.plugins.inHD.GraphDesc.value + ".xml"
+			skFile = open(fonts_file, "r")
+			fonts_lines = skFile.readlines()
+			skFile.close()
+			for x in fonts_lines:
+			  skin_lines.append(x)
+
+			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-sidesc-" + config.plugins.inHD.SIDesc.value + ".xml"
+			skFile = open(fonts_file, "r")
+			fonts_lines = skFile.readlines()
+			skFile.close()
+			for x in fonts_lines:
+			  skin_lines.append(x)
+			  
+			fonts_file = self.daten + "fonts/skin-fonts-subtitles.xml"
 			skFile = open(fonts_file, "r")
 			fonts_lines = skFile.readlines()
 			skFile.close()

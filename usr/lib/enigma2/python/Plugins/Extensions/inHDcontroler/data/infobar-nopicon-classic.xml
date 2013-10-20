@@ -1,39 +1,39 @@
   <!--/* INFOBAR NOPICON CLASSIC -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="center,0" size="1280,720" title="InfoBar">
+  <screen backgroundColor="Transparent" flags="wfNoBorder" name="InfoBar" position="center,0" size="1280,720" title="InfoBar">
     <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
-    <widget source="global.CurrentTime" render="Label" position="1080,530" size="113,40" font="Nmsbd; 33" halign="right" backgroundColor="black" transparent="1" valign="bottom" foregroundColor="greytext">
+    <widget source="global.CurrentTime" render="Label" position="1080,530" size="113,40" font="Bold; 33" halign="right" backgroundColor="Black" transparent="1" valign="bottom" foregroundColor="TextDimmed">
       <convert type="ClockToText">%H:%M</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="764,530" size="300,40" font="Nmsbd; 33" halign="right" backgroundColor="black" transparent="1" valign="bottom" foregroundColor="greytext">
+    <widget source="global.CurrentTime" render="Label" position="764,530" size="300,40" font="Bold; 33" halign="right" backgroundColor="Black" transparent="1" valign="bottom" foregroundColor="TextDimmed">
       <convert type="inHDClockToText">Format:%d.%m.%Y</convert>
     </widget>
     <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1081,584" zPosition="3" size="36,36" alphatest="on">
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="ChannelNumber" position="78,530" size="90,40" font="Nmsbd; 33" valign="bottom" halign="center" transparent="1" backgroundColor="black" shadowColor="#000000" shadowOffset="-1,-1" noWrap="1" foregroundColor="yellowtext">
+    <widget source="session.CurrentService" render="ChannelNumber" position="78,530" size="90,40" font="Bold; 33" valign="bottom" halign="center" transparent="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" noWrap="1" foregroundColor="TextHighlight">
     </widget>
-    <widget position="175,530" size="580,40" source="session.CurrentService" render="Label" font="Nmsbd; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="yellowtext">
+    <widget position="175,530" size="580,40" source="session.CurrentService" render="Label" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget position="78,583" size="90,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" backgroundColor="transpblack2" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left">
+    <widget position="78,583" size="90,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget position="175,583" size="740,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" noWrap="1" backgroundColor="transpblack2" shadowColor="#000000" shadowOffset="-1,-1" transparent="1">
+    <widget position="175,583" size="740,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" noWrap="1" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget position="921,583" size="145,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" backgroundColor="transpblack2" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1">
+    <widget position="921,583" size="145,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1">
       <convert type="EventTime">Remaining</convert>
       <convert type="RemainingToText">InMinutes</convert>
     </widget>
-    <widget position="78,624" size="90,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" backgroundColor="transpblack2" foregroundColor="greytext" transparent="1" halign="left">
+    <widget position="78,624" size="90,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" halign="left">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget position="175,624" size="740,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" noWrap="1" backgroundColor="transpblack2" foregroundColor="greytext" transparent="1">
+    <widget position="175,624" size="740,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" noWrap="1" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget position="921,624" size="145,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" backgroundColor="transpblack2" foregroundColor="greytext" halign="right" transparent="1">
+    <widget position="921,624" size="145,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" foregroundColor="TextDimmed" halign="right" transparent="1">
       <convert type="EventTime">Duration</convert>
       <convert type="ClockToText">InMinutes</convert>
     </widget>
@@ -67,8 +67,8 @@
       <convert type="ServiceInfo">IsCrypted</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.Event_Now" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="81,572" size="980,3" transparent="1" backgroundColor="transpblack2" zPosition="5">
+    <widget source="session.Event_Now" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="81,572" size="980,3" transparent="1" backgroundColor="BackTransparent" zPosition="5">
       <convert type="EventTime">Progress</convert>
     </widget>
-    <eLabel name="ProgressBack" position="81,573" size="890,1" backgroundColor="progressback" zPosition="4" />
-    <eLabel position="67,665" size="1144,2" backgroundColor="bluestripe" />
+    <eLabel name="ProgressbarBack" position="81,573" size="890,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <eLabel position="67,665" size="1144,2" backgroundColor="Stripe" />

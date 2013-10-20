@@ -1,19 +1,19 @@
     <!--/* FOOTER SATINFO SIGNAL -->
     <!-- Footer - Signal -->
-    <eLabel text="SNR:" position="858,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="background" foregroundColor="greytext" transparent="1" />
-    <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="transpblack2" transparent="1">
+    <eLabel text="SNR:" position="858,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1">
       <convert type="FrontendInfo">SNR</convert>
     </widget>
-    <eLabel text="AGC:" position="968,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="background" foregroundColor="greytext" transparent="1" />
-    <widget source="session.FrontendStatus" render="Label" position="1022,675" size="50,22" font="Nmsbd; 17" valign="center" backgroundColor="transpblack2" transparent="1">
+    <eLabel text="AGC:" position="968,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="1022,675" size="50,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1">
       <convert type="FrontendInfo">AGC</convert>
     </widget>
-    <eLabel text="BER:" position="1078,675" size="50,22" font="Nmsbd; 18" valign="center" backgroundColor="background" foregroundColor="greytext" transparent="1" />
-    <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Nmsbd; 17" valign="center" backgroundColor="transpblack2" transparent="1" zPosition="2">
+    <eLabel text="BER:" position="1078,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
+    <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1" zPosition="2">
       <convert type="FrontendInfo">BER</convert>
     </widget>
     <!-- Footer - Sat -->
-    <widget source="session.CurrentService" render="Label" position="90,675" size="770,22" font="Nmsbd; 18" backgroundColor="background" transparent="1" halign="left" valign="center" zPosition="3">
+    <widget source="session.CurrentService" render="Label" position="90,675" size="770,22" font="Bold; 18" backgroundColor="BackTransparent" transparent="1" halign="left" valign="center" zPosition="3">
       <convert type="PliExtraInfo">ServiceInfo</convert>
     </widget>
     <!-- FOOTER SATINFO SIGNAL */-->
