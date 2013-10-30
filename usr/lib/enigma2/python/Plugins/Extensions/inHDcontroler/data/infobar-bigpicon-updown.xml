@@ -10,7 +10,7 @@
     <widget position="420,30" size="475,50" source="session.CurrentService" render="Label" font="Bold; 45" valign="center" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="session.CurrentService" render="Picon" position="69,15" size="220,132" zPosition="4" alphatest="blend" transparent="1">
+    <widget source="session.CurrentService" render="inHDBigPicon" position="69,15" size="220,132" zPosition="4" alphatest="blend" transparent="1">
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget position="67,570" size="90,35" source="session.Event_Now" render="Label" font="Bold; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="right">

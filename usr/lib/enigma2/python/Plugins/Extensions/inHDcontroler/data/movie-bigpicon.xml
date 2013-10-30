@@ -1,0 +1,97 @@
+  <!--/* MoviePlayer BigPicon -->
+  <screen name="MoviePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
+    <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
+    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%A</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%d %B</convert>
+    </widget>
+    <ePixmap position="0,559" zPosition="-3" size="1280,720" pixmap="infinityHD-nbox/infobar_2.png" />
+    <widget source="session.CurrentService" render="Label" position="300,605" size="692,40" font="Bold; 33" halign="left" valign="bottom" noWrap="1" backgroundColor="Black" transparent="1" foregroundColor="TextHighlight">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="986,645" size="120,35" font="Regular; 28" halign="right" valign="bottom" backgroundColor="BackTransparent" shadowColor="Black" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServicePosition">Position,ShowHours</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="1115,645" size="110,35" font="Regular; 28" halign="right" valign="bottom" backgroundColor="BackTransparent" transparent="1">
+      <convert type="ServicePosition">Length,ShowHours</convert>
+    </widget>
+    <!-- Picon /-->
+    <widget source="session.CurrentService" render="inHDBigPicon" position="53,568" size="220,132" zPosition="4" alphatest="blend" transparent="1">
+      <convert type="inHDMovieReference">Reference</convert>
+    </widget>
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1055,605" zPosition="3" size="36,36" alphatest="on">
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1100,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">VideoWidth</convert>
+      <convert type="ValueRange">0,720</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1100,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">VideoWidth</convert>
+      <convert type="ValueRange">721,1980</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1190,605" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_dolby_kl.png" position="1190,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1145,605" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_format_kl.png" position="1145,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">IsWidescreen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!-- Progressbar /-->
+    <eLabel name="ProgressbarBack" position="300,661" size="690,1" backgroundColor="ProgressbarBack" zPosition="3" />
+    <widget source="session.CurrentService" render="Progress" position="300,660" size="690,3" zPosition="4" pixmap="infinityHD-nbox/progressnbox.png" transparent="1">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <widget source="session.CurrentService" render="PositionGauge" position="300,657" size="690,9" zPosition="5" transparent="1">
+      <convert type="ServicePosition">Gauge</convert>
+    </widget>
+    <eLabel name="Label" position="1108,647" size="15,35" font="Regular; 28" text="/" halign="center" valign="bottom" />
+  </screen>
+  <!-- MoviePlayer BigPicon */-->
+  <!--/* MovieSelection BigPicon -->
+  <screen name="MovieSelection" position="0,0" size="1280,720" flags="wfNoBorder" title="Select a movie">
+  <widget font="Bold; 28" position="60,25" size="605,35" render="Label" source="Title" transparent="1" valign="center" zPosition="2" />
+  <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
+  <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
+  <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
+    <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
+  </widget>
+  <widget position="60,84" size="600,525" itemHeights="105,75,35" fontSizesOriginal="25,20,20" fontSizesCompact="25,20" fontSizesMinimal="25,20" name="list" scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
+  <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
+  <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
+  <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
+  <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
+  <widget position="240,640" size="200,36" name="key_red" font="Bold;19" halign="center" valign="center" backgroundColor="KeyRedBack" transparent="1" zPosition="3" />
+  <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
+  <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
+  <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
+  <widget position="1066,185" size="171,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
+    <convert type="ServiceTime">Duration</convert>
+    <convert type="ClockToText">AsLengthSeconds</convert>
+  </widget>
+  <eLabel position="680,225" size="557,2" backgroundColor="Stripe" zPosition="2" />
+  <widget position="680,237" size="557,319" source="Service" render="Label" valign="top" transparent="1" zPosition="3" font="Regular; 24" foregroundColor="TextLightDimmed">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget position="1053,562" size="185,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
+    <convert type="MovieInfo">FileSize</convert>
+  </widget>
+  <widget position="817,600" size="420,26" name="freeDiskSpace" font="Bold; 24" halign="right" backgroundColor="BackTransparent" transparent="1" zPosition="3" />
+  <widget source="Service" render="inHDBigPicon" position="695,81" zPosition="4" size="220,132" transparent="1" alphatest="blend">
+    <convert type="inHDMovieReference" />
+  </widget>
+<widget position="932,85" size="305,94" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="left" foregroundColor="TextHighlight" valign="top">
+  <convert type="EventName">Name</convert>
+</widget>
+</screen>
+  <!-- MovieSelection BigPicon */-->

@@ -1,0 +1,39 @@
+  <windowstyle type="skinned" id="0">
+    <title offset="20,10" font="Bold;24" />
+    <color name="Background" color="BackTransparent" />
+    <color name="LabelForeground" color="TextForeground" />
+    <color name="ListboxBackground" color="BackTransparent" />
+    <color name="ListboxForeground" color="TextForeground" />
+    <color name="ListboxSelectedBackground" color="ListSelectBack" />
+    <color name="ListboxSelectedForeground" color="ListSelectFore" />
+    <color name="ListboxMarkedBackground" color="ListMarkBack" />
+    <color name="ListboxMarkedForeground" color="ListMarkFore" />
+    <color name="ListboxMarkedAndSelectedBackground" color="ListMarkSelectBack" />
+    <color name="ListboxMarkedAndSelectedForeground" color="ListMarkSelectFore" />
+    <color name="WindowTitleForeground" color="TextForeground" />
+    <color name="WindowTitleBackground" color="BackTransparent" />
+    <borderset name="bsWindow">
+      <pixmap pos="bpTopLeft" filename="infinityHD-nbox/general/b_tl.png" />
+      <pixmap pos="bpTop" filename="infinityHD-nbox/general/b_t.png" />
+      <pixmap pos="bpTopRight" filename="infinityHD-nbox/general/b_tr.png" />
+      <pixmap pos="bpLeft" filename="infinityHD-nbox/general/b_l.png" />
+      <pixmap pos="bpRight" filename="infinityHD-nbox/general/b_r.png" />
+      <pixmap pos="bpBottomLeft" filename="infinityHD-nbox/general/b_bl.png" />
+      <pixmap pos="bpBottom" filename="infinityHD-nbox/general/b_b.png" />
+      <pixmap pos="bpBottomRight" filename="infinityHD-nbox/general/b_br.png" />
+    </borderset>
+  </windowstyle>
+  <windowstyle type="skinned" id="1">
+    <color name="Background" color="BackTransparent" />
+    <color name="LabelForeground" color="TextForeground" />
+    <color name="ListboxBackground" color="BackTransparent" />
+    <color name="ListboxForeground" color="TextForeground" />
+    <color name="ListboxSelectedBackground" color="ListSelectBack" />
+    <color name="ListboxSelectedForeground" color="ListSelectFore" />
+    <color name="ListboxMarkedBackground" color="ListMarkBack" />
+    <color name="ListboxMarkedForeground" color="ListMarkFore" />
+    <color name="ListboxMarkedAndSelectedBackground" color="ListMarkSelectBack" />
+    <color name="ListboxMarkedAndSelectedForeground" color="ListMarkSelectFore" />
+    <color name="WindowTitleForeground" color="TextForeground" />
+    <color name="WindowTitleBackground" color="BackTransparent" />
+  </windowstyle>

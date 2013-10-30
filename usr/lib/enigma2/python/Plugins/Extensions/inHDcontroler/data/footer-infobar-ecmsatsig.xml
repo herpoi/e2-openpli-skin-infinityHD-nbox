@@ -17,7 +17,7 @@
       <convert type="PliExtraInfo">ServiceInfo</convert>
     </widget>
     <!-- Footer - ECM -->
-    <eLabel text="ECM:" position="90,647" size="50,22" font="Bold; 18" valign="center" backgroundColor="backgrounds" foregroundColor="TextDimmed" transparent="1" />
+    <eLabel text="ECM:" position="90,647" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
     <widget source="session.CurrentService" render="Label" position="140,647" size="1050, 22" zPosition="3" font="Bold; 18" halign="left" noWrap="1" backgroundColor="BackTransparent" transparent="1" valign="center" foregroundColor="KeyGreen">
       <convert type="DMCHDCaidDisplay">Default</convert>
     </widget>	

@@ -70,14 +70,14 @@
     <color name="WindowTitleForeground" color="TextForeground" />
     <color name="WindowTitleBackground" color="BackTransparent" />
     <borderset name="bsWindow">
-      <pixmap pos="bpTopLeft" filename="infinityHD-nbox/general/b_tl.png" />
-      <pixmap pos="bpTop" filename="infinityHD-nbox/general/b_t.png" />
-      <pixmap pos="bpTopRight" filename="infinityHD-nbox/general/b_tr.png" />
-      <pixmap pos="bpLeft" filename="infinityHD-nbox/general/b_l.png" />
-      <pixmap pos="bpRight" filename="infinityHD-nbox/general/b_r.png" />
-      <pixmap pos="bpBottomLeft" filename="infinityHD-nbox/general/b_bl.png" />
-      <pixmap pos="bpBottom" filename="infinityHD-nbox/general/b_b.png" />
-      <pixmap pos="bpBottomRight" filename="infinityHD-nbox/general/b_br.png" />
+      <pixmap pos="bpTopLeft" filename="infinityHD-nbox/general/b_tl_shadow.png" />
+      <pixmap pos="bpTop" filename="infinityHD-nbox/general/b_t_shadow.png" />
+      <pixmap pos="bpTopRight" filename="infinityHD-nbox/general/b_tr_shadow.png" />
+      <pixmap pos="bpLeft" filename="infinityHD-nbox/general/b_l_shadow.png" />
+      <pixmap pos="bpRight" filename="infinityHD-nbox/general/b_r_shadow.png" />
+      <pixmap pos="bpBottomLeft" filename="infinityHD-nbox/general/b_bl_shadow.png" />
+      <pixmap pos="bpBottom" filename="infinityHD-nbox/general/b_b_shadow.png" />
+      <pixmap pos="bpBottomRight" filename="infinityHD-nbox/general/b_br_shadow.png" />
     </borderset>
   </windowstyle>
   <windowstyle type="skinned" id="1">
@@ -134,7 +134,7 @@
     <widget position="407,530" size="714,40" source="session.CurrentService" render="Label" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="session.CurrentService" render="Picon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1">
+    <widget source="session.CurrentService" render="inHDBigPicon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1">
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget position="316,583" size="85,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left">
@@ -294,7 +294,7 @@
     </widget>
     <eLabel name="ProgressbarBack" position="932,99" size="150,1" backgroundColor="ProgressbarBack" zPosition="2" />
     <eLabel position="60,665" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <!--/* FOOTER ECM SIGNAL -->
+    <!--/* FOOTER SATINFO SIGNAL -->
     <!-- Footer - Signal -->
     <eLabel text="SNR:" position="858,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
     <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1">
@@ -308,44 +308,11 @@
     <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1" zPosition="2">
       <convert type="FrontendInfo">BER</convert>
     </widget>
-    <!-- Footer - Tuner -->
-    <eLabel text="Tuner:" position="720,675" size="60,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
-    <widget source="session.TunerInfo" render="FixedLabel" position="780,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="2" text="A" foregroundColor="TextHighlight" font="Bold; 17" halign="center">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">1</convert>
-      <convert type="ConditionalShowHide" />
+    <!-- Footer - Sat -->
+    <widget source="session.CurrentService" render="Label" position="90,675" size="770,22" font="Bold; 18" backgroundColor="BackTransparent" transparent="1" halign="left" valign="center" zPosition="3">
+      <convert type="PliExtraInfo">ServiceInfo</convert>
     </widget>
-    <widget source="session.TunerInfo" render="FixedLabel" position="800,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="2" text="B" foregroundColor="TextHighlight" font="Bold; 17" halign="center">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">2</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.TunerInfo" render="FixedLabel" position="820,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="2" text="C" foregroundColor="TextHighlight" font="Bold; 17" halign="center">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">4</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="FixedLabel" position="780,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="3" text="A" foregroundColor="KeyGreen" font="Bold; 17" halign="center">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">0,0</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="FixedLabel" position="800,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="3" text="B" foregroundColor="KeyGreen" font="Bold; 17" halign="center">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">1,1</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="FixedLabel" position="820,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="3" text="C" foregroundColor="KeyGreen" font="Bold; 17" halign="center">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">2,2</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <!-- Footer - ECM -->
-    <eLabel text="ECM:" position="90,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="backgrounds" foregroundColor="TextDimmed" transparent="1" />
-    <widget source="session.CurrentService" render="Label" position="140,675" size="560, 22" zPosition="3" font="Bold; 18" halign="left" noWrap="0" backgroundColor="BackTransparent" transparent="1" valign="center">
-      <convert type="DMCHDCaidDisplay">ShortECM</convert>
-    </widget>
-    <!-- FOOTER ECM SIGNAL */-->
+    <!-- FOOTER SATINFO SIGNAL */-->
   </screen>
   <!-- INFOBAR/SECOND INFOBAR */-->
   <!--/* CHANNEL SELECTION BIGPICON RIGHT NOEXT -->
@@ -368,7 +335,7 @@
     <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
     <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
     <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
-    <widget source="ServiceEvent" render="Picon" position="63,80" size="220,132" zPosition="10" alphatest="blend" transparent="1">
+    <widget source="ServiceEvent" render="inHDBigPicon" position="63,80" size="220,132" zPosition="10" alphatest="blend" transparent="1">
       <!--  <convert type="ServiceName">Name</convert>-->
       <convert type="inHDRefString">ServicelistRef</convert>
     </widget>
@@ -415,7 +382,7 @@
   <!-- CHANNEL SELECTION - STOP -->  <!--/* EPG SELECTION BIGPICON RIGHT -->
   <screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder">
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <widget alphatest="blend" position="63,80" render="Picon" size="220,132" source="Event" transparent="1" zPosition="1">
+    <widget alphatest="blend" position="63,80" render="inHDBigPicon" size="220,132" source="Event" transparent="1" zPosition="1">
       <convert type="inHDRefString">CurrentRef</convert>
     </widget>
     <widget source="Service" render="Label" position="60,25" size="605,35" font="Bold; 28" noWrap="1" backgroundColor="BackTransparent" transparent="1" halign="left" zPosition="1">
@@ -477,7 +444,7 @@
     </widget>
     <widget name="datetime" position="315,80" zPosition="1" size="450,35" font="Bold; 28" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight" />
     <widget name="channel" position="60,25" size="605,35" font="Bold; 28" halign="left" transparent="1" zPosition="2" />
-    <widget alphatest="blend" position="63,80" render="Picon" size="220,132" source="Title" transparent="1" zPosition="1">
+    <widget alphatest="blend" position="63,80" render="inHDBigPicon" size="220,132" source="Title" transparent="1" zPosition="1">
       <convert type="inHDRefString">CurrentRef</convert>
     </widget>
   </screen>
@@ -489,7 +456,115 @@
     </widget>
   </screen>
   <!-- NUMBERZAP CENTER */-->
-  <!--/* GraphMultiEPG -->
+  <!--/* MoviePlayer BigPicon -->
+  <screen name="MoviePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
+    <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
+    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%A</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%d %B</convert>
+    </widget>
+    <ePixmap position="0,559" zPosition="-3" size="1280,720" pixmap="infinityHD-nbox/infobar_2.png" />
+    <widget source="session.CurrentService" render="Label" position="300,605" size="692,40" font="Bold; 33" halign="left" valign="bottom" noWrap="1" backgroundColor="Black" transparent="1" foregroundColor="TextHighlight">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="986,645" size="120,35" font="Regular; 28" halign="right" valign="bottom" backgroundColor="BackTransparent" shadowColor="Black" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServicePosition">Position,ShowHours</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="1115,645" size="110,35" font="Regular; 28" halign="right" valign="bottom" backgroundColor="BackTransparent" transparent="1">
+      <convert type="ServicePosition">Length,ShowHours</convert>
+    </widget>
+    <!-- Picon /-->
+    <widget source="session.CurrentService" render="inHDBigPicon" position="53,568" size="220,132" zPosition="4" alphatest="blend" transparent="1">
+      <convert type="inHDMovieReference">Reference</convert>
+    </widget>
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1055,605" zPosition="3" size="36,36" alphatest="on">
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1100,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">VideoWidth</convert>
+      <convert type="ValueRange">0,720</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1100,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">VideoWidth</convert>
+      <convert type="ValueRange">721,1980</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1190,605" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_dolby_kl.png" position="1190,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1145,605" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_format_kl.png" position="1145,605" size="36,36" zPosition="2" transparent="1">
+      <convert type="ServiceInfo">IsWidescreen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!-- Progressbar /-->
+    <eLabel name="ProgressbarBack" position="300,661" size="690,1" backgroundColor="ProgressbarBack" zPosition="3" />
+    <widget source="session.CurrentService" render="Progress" position="300,660" size="690,3" zPosition="4" pixmap="infinityHD-nbox/progressnbox.png" transparent="1">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <widget source="session.CurrentService" render="PositionGauge" position="300,657" size="690,9" zPosition="5" transparent="1">
+      <convert type="ServicePosition">Gauge</convert>
+    </widget>
+    <eLabel name="Label" position="1108,647" size="15,35" font="Regular; 28" text="/" halign="center" valign="bottom" />
+  </screen>
+  <!-- MoviePlayer BigPicon */-->
+  <!--/* MovieSelection BigPicon -->
+  <screen name="MovieSelection" position="0,0" size="1280,720" flags="wfNoBorder" title="Select a movie">
+  <widget font="Bold; 28" position="60,25" size="605,35" render="Label" source="Title" transparent="1" valign="center" zPosition="2" />
+  <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
+  <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
+  <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
+    <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
+  </widget>
+  <widget position="60,84" size="600,525" itemHeights="105,75,35" fontSizesOriginal="25,20,20" fontSizesCompact="25,20" fontSizesMinimal="25,20" name="list" scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
+  <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
+  <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
+  <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
+  <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
+  <widget position="240,640" size="200,36" name="key_red" font="Bold;19" halign="center" valign="center" backgroundColor="KeyRedBack" transparent="1" zPosition="3" />
+  <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
+  <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
+  <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
+  <widget position="1066,185" size="171,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
+    <convert type="ServiceTime">Duration</convert>
+    <convert type="ClockToText">AsLengthSeconds</convert>
+  </widget>
+  <eLabel position="680,225" size="557,2" backgroundColor="Stripe" zPosition="2" />
+  <widget position="680,237" size="557,319" source="Service" render="Label" valign="top" transparent="1" zPosition="3" font="Regular; 24" foregroundColor="TextLightDimmed">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget position="1053,562" size="185,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
+    <convert type="MovieInfo">FileSize</convert>
+  </widget>
+  <widget position="817,600" size="420,26" name="freeDiskSpace" font="Bold; 24" halign="right" backgroundColor="BackTransparent" transparent="1" zPosition="3" />
+  <widget source="Service" render="inHDBigPicon" position="695,81" zPosition="4" size="220,132" transparent="1" alphatest="blend">
+    <convert type="inHDMovieReference" />
+  </widget>
+<widget position="932,85" size="305,94" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="left" foregroundColor="TextHighlight" valign="top">
+  <convert type="EventName">Name</convert>
+</widget>
+</screen>
+  <!-- MovieSelection BigPicon */-->
+  <!--/* MUTE -->
+  <screen name="Mute" zPosition="1" position="0,0" size="122,88" title="Mute" backgroundColor="Transparent" flags="wfNoBorder">
+	<ePixmap position="0,0" size="122,88" pixmap="infinityHD-nbox/volume/mute_new.png" alphatest="on" />
+  </screen>
+  <!-- MUTE */-->
+  <!--/* VOLUME VERTICAL -->
+  <screen name="Volume" position="0,184" size="122,306" title="Volume" flags="wfNoBorder" zPosition="10" backgroundColor="Transparent">
+	<ePixmap position="0,0" zPosition="-1" size="122,306" pixmap="infinityHD-nbox/volume/volumebar_h_back.png" alphatest="on" />
+	<widget name="Volume" position="37,19" size="33,207" zPosition="1" pixmap="infinityHD-nbox/volume/volumebar_h_fore.png" transparent="1" orientation="orBottomToTop" alphatest="blend"  />
+  </screen>
+  <!-- VOLUME VERTICAL */-->
+<!--/* GraphMultiEPG -->
   <screen name="GraphMultiEPG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder">
     <eLabel position="60,25" size="605,35" text="Electronic Program Guide" halign="left" font="Bold; 28" transparent="1" zPosition="2" />
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
@@ -623,92 +698,6 @@
     </widget>
   </screen>
   <!-- VIRTUALZAP */-->
-  <!--/* MOVIEPLAYER -->
-  <screen name="MoviePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
-    <ePixmap position="0,70" zPosition="-3" size="1280,720" pixmap="infinityHD-nbox/infobar.png" />
-    <widget source="session.CurrentService" render="Label" position="300,560" size="700,32" font="Bold;30" halign="center" valign="top" noWrap="1" backgroundColor="Black" transparent="1">
-      <convert type="ServiceName">Name</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="316,615" size="110,30" font="Bold; 26" halign="right" valign="right" backgroundColor="BackTransparent" shadowColor="Black" shadowOffset="-1,-1" transparent="1">
-      <convert type="ServicePosition">Position</convert>
-    </widget>
-    <eLabel name="ProgressbarBack" position="433,628" size="465,1" backgroundColor="ProgressbarBack" zPosition="3" />
-    <widget source="session.CurrentService" render="Progress" position="433,627" size="465,3" zPosition="4" pixmap="infinityHD-nbox/progressnbox.png" transparent="1">
-      <convert type="ServicePosition">Position</convert>
-    </widget>
-    <widget source="session.CurrentService" render="PositionGauge" position="433,623" size="465,9" zPosition="5" transparent="1">
-      <convert type="ServicePosition">Gauge</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="900,615" size="110,30" font="Bold; 26" halign="left" valign="left" backgroundColor="BackTransparent" transparent="1">
-      <convert type="ServicePosition">Remaining</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="575,640" size="150,30" font="Bold; 26" halign="center" valign="center" backgroundColor="BackTransparent" transparent="1">
-      <convert type="ServicePosition">Length</convert>
-    </widget>
-    <ePixmap pixmap="infinityHD-nbox/icons/icon_dolby_0.png" position="1175,611" size="48,48" zPosition="1" alphatest="on" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/icon_dolby_1.png" position="1175,611" size="48,48" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">IsMultichannel</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="infinityHD-nbox/icons/icon_wide_0.png" position="1120,611" size="48,48" zPosition="1" alphatest="on" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/icon_wide_1.png" position="1120,611" size="48,48" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">IsWidescreen</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="92,560" size="120,32" font="Bold; 30" valign="top" halign="center" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextDimmed">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="1025,560" size="200,32" font="Bold; 30" valign="top" halign="right" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1">
-      <convert type="ClockToText">Format:%d.%m.%Y</convert>
-    </widget>
-  </screen>
-  <!-- MOVIEPLAYER */-->
-  <!--/* MOVIE SELECTION -->
-  <screen name="MovieSelection" position="0,0" size="1280,720" flags="wfNoBorder" title="Select a movie">
-    <widget font="Bold; 28" position="60,25" size="605,35" render="Label" source="Title" transparent="1" valign="center" zPosition="2" />
-    <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
-    <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
-      <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
-    </widget>
-    <widget position="60,77" size="600,527" name="list" scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
-    <!--		<ePixmap position="150,195" size="400,300" pixmap="infinityHD-nbox/frame/frame_400x300.png" alphatest="on"/> -->
-    <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
-    <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
-    <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
-    <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
-    <widget position="240,640" size="200,36" name="key_red" font="Bold;19" halign="center" valign="center" backgroundColor="KeyRedBack" transparent="1" zPosition="3" />
-    <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
-    <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
-    <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
-    <!--		<widget position="170,300" size="360,40" name="waitingtext" zPosition="4" font="Bold;22" backgroundColor="#44000000" halign="center" valign="center" /> -->
-    <widget position="680,75" size="431,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="left" foregroundColor="TextHighlight">
-      <convert type="MovieInfo">RecordServiceName</convert>
-    </widget>
-    <widget position="1118,76" size="119,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
-      <convert type="ServiceTime">Duration</convert>
-      <convert type="ClockToText">AsLength</convert>
-    </widget>
-    <eLabel position="680,115" size="557,2" backgroundColor="Stripe" zPosition="2" />
-    <widget position="680,128" size="557,423" source="Service" render="Label" valign="top" transparent="1" zPosition="3" font="Regular; 26" foregroundColor="TextLightDimmed">
-      <convert type="EventName">ExtendedDescription</convert>
-    </widget>
-    <widget position="1052,560" size="185,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
-      <convert type="MovieInfo">FileSize</convert>
-    </widget>
-    <widget position="817,600" size="420,26" name="freeDiskSpace" font="Bold; 24" halign="right" backgroundColor="BackTransparent" transparent="1" zPosition="3" />
-  </screen>
-  <!-- MOVIE SELECTION */-->
-  <screen name="Mute" zPosition="10" position="1195,25" size="50,50" title="Mute" backgroundColor="Transparent" flags="wfNoBorder">
-    <ePixmap position="0,0" size="100,100" pixmap="infinityHD-nbox/volume/mute.png" alphatest="on" />
-  </screen>
-  <!--/* VOLUME -->
-  <screen name="Volume" position="0,0" size="1280, 70" title="Volume" flags="wfNoBorder" zPosition="1" backgroundColor="BackTransparent">
-    <eLabel text="Volume" position="50, 24" zPosition="1" size="210,24" font="Bold;22" halign="right" foregroundColor="TextDimmed" backgroundColor="BackTransparent" transparent="1" />
-    <ePixmap position="0, 0" zPosition="0" size="1280,70" pixmap="infinityHD-nbox/volume/vol_back.png" />
-    <widget name="Volume" position="285, 25" zPosition="1" size="710,20" pixmap="infinityHD-nbox/volume/vol.png" transparent="1" />
-  </screen>
-  <!-- VOLUME */-->
   <!--/* MENU -->
   <screen flags="wfNoBorder" name="menu_mainmenu" position="0,0" size="1280,720" title="Main menu">
     <widget font="Bold;32" position="675,130" render="Label" size="485,35" source="title" transparent="1" zPosition="2" />

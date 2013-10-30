@@ -1,18 +1,12 @@
 #######################################################################
 #
-#  Ai-HD-Skins Control for Dreambox/Enigma-2
-#  Coded by Vali (c)2009-2011
-#  Support: www.dreambox-tools.info
-#
-#######################################################################
-#
-#  Mod by Pich 2012
-#  Support: www.vuplus-support.org 
+#    MyMetrix 
+#    Coded by iMaxxx (c) 2013
 #
 #######################################################################
 #
 #  Mod by herpoi 2013 for infinityHD-nbox
-#  Support: ...
+#  Support: https://github.com/herpoi/infinityHD-nbox
 #
 ########################################################################
 #
@@ -31,8 +25,6 @@
 #
 #######################################################################
 
-
-
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -40,14 +32,41 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.Console import Console
 from Screens.Standby import TryQuitMainloop
 from Components.ActionMap import ActionMap
-from Components.config import config, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigText, ConfigInteger
+from Components.AVSwitch import AVSwitch
+from Components.config import config, configfile, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigNumber, ConfigText, ConfigInteger
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
+from Components.Language import language
 from Tools.Directories import fileExists
 from skin import parseColor
-from os import system
+from os import environ, listdir, remove, rename, system
+from Components.Pixmap import Pixmap
+import urllib
+import gettext
+from enigma import ePicLoad
+from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 
+#############################################################
 
+#lang = language.getLanguage()
+#environ["LANGUAGE"] = lang[:2]
+#gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
+#gettext.textdomain("enigma2")
+#gettext.bindtextdomain("inHDcontroler", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/inHDcontroler/locale/"))
+
+#def _(txt):
+#	t = gettext.dgettext("inHDcontroler", txt)
+#	if t == txt:
+#		t = gettext.gettext(txt)
+#	return t
+
+#def translateBlock(block):
+#	for x in TranslationHelper:
+#		if block.__contains__(x[0]):
+#			block = block.replace(x[0], x[1])
+#	return block
+
+#############################################################
 
 config.plugins.inHD  = ConfigSubsection()
 config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
@@ -55,7 +74,7 @@ config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
 				("fresh", _("Fresh"))
 				])
 config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choices = [
-        ("bigpicon-classic", _("BigPicon Classic ")),
+				("bigpicon-classic", _("BigPicon Classic ")),
 				("picon-classic", _("Picon Classic")),
 				("bigpicon-updown", _("Big Picon Up Down")),
 				("picon-updown", _("Picon Up Down")),
@@ -123,93 +142,106 @@ config.plugins.inHD.SecondInfobarFooter = ConfigSelection(default="satsig", choi
 				("ecmsatsig", _("ECM/Sat Info/Signal"))
 				])		
 config.plugins.inHD.Font = ConfigSelection(default="aller", choices = [
-        ("ubuntu", _("Ubuntu")),
-        ("aller", _("Aller")),
-        ("roboto", _("Roboto")),
-        ("cool", _("Cool"))
-        ])
+				("ubuntu", _("Ubuntu")),
+				("aller", _("Aller")),
+				("roboto", _("Roboto")),
+				("cool", _("Cool"))
+				])
 config.plugins.inHD.ChSelDesc = ConfigSelection(default="100", choices = [
-        ("80", _("80")),
-        ("85", _("85")),
-        ("90", _("90")),
-        ("95", _("95")),
-        ("100", _("100")),
-        ("105", _("105")),
-        ("110", _("110")),
-        ("115", _("115")),
-        ("120", _("120"))
-        ])
+				("80", _("80")),
+				("85", _("85")),
+				("90", _("90")),
+				("95", _("95")),
+				("100", _("100")),
+				("105", _("105")),
+				("110", _("110")),
+				("115", _("115")),
+				("120", _("120"))
+				])
 config.plugins.inHD.EPGSelDesc = ConfigSelection(default="100", choices = [
-        ("80", _("80")),
-        ("85", _("85")),
-        ("90", _("90")),
-        ("95", _("95")),
-        ("100", _("100")),
-        ("105", _("105")),
-        ("110", _("110")),
-        ("115", _("115")),
-        ("120", _("120"))
-        ])
+				("80", _("80")),
+				("85", _("85")),
+				("90", _("90")),
+				("95", _("95")),
+				("100", _("100")),
+				("105", _("105")),
+				("110", _("110")),
+				("115", _("115")),
+				("120", _("120"))
+				])
 config.plugins.inHD.EvDesc = ConfigSelection(default="100", choices = [
-        ("80", _("80")),
-        ("85", _("85")),
-        ("90", _("90")),
-        ("95", _("95")),
-        ("100", _("100")),
-        ("105", _("105")),
-        ("110", _("110")),
-        ("115", _("115")),
-        ("120", _("120"))
-        ])
+				("80", _("80")),
+				("85", _("85")),
+				("90", _("90")),
+				("95", _("95")),
+				("100", _("100")),
+				("105", _("105")),
+				("110", _("110")),
+				("115", _("115")),
+				("120", _("120"))
+				])
 config.plugins.inHD.GraphDesc = ConfigSelection(default="100", choices = [
-        ("80", _("80")),
-        ("85", _("85")),
-        ("90", _("90")),
-        ("95", _("95")),
-        ("100", _("100")),
-        ("105", _("105")),
-        ("110", _("110")),
-        ("115", _("115")),
-        ("120", _("120"))
-        ])
+				("80", _("80")),
+				("85", _("85")),
+				("90", _("90")),
+				("95", _("95")),
+				("100", _("100")),
+				("105", _("105")),
+				("110", _("110")),
+				("115", _("115")),
+				("120", _("120"))
+				])
 config.plugins.inHD.SIDesc = ConfigSelection(default="100", choices = [
-        ("80", _("80")),
-        ("85", _("85")),
-        ("90", _("90")),
-        ("95", _("95")),
-        ("100", _("100")),
-        ("105", _("105")),
-        ("110", _("110")),
-        ("115", _("115")),
-        ("120", _("120"))
-        ])
-		
+				("80", _("80")),
+				("85", _("85")),
+				("90", _("90")),
+				("95", _("95")),
+				("100", _("100")),
+				("105", _("105")),
+				("110", _("110")),
+				("115", _("115")),
+				("120", _("120"))
+				])
+config.plugins.inHD.VolumeBar = ConfigSelection(default="vertical", choices = [
+				("vertical", _("Vertical")),
+				("horizontal", _("Horizontal"))
+				])
+config.plugins.inHD.WindowStyle = ConfigSelection(default="new", choices = [
+				("new", _("New")),
+				("classic", _("Classic"))
+				])
+				
 def main(session, **kwargs):
 	session.open(inHDsetup)
 
 def Plugins(**kwargs):
-	return PluginDescriptor(name="infinityHD Controler", description=_("Configuration tool for infinityHD-nbox skin. Mod by herpoi"), where = PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main)
+	return PluginDescriptor(name="inHD Controler", description=_("Configuration tool for infinityHD-nbox"), where = PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main)
 
 #######################################################################
 
 class inHDsetup(ConfigListScreen, Screen):
 	skin = """
-    <screen name="inHDsetup" position="center,center" size="780,600" title="infinityHD Controler GIT">
+    <screen name="inHDsetup" position="center,center" size="780,600" title="inHD Controler GIT">
       <ePixmap position="117,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="blend" transparent="1" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="49,570" size="120,26" text="Cancel" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="209,570" size="120,26" text="Save" />
+      <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="369,570" size="120,26" text="Restart GUI" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/red.png" position="10,567" size="30,30" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/green.png" position="170,567" size="30,30" />      
+      <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/yellow.png" position="330,567" size="30,30" />      
       <widget name="config" position="15,187" scrollbarMode="showOnDemand" size="750,350" />
     </screen>"""
 
-	def __init__(self, session):
+	def __init__(self, session, args = None):
 		self.release = "-git"
+		self.skin_lines = []
 		Screen.__init__(self, session)
 		self.session = session
-		self.datei = "/usr/local/share/enigma2/infinityHD-nbox/skin.xml"
+		self.datei = "/usr/share/enigma2/infinityHD-nbox/skin.xml"
+		self.dateiTMP = "/usr/share/enigma2/infinityHD-nbox/skin.xml.tmp"
 		self.daten = "/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/"
 		list = []
+		list.append(getConfigListEntry(_("============ Fonts & colors ============"), ))
 		list.append(getConfigListEntry(_("Font:"), config.plugins.inHD.Font))
 		list.append(getConfigListEntry(_("EPG font size on Channel Selection screen [%]:"), config.plugins.inHD.ChSelDesc))
 		list.append(getConfigListEntry(_("EPG font size on Second Infobar screen [%]:"), config.plugins.inHD.SIDesc))
@@ -217,198 +249,160 @@ class inHDsetup(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("EPG font size on Event View screen [%]:"), config.plugins.inHD.EvDesc))
 		list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen [%]:"), config.plugins.inHD.GraphDesc))
 		list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
+		list.append(getConfigListEntry(_("============ Infobar  ============"), ))
 		list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
 		list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
+		list.append(getConfigListEntry(_("============ Second Infobar  ============"), ))
 		list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
 		list.append(getConfigListEntry(_("Second Fnfobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
+		list.append(getConfigListEntry(_("============ Channel Selection  ============"), ))
 		list.append(getConfigListEntry(_("Channel Selection side:"), config.plugins.inHD.Side))
 		list.append(getConfigListEntry(_("Channel Selection picon:"), config.plugins.inHD.Picon))
 		list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
 		list.append(getConfigListEntry(_("Show next events on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionnext))
+		list.append(getConfigListEntry(_("============ Other  ============"), ))
 		list.append(getConfigListEntry(_("EPG Selection:"), config.plugins.inHD.EpgSelection))
 		list.append(getConfigListEntry(_("Event View:"), config.plugins.inHD.Eventview))
 		list.append(getConfigListEntry(_("Number Zap:"), config.plugins.inHD.NumberZap))
+		list.append(getConfigListEntry(_("Volume Bar:"), config.plugins.inHD.VolumeBar))
+		list.append(getConfigListEntry(_("Window Style:"), config.plugins.inHD.WindowStyle))
 	
 		
 		ConfigListScreen.__init__(self, list)
-		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], 
+		self["actions"] = ActionMap(["OkCancelActions","DirectionActions", "InputActions", "ColorActions"],
 									{
-									"red": self.exit, 
-									"green": self.save 
-									})
-#									}, -1)
-		self.onLayoutFinish.append(self.UpdateComponents)
+									"left": self.keyLeft,
+									"down": self.keyDown,
+									"up": self.keyUp,
+									"right": self.keyRight,
+									"red": self.exit,
+									"yellow": self.reboot,
+									"blue": self.showInfo,
+									"green": self.save,
+									"cancel": self.exit}, -1)
+#		self.onLayoutFinish.append(self.UpdateComponents)
 
-	def UpdateComponents(self):
-	  if not fileExists(self.datei + self.release):
-			system("touch " + self.datei + self.release)
+#	def UpdateComponents(self):
+#		self.UpdatePicture()
+		#if not fileExists(self.datei + self.release):
+		#	system('cp -f ' + self.komponente + 'hardyPicon2.py /usr/lib/enigma2/python/Components/Renderer/hardyPicon2.py')
+		#	system("tar -xzvf " + self.komponente + "MetrixHD.tar.gz" + " -C /")
+		#	system("touch " + self.datei + self.release)
+
+	def keyLeft(self):	
+		ConfigListScreen.keyLeft(self)	
+
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+	
+	def keyDown(self):
+		#print "key down"
+		self["config"].instance.moveSelection(self["config"].instance.moveDown)
+		#ConfigListScreen.keyDown(self)
+		
+	def keyUp(self):
+		#print "key up"
+		self["config"].instance.moveSelection(self["config"].instance.moveUp)
+		#ConfigListScreen.keyUp(self)
+	
+	def reboot(self):
+		restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("Do you really want to restart GUI now?"), MessageBox.TYPE_YESNO)
+		restartbox.setTitle(_("Restart GUI"))
+		
+	def showInfo(self):
+		self.session.open(MessageBox, _("Information"), MessageBox.TYPE_INFO)
 
 	def save(self):
-		if not fileExists(self.datei + self.release):
-			for x in self["config"].list:
-				x[1].cancel()
-			self.close()
-			return
 		for x in self["config"].list:
-			x[1].save()
+			if len(x) > 1:
+        			x[1].save()
+			else:
+       				pass
+
+		########### READING DATA FILES
 		try:
-			skin_lines = []
-			head_file = self.daten + "skin-head-" + config.plugins.inHD.Colors.value + ".xml"
-			skFile = open(head_file, "r")
-			head_lines = skFile.readlines()
-			skFile.close()
-			for x in head_lines:
-				skin_lines.append(x)
-				
-			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + ".xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-				
-			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-chseldesc-" + config.plugins.inHD.ChSelDesc.value + ".xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-				
-			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-epgseldesc-" + config.plugins.inHD.EPGSelDesc.value + ".xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-				
-			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-evdesc-" + config.plugins.inHD.EvDesc.value + ".xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-				
-			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-graphdesc-" + config.plugins.inHD.GraphDesc.value + ".xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-
-			fonts_file = self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-sidesc-" + config.plugins.inHD.SIDesc.value + ".xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-			  
-			fonts_file = self.daten + "fonts/skin-fonts-subtitles.xml"
-			skFile = open(fonts_file, "r")
-			fonts_lines = skFile.readlines()
-			skFile.close()
-			for x in fonts_lines:
-			  skin_lines.append(x)
-			  
-			infobar_file = self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml"
-			skFile = open(infobar_file, "r")
-			infobar_lines = skFile.readlines()
-			skFile.close()
-			for x in infobar_lines:
-				skin_lines.append(x)  
-				
-			infobarfooter_file = self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml"
-			skFile = open(infobarfooter_file, "r")
-			infobarfooter_lines = skFile.readlines()
-			skFile.close()
-			for x in infobarfooter_lines:
-				skin_lines.append(x)
-			
-			
+			# Head & Colors
+			self.appendSkinFile(self.daten + "skin-head-" + config.plugins.inHD.Colors.value + ".xml")
+			# Window Style
+			self.appendSkinFile(self.daten + "windowstyle-" + config.plugins.inHD.WindowStyle.value + ".xml")
+			# Font Type
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + ".xml")
+			# EPG Font Size
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-chseldesc-" + config.plugins.inHD.ChSelDesc.value + ".xml")
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-epgseldesc-" + config.plugins.inHD.EPGSelDesc.value + ".xml")
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-evdesc-" + config.plugins.inHD.EvDesc.value + ".xml")
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-graphdesc-" + config.plugins.inHD.GraphDesc.value + ".xml")
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-sidesc-" + config.plugins.inHD.SIDesc.value + ".xml")
+			self.appendSkinFile(self.daten + "fonts/skin-fonts-subtitles.xml")
+			# Infobar
+			self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml")
+			# Infobar Footer
+			self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml")
+			# Second Infobar
 			if config.plugins.inHD.SecondInfobarFooter.value=="ecmsatsig":
-				secondinfobar_file = self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + "-ecm.xml"
+				self.appendSkinFile(self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + "-ecm.xml")
 			else: 
-				secondinfobar_file = self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + ".xml"
-			skFile = open(secondinfobar_file, "r")
-			secondinfobar_lines = skFile.readlines()
-			skFile.close()
-			for x in secondinfobar_lines:
-				skin_lines.append(x)
-				
-			skn_file = self.daten + "footer-infobar-"
+				self.appendSkinFile(self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + ".xml")
+			# Second Infobar Footer
 			if config.plugins.inHD.SecondInfobar.value=="compact":
-				skn_file = skn_file + "dummy.xml"		
+				self.appendSkinFile(self.daten + "footer-infobar-dummy.xml")
 			else:	
-				skn_file = skn_file + config.plugins.inHD.SecondInfobarFooter.value + ".xml"
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)
-
-			skn_file = self.daten + "channel1-"
+				self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.SecondInfobarFooter.value + ".xml")
+			# Channel Selection 1
 			if config.plugins.inHD.ChannelSelectionnext.value=="yes":
-				skn_file = skn_file + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + ".xml"	
+				self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + ".xml")
 			else:	
-				skn_file = skn_file + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + "-nonext.xml"
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)	
+				self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + "-nonext.xml")
+			# Channel Selection 2
+			self.appendSkinFile(self.daten + "channel2-" + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Rows.value + ".xml")
+			# EPG Selection
+			self.appendSkinFile(self.daten + "epg-" + config.plugins.inHD.EpgSelection.value + ".xml")
+			# EventView
+			self.appendSkinFile(self.daten + "eventview-" + config.plugins.inHD.Eventview.value + ".xml")
+			# NumberZap
+			self.appendSkinFile(self.daten + "numberzap-" + config.plugins.inHD.NumberZap.value + ".xml")
+			# Movie Player $ Movie Selection
+			if config.plugins.inHD.Infobar.value=="bigpicon-classic":
+				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
+			elif config.plugins.inHD.Infobar.value=="bigpicon-updown":
+				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
+			else: 
+				self.appendSkinFile(self.daten + "movie-picon.xml")
+			# Volume Bar
+			self.appendSkinFile(self.daten + "volumebar-" + config.plugins.inHD.VolumeBar.value + ".xml")
+			# Skin rest
+			self.appendSkinFile(self.daten + "skin-rest.xml")
 
-			skn_file = self.daten + "channel2-"
-			skn_file = skn_file + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Rows.value + ".xml"	
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)	
-
-			skn_file = self.daten + "epg-" + config.plugins.inHD.EpgSelection.value + ".xml"
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)	
-				
-			skn_file = self.daten + "eventview-" + config.plugins.inHD.Eventview.value + ".xml"
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)	
-				
-			skn_file = self.daten + "numberzap-" + config.plugins.inHD.NumberZap.value + ".xml"
-			skFile = open(skn_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)	
-
-			base_file = self.daten + "skin-rest.xml"
-			skFile = open(base_file, "r")
-			file_lines = skFile.readlines()
-			skFile.close()
-			for x in file_lines:
-				skin_lines.append(x)
 			xFile = open(self.datei, "w")
-			for xx in skin_lines:
+			for xx in self.skin_lines:
 				xFile.writelines(xx)
 			xFile.close()
+
 		except:	
-			self.session.open(MessageBox, _("Error by processing the skin file !!!"), MessageBox.TYPE_ERROR)
-		restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now?"), MessageBox.TYPE_YESNO)
-		restartbox.setTitle(_("Restart GUI now?"))
+			self.session.open(MessageBox, _("Error creating Skin!"), MessageBox.TYPE_ERROR)
+			configfile.save()
+			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now ?"), MessageBox.TYPE_YESNO)
+			restartbox.setTitle(_("Restart GUI"))
 
 	def restartGUI(self, answer):
 		if answer is True:
+			configfile.save()
 			self.session.open(TryQuitMainloop, 3)
 		else:
 			self.close()
+			
+	def appendSkinFile(self,appendFileName):
+		skFile = open(appendFileName, "r")
+		file_lines = skFile.readlines()
+		skFile.close()	
+		for x in file_lines:
+			self.skin_lines.append(x)
+			
 
 	def exit(self):
 		for x in self["config"].list:
-			x[1].cancel()
+			if len(x) > 1:
+					x[1].cancel()
+			else:
+       				pass
 		self.close()
-		
-

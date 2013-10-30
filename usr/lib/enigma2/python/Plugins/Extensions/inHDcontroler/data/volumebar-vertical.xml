@@ -1,0 +1,11 @@
+  <!--/* MUTE -->
+  <screen name="Mute" zPosition="1" position="0,0" size="122,88" title="Mute" backgroundColor="Transparent" flags="wfNoBorder">
+	<ePixmap position="0,0" size="122,88" pixmap="infinityHD-nbox/volume/mute_new.png" alphatest="on" />
+  </screen>
+  <!-- MUTE */-->
+  <!--/* VOLUME VERTICAL -->
+  <screen name="Volume" position="0,184" size="122,306" title="Volume" flags="wfNoBorder" zPosition="10" backgroundColor="Transparent">
+	<ePixmap position="0,0" zPosition="-1" size="122,306" pixmap="infinityHD-nbox/volume/volumebar_h_back.png" alphatest="on" />
+	<widget name="Volume" position="37,19" size="33,207" zPosition="1" pixmap="infinityHD-nbox/volume/volumebar_h_fore.png" transparent="1" orientation="orBottomToTop" alphatest="blend"  />
+  </screen>
+  <!-- VOLUME VERTICAL */-->

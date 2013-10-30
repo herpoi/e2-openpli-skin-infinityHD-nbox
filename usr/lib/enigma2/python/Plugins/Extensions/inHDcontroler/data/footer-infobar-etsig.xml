@@ -45,7 +45,7 @@
       <convert type="ConditionalShowHide" />
     </widget>
     <!-- Footer - ECM -->
-    <eLabel text="ECM:" position="90,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="backgrounds" foregroundColor="TextDimmed" transparent="1" />
+    <eLabel text="ECM:" position="90,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
     <widget source="session.CurrentService" render="Label" position="140,675" size="560, 22" zPosition="3" font="Bold; 18" halign="left" noWrap="0" backgroundColor="BackTransparent" transparent="1" valign="center">
       <convert type="DMCHDCaidDisplay">ShortECM</convert>
     </widget>

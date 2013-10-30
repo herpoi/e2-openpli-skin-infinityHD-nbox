@@ -1,3 +1,7 @@
+##
+## MovieReference Converter copied from MyMetrixHD
+##
+#
 # Movie Selection:
 #<widget source="Service" render="Picon" position="1120,95" zPosition="14" size="100,60" transparent="12" alphatest="blend">
 #	<convert type="MovieReference"/>
