@@ -4,7 +4,7 @@ Skórka infinityHD-nbox kompatybilna z image OpenPLi.
 
 Z poziomu kontrolera możliwa jest zmiana wyglądu poszczególnych ekranów.
 
-<strong>Ważna uwaga dla osób korzystających z różnej wielkości pikon na poszczególnych ekranach (dla tych którzy mają wybrane np. Infobar BigPicon, zaś Channel Selection Picon).</strong><br />
+<strong>Ważna uwaga dla osób korzystających z różnej wielkości pikon na poszczególnych ekranach (np. dla tych którzy mają wybrane w kontrolrze Infobar BigPicon oraz Channel Selection Picon).</strong><br />
 Na niektórych odbiornikach jest problem z prawidłowym skalowaniem pikon. Występują problemy z przeźroczystym tłem lub chwilowe migotanie obrazu.
 
 Jeśli zauważyłeś takie problemy to skorzystaj z dwóch rodzajów pikon:
