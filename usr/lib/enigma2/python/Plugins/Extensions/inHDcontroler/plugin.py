@@ -351,7 +351,7 @@ class inHDsetup(ConfigListScreen, Screen):
 			# Channel Selection 1
 			if config.plugins.inHD.ChannelSelectionnext.value=="yes":
 				self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + ".xml")
-			else:	
+			else:
 				self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + "-nonext.xml")
 			# Channel Selection 2
 			self.appendSkinFile(self.daten + "channel2-" + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Rows.value + ".xml")
@@ -366,19 +366,22 @@ class inHDsetup(ConfigListScreen, Screen):
 				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
 			elif config.plugins.inHD.Infobar.value=="bigpicon-updown":
 				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
-			else: 
+			else:
 				self.appendSkinFile(self.daten + "movie-picon.xml")
 			# Volume Bar
 			self.appendSkinFile(self.daten + "volumebar-" + config.plugins.inHD.VolumeBar.value + ".xml")
 			# Skin rest
 			self.appendSkinFile(self.daten + "skin-rest.xml")
-
+			
 			xFile = open(self.datei, "w")
 			for xx in self.skin_lines:
 				xFile.writelines(xx)
 			xFile.close()
+			self.skin_lines = []
+#			system("rm -rf " + self.datei + "&& mv " + self.dateiTMP + " " + self.datei)
+			self.session.open(MessageBox, _("Successfully creating Skin!"), MessageBox.TYPE_INFO)
 
-		except:	
+		except:
 			self.session.open(MessageBox, _("Error creating Skin!"), MessageBox.TYPE_ERROR)
 			configfile.save()
 			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now ?"), MessageBox.TYPE_YESNO)
