@@ -96,10 +96,12 @@ config.plugins.inHD.Picon = ConfigSelection(default="bigpicon", choices = [
 				("nopicon", _("No Picon")),
 				("picon", _("Classic"))
 				])				
-config.plugins.inHD.ChannelSelectionnext = ConfigSelection(default="no", choices = [
-				("yes", _("Yes")),
-				("no", _("No"))
-				])		
+config.plugins.inHD.ChannelSelectionNumberNext = ConfigSelection(default="2", choices = [
+				("0", _("0")),
+				("1", _("1")),
+				("2", _("2")),
+				("3", _("3"))
+				])	
 config.plugins.inHD.Rows = ConfigSelection(default="rows14", choices = [
 				("rows14", _("14")),
 				("rows16", _("16")),
@@ -116,7 +118,7 @@ config.plugins.inHD.EpgSelection = ConfigSelection(default="bigpicon-right", cho
 				("bigpicon-up", _("Big Picon Up")),
 				("nopicon-up", _("No Picon Up"))
 				])
-config.plugins.inHD.Eventview = ConfigSelection(default="bigpicon", choices = [
+config.plugins.inHD.Eventview = ConfigSelection(default="nopicon", choices = [
 				("picon-classic", _("Picon Classic")),
 				("bigpicon", _("Big Picon")),
 				("nopicon", _("No Picon"))
@@ -148,59 +150,59 @@ config.plugins.inHD.Font = ConfigSelection(default="aller", choices = [
 				("cool", _("Cool"))
 				])
 config.plugins.inHD.ChSelDesc = ConfigSelection(default="100", choices = [
-				("80", _("80")),
-				("85", _("85")),
-				("90", _("90")),
-				("95", _("95")),
-				("100", _("100")),
-				("105", _("105")),
-				("110", _("110")),
-				("115", _("115")),
-				("120", _("120"))
+				("80", _("80%")),
+				("85", _("85%")),
+				("90", _("90%")),
+				("95", _("95%")),
+				("100", _("100%")),
+				("105", _("105%")),
+				("110", _("110%")),
+				("115", _("115%")),
+				("120", _("120%"))
 				])
 config.plugins.inHD.EPGSelDesc = ConfigSelection(default="100", choices = [
-				("80", _("80")),
-				("85", _("85")),
-				("90", _("90")),
-				("95", _("95")),
-				("100", _("100")),
-				("105", _("105")),
-				("110", _("110")),
-				("115", _("115")),
-				("120", _("120"))
+				("80", _("80%")),
+				("85", _("85%")),
+				("90", _("90%")),
+				("95", _("95%")),
+				("100", _("100%")),
+				("105", _("105%")),
+				("110", _("110%")),
+				("115", _("115%")),
+				("120", _("120%"))
 				])
 config.plugins.inHD.EvDesc = ConfigSelection(default="100", choices = [
-				("80", _("80")),
-				("85", _("85")),
-				("90", _("90")),
-				("95", _("95")),
-				("100", _("100")),
-				("105", _("105")),
-				("110", _("110")),
-				("115", _("115")),
-				("120", _("120"))
+				("80", _("80%")),
+				("85", _("85%")),
+				("90", _("90%")),
+				("95", _("95%")),
+				("100", _("100%")),
+				("105", _("105%")),
+				("110", _("110%")),
+				("115", _("115%")),
+				("120", _("120%"))
 				])
 config.plugins.inHD.GraphDesc = ConfigSelection(default="100", choices = [
-				("80", _("80")),
-				("85", _("85")),
-				("90", _("90")),
-				("95", _("95")),
-				("100", _("100")),
-				("105", _("105")),
-				("110", _("110")),
-				("115", _("115")),
-				("120", _("120"))
+				("80", _("80%")),
+				("85", _("85%")),
+				("90", _("90%")),
+				("95", _("95%")),
+				("100", _("100%")),
+				("105", _("105%")),
+				("110", _("110%")),
+				("115", _("115%")),
+				("120", _("120%"))
 				])
 config.plugins.inHD.SIDesc = ConfigSelection(default="100", choices = [
-				("80", _("80")),
-				("85", _("85")),
-				("90", _("90")),
-				("95", _("95")),
-				("100", _("100")),
-				("105", _("105")),
-				("110", _("110")),
-				("115", _("115")),
-				("120", _("120"))
+				("80", _("80%")),
+				("85", _("85%")),
+				("90", _("90%")),
+				("95", _("95%")),
+				("100", _("100%")),
+				("105", _("105%")),
+				("110", _("110%")),
+				("115", _("115%")),
+				("120", _("120%"))
 				])
 config.plugins.inHD.VolumeBar = ConfigSelection(default="vertical", choices = [
 				("vertical", _("Vertical")),
@@ -243,11 +245,11 @@ class inHDsetup(ConfigListScreen, Screen):
 		list = []
 		list.append(getConfigListEntry(_("============ Fonts & colors ============"), ))
 		list.append(getConfigListEntry(_("Font:"), config.plugins.inHD.Font))
-		list.append(getConfigListEntry(_("EPG font size on Channel Selection screen [%]:"), config.plugins.inHD.ChSelDesc))
-		list.append(getConfigListEntry(_("EPG font size on Second Infobar screen [%]:"), config.plugins.inHD.SIDesc))
-		list.append(getConfigListEntry(_("EPG font size on EPG Selection screen [%]:"), config.plugins.inHD.EPGSelDesc))
-		list.append(getConfigListEntry(_("EPG font size on Event View screen [%]:"), config.plugins.inHD.EvDesc))
-		list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen [%]:"), config.plugins.inHD.GraphDesc))
+		list.append(getConfigListEntry(_("EPG font size on Channel Selection screen:"), config.plugins.inHD.ChSelDesc))
+		list.append(getConfigListEntry(_("EPG font size on Second Infobar screen:"), config.plugins.inHD.SIDesc))
+		list.append(getConfigListEntry(_("EPG font size on EPG Selection screen:"), config.plugins.inHD.EPGSelDesc))
+		list.append(getConfigListEntry(_("EPG font size on Event View screen:"), config.plugins.inHD.EvDesc))
+		list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen:"), config.plugins.inHD.GraphDesc))
 		list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
 		list.append(getConfigListEntry(_("============ Infobar  ============"), ))
 		list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
@@ -259,7 +261,7 @@ class inHDsetup(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Channel Selection side:"), config.plugins.inHD.Side))
 		list.append(getConfigListEntry(_("Channel Selection picon:"), config.plugins.inHD.Picon))
 		list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
-		list.append(getConfigListEntry(_("Show next events on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionnext))
+		list.append(getConfigListEntry(_("How many next events to show on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionNumberNext))
 		list.append(getConfigListEntry(_("============ Other  ============"), ))
 		list.append(getConfigListEntry(_("EPG Selection:"), config.plugins.inHD.EpgSelection))
 		list.append(getConfigListEntry(_("Event View:"), config.plugins.inHD.Eventview))
@@ -349,10 +351,9 @@ class inHDsetup(ConfigListScreen, Screen):
 			else:	
 				self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.SecondInfobarFooter.value + ".xml")
 			# Channel Selection 1
-			if config.plugins.inHD.ChannelSelectionnext.value=="yes":
-				self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + ".xml")
-			else:
-				self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + "-nonext.xml")
+			self.appendSkinFile(self.daten + "channel1-" + config.plugins.inHD.Picon.value + "-" + config.plugins.inHD.Side.value + "-nonext.xml")
+			# Channel Selection 1a
+			self.appendSkinFile(self.daten + "channel1a-next" + config.plugins.inHD.ChannelSelectionNumberNext.value + "-" + config.plugins.inHD.Side.value + ".xml")
 			# Channel Selection 2
 			self.appendSkinFile(self.daten + "channel2-" + config.plugins.inHD.Side.value + "-" + config.plugins.inHD.Rows.value + ".xml")
 			# EPG Selection
@@ -379,7 +380,7 @@ class inHDsetup(ConfigListScreen, Screen):
 			xFile.close()
 			self.skin_lines = []
 #			system("rm -rf " + self.datei + "&& mv " + self.dateiTMP + " " + self.datei)
-			self.session.open(MessageBox, _("Successfully creating Skin!"), MessageBox.TYPE_INFO)
+			self.session.open(MessageBox, _("Successfully creating Skin!"), MessageBox.TYPE_INFO, timeout=5)
 
 		except:
 			self.session.open(MessageBox, _("Error creating Skin!"), MessageBox.TYPE_ERROR)

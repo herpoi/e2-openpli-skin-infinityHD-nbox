@@ -17,17 +17,16 @@
     <widget source="Event" render="Label" position="737,153" zPosition="1" size="500,32" font="Bold; 24" valign="top" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="865,114" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
+    <widget source="Event" render="Label" position="865,114" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="left">
       <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">
-      </convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
     <widget source="Event" render="Label" position="938,114" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:- %H:%M</convert>
     </widget>
     <widget source="Event" render="Label" position="737,190" zPosition="1" size="500,421" font="EPGSelDesc; 24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="Event" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="1032,127" zPosition="3" size="196,3" transparent="1">
       <convert type="EventTime">Progress</convert>

@@ -6,14 +6,14 @@
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="session.Event_Now" render="Label" position="230,67" size="965,200" font="SIDesc; 24" zPosition="1" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextLightDimmed" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <eLabel text="Next:" position="85,275" size="140,32" font="Bold; 26" halign="left" foregroundColor="TextHighlight2" backgroundColor="BackTransparent" transparent="1" valign="top" />
     <widget position="230,275" size="965,32" source="session.Event_Next" render="Label" font="Bold; 26" valign="top" noWrap="1" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight2">
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="session.Event_Next" render="Label" position="230,312" size="965,200" font="SIDesc; 24" zPosition="1" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextLightDimmed" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <eLabel position="67,518" size="1144,2" backgroundColor="Stripe" />
     <!-- Stop EPG -->

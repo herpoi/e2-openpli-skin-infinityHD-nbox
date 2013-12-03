@@ -1,4 +1,4 @@
-  <!--/* CHANNEL SELECTION PICON LEFT NOEXT -->
+  <!--/* CHANNEL SELECTION PICON LEFT -->
   <screen name="ChannelSelection" position="center,center" size="1280,720" title="" flags="wfNoBorder">
     <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
     <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
@@ -15,15 +15,14 @@
     </widget>
     <widget source="ServiceEvent" render="Label" position="865,114" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">
-      </convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
     <widget source="ServiceEvent" render="Label" position="938,114" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:- %H:%M</convert>
     </widget>
     <widget source="ServiceEvent" render="Label" position="737,190" zPosition="1" size="500,425" font="ChSelDesc; 24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="ServiceEvent" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="1032,127" zPosition="3" size="196,3" transparent="1">
       <convert type="EventTime">Progress</convert>

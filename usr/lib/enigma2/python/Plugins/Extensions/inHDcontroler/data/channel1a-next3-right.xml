@@ -1,0 +1,22 @@
+    <eLabel position="63,493" size="500,131" backgroundColor="BackTransparent" transparent="0" zPosition="4" />
+    <eLabel text="Next" position="63,498" size="500,32" font="Bold; 26" halign="left" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1" valign="top" zPosition="5"/>
+    <eLabel position="63,532" size="500,2" backgroundColor="Stripe" zPosition="5" />
+	<widget source="ServiceEvent" render="Label" position="63,534" size="410,25" font="Regular; 22" zPosition="5" noWrap="1" transparent="1" valign="top" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent">
+      <convert type="inHDNextEvents">Event1,noDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="473,534" size="90,25" font="Regular;22" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" zPosition="5" halign="right" valign="top" noWrap="1" transparent="1">
+      <convert type="inHDNextEvents">Event1,onlyDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="63,562" size="410,25" font="Regular; 22" zPosition="5" noWrap="1" transparent="1" valign="top" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent">
+      <convert type="inHDNextEvents">Event2,noDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="473,562" size="90,25" font="Regular;22" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" zPosition="5" halign="right" valign="top" noWrap="1" transparent="1">
+      <convert type="inHDNextEvents">Event2,onlyDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="63,590" size="410,25" font="Regular; 22" zPosition="5" noWrap="1" transparent="1" valign="top" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent">
+      <convert type="inHDNextEvents">Event3,noDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="473,590" size="90,25" font="Regular;22" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" zPosition="5" halign="right" valign="top" noWrap="1" transparent="1">
+      <convert type="inHDNextEvents">Event3,onlyDuration</convert>
+    </widget>
+	

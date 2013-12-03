@@ -255,14 +255,14 @@
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="session.Event_Now" render="Label" position="212,127" size="998,225" font="SIDesc; 24" zPosition="1" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextLightDimmed" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <eLabel text="Next:" position="67,373" size="140,32" font="Bold; 26" halign="left" foregroundColor="TextHighlight2" backgroundColor="BackTransparent" transparent="1" valign="top" />
     <widget position="310,373" size="750,32" source="session.Event_Next" render="Label" font="Bold; 26" valign="top" noWrap="1" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight2">
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="session.Event_Next" render="Label" position="212,412" size="998,225" font="SIDesc; 24" zPosition="1" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextLightDimmed" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <!-- Stop EPG -->
     <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
@@ -294,7 +294,7 @@
     </widget>
     <eLabel name="ProgressbarBack" position="932,99" size="150,1" backgroundColor="ProgressbarBack" zPosition="2" />
     <eLabel position="60,665" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <!--/* FOOTER SATINFO SIGNAL -->
+    <!--/* FOOTER ECM SIGNAL -->
     <!-- Footer - Signal -->
     <eLabel text="SNR:" position="858,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
     <widget source="session.FrontendStatus" render="Label" position="912,675" size="50,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1">
@@ -308,14 +308,47 @@
     <widget source="session.FrontendStatus" render="Label" position="1131,675" size="70,22" font="Bold; 17" valign="center" backgroundColor="BackTransparent" transparent="1" zPosition="2">
       <convert type="FrontendInfo">BER</convert>
     </widget>
-    <!-- Footer - Sat -->
-    <widget source="session.CurrentService" render="Label" position="90,675" size="770,22" font="Bold; 18" backgroundColor="BackTransparent" transparent="1" halign="left" valign="center" zPosition="3">
-      <convert type="PliExtraInfo">ServiceInfo</convert>
+    <!-- Footer - Tuner -->
+    <eLabel text="Tuner:" position="720,675" size="60,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
+    <widget source="session.TunerInfo" render="FixedLabel" position="780,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="2" text="A" foregroundColor="TextHighlight" font="Bold; 17" halign="center">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">1</convert>
+      <convert type="ConditionalShowHide" />
     </widget>
-    <!-- FOOTER SATINFO SIGNAL */-->
+    <widget source="session.TunerInfo" render="FixedLabel" position="800,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="2" text="B" foregroundColor="TextHighlight" font="Bold; 17" halign="center">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.TunerInfo" render="FixedLabel" position="820,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="2" text="C" foregroundColor="TextHighlight" font="Bold; 17" halign="center">
+      <convert type="TunerInfo">TunerUseMask</convert>
+      <convert type="ValueBitTest">4</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" position="780,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="3" text="A" foregroundColor="KeyGreen" font="Bold; 17" halign="center">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">0,0</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" position="800,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="3" text="B" foregroundColor="KeyGreen" font="Bold; 17" halign="center">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">1,1</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.FrontendInfo" render="FixedLabel" position="820,675" size="22,22" backgroundColor="BackTransparent" transparent="1" zPosition="3" text="C" foregroundColor="KeyGreen" font="Bold; 17" halign="center">
+      <convert type="FrontendInfo">NUMBER</convert>
+      <convert type="ValueRange">2,2</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <!-- Footer - ECM -->
+    <eLabel text="ECM:" position="90,675" size="50,22" font="Bold; 18" valign="center" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" />
+    <widget source="session.CurrentService" render="Label" position="140,675" size="560, 22" zPosition="3" font="Bold; 18" halign="left" noWrap="0" backgroundColor="BackTransparent" transparent="1" valign="center">
+      <convert type="DMCHDCaidDisplay">ShortECM</convert>
+    </widget>
+    <!-- FOOTER ECM SIGNAL */-->
   </screen>
   <!-- INFOBAR/SECOND INFOBAR */-->
-  <!--/* CHANNEL SELECTION BIGPICON RIGHT NOEXT -->
+  <!--/* CHANNEL SELECTION BIGPICON RIGHT -->
   <screen name="ChannelSelection" position="0,0" size="1280,720" title="" flags="wfNoBorder">
     <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
     <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
@@ -325,7 +358,7 @@
     <!--eLabel position="60,25" size="852,35" text="Channel Selection" halign="left" font="Bold; 28" transparent="1" zPosition="2" /-->
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
     <widget source="ServiceEvent" render="Label" position="63,255" zPosition="1" size="500,365" font="ChSelDesc; 24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
     <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
@@ -344,8 +377,7 @@
     </widget>
     <widget source="ServiceEvent" render="Label" position="298,159" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">
-      </convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
     <widget source="ServiceEvent" render="Label" position="374,159" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventTime">EndTime</convert>
@@ -357,6 +389,21 @@
     <eLabel name="ProgressbarBack" position="298,199" size="265,1" backgroundColor="ProgressbarBack" zPosition="2" />
     <widget source="Event" render="Label" position="63,220" zPosition="1" size="500,30" font="Bold; 24" valign="bottom" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1" noWrap="1">
       <convert type="EventName">Name</convert>
+    </widget>
+    <eLabel position="63,521" size="500,103" backgroundColor="BackTransparent" transparent="0" zPosition="4" />
+    <eLabel text="Next" position="63,525" size="500,32" font="Bold; 26" halign="left" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1" valign="top" zPosition="5"/>
+    <eLabel position="63,559" size="500,2" backgroundColor="Stripe" zPosition="5" />
+	<widget source="ServiceEvent" render="Label" position="63,562" size="410,25" font="Regular; 22" zPosition="5" noWrap="1" transparent="1" valign="top" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent">
+      <convert type="inHDNextEvents">Event1,noDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="473,562" size="90,25" font="Regular;22" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" zPosition="5" halign="right" valign="top" noWrap="1" transparent="1">
+      <convert type="inHDNextEvents">Event1,onlyDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="63,590" size="410,25" font="Regular; 22" zPosition="5" noWrap="1" transparent="1" valign="top" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent">
+      <convert type="inHDNextEvents">Event2,noDuration</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="473,590" size="90,25" font="Regular;22" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" zPosition="5" halign="right" valign="top" noWrap="1" transparent="1">
+      <convert type="inHDNextEvents">Event2,onlyDuration</convert>
     </widget>
     <widget position="581,82" size="656,532" name="list" scrollbarMode="showOnDemand" transparent="1"
     serviceItemHeight="38"
@@ -393,15 +440,14 @@
       <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
     </widget>
     <widget source="Event" render="Label" position="63,255" zPosition="1" size="500,368" font="EPGSelDesc; 24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
-      <convert type="EventName">ExtendedDescription</convert>
+      <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="Service" render="Label" position="298,85" zPosition="1" size="265,60" font="Bold; 24" halign="left" valign="top">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="298,159" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
+    <widget source="Event" render="Label" position="298,159" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="left">
       <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">
-      </convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
     <widget source="Event" render="Label" position="374,159" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventTime">EndTime</convert>
@@ -425,11 +471,11 @@
     <widget position="581,82" size="656,543" name="list" transparent="1" itemHeight="30" zPosition="2" scrollbarMode="showOnDemand" />
   </screen>
   <!-- EPG SELECTION BIGPICON RIGHT */-->
-  <!--/* EVENTVIEW BIGPICON -->
+  <!--/* EVENTVIEW NOPICON -->
   <screen name="EventView" position="0,0" size="1280,720" title="Eventview" flags="wfNoBorder">
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <widget name="epg_description" position="315,130" size="920,476" font="EvDesc; 28" backgroundColor="BackTransparent" foregroundColor="TextLightDimmed" transparent="1" valign="top" />
-    <widget name="duration" position="1125,80" size="110,35" zPosition="1" halign="right" font="Bold; 28" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight" />
+    <widget name="epg_description" position="63,130" size="1170,476" font="EvDesc; 28" backgroundColor="BackTransparent" foregroundColor="TextLightDimmed" transparent="1" valign="top" />
+    <widget name="duration" position="1123,80" size="110,35" zPosition="1" halign="right" font="Bold; 28" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight" />
     <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
     <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
     <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
@@ -442,13 +488,10 @@
     <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
       <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
     </widget>
-    <widget name="datetime" position="315,80" zPosition="1" size="450,35" font="Bold; 28" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight" />
+    <widget name="datetime" position="63,80" zPosition="1" size="450,35" font="Bold; 28" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight" />
     <widget name="channel" position="60,25" size="605,35" font="Bold; 28" halign="left" transparent="1" zPosition="2" />
-    <widget alphatest="blend" position="63,80" render="inHDBigPicon" size="220,132" source="Title" transparent="1" zPosition="1">
-      <convert type="inHDRefString">CurrentRef</convert>
-    </widget>
   </screen>
-  <!-- EVENTVIEW BIGPICON */-->
+  <!-- EVENTVIEW NOPICON */-->
   <!--/* NUMBERZAP CENTER -->
   <screen name="NumberZap" position="440,242" size="400,135" flags="wfNoBorder">
     <widget name="number" position="96,13" size="200,60" font="Bold; 55" halign="center" valign="center" />
@@ -554,17 +597,17 @@
 </screen>
   <!-- MovieSelection BigPicon */-->
   <!--/* MUTE -->
-  <screen name="Mute" zPosition="1" position="0,0" size="122,88" title="Mute" backgroundColor="Transparent" flags="wfNoBorder">
-	<ePixmap position="0,0" size="122,88" pixmap="infinityHD-nbox/volume/mute_new.png" alphatest="on" />
+  <screen name="Mute" zPosition="1" position="0,0" size="109,75" title="Mute" backgroundColor="Transparent" flags="wfNoBorder">
+	<ePixmap position="0,0" size="109,75" pixmap="infinityHD-nbox/volume/mute_new.png" alphatest="on" />
   </screen>
   <!-- MUTE */-->
   <!--/* VOLUME VERTICAL -->
-  <screen name="Volume" position="0,184" size="122,306" title="Volume" flags="wfNoBorder" zPosition="10" backgroundColor="Transparent">
-	<ePixmap position="0,0" zPosition="-1" size="122,306" pixmap="infinityHD-nbox/volume/volumebar_h_back.png" alphatest="on" />
+  <screen name="Volume" position="0,184" size="109,293" title="Volume" flags="wfNoBorder" zPosition="10" backgroundColor="Transparent">
+	<ePixmap position="0,0" zPosition="-1" size="109,293" pixmap="infinityHD-nbox/volume/volumebar_h_back.png" alphatest="on" />
 	<widget name="Volume" position="37,19" size="33,207" zPosition="1" pixmap="infinityHD-nbox/volume/volumebar_h_fore.png" transparent="1" orientation="orBottomToTop" alphatest="blend"  />
   </screen>
   <!-- VOLUME VERTICAL */-->
-<!--/* GraphMultiEPG -->
+  <!--/* GraphMultiEPG -->
   <screen name="GraphMultiEPG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder">
     <eLabel position="60,25" size="605,35" text="Electronic Program Guide" halign="left" font="Bold; 28" transparent="1" zPosition="2" />
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
@@ -618,10 +661,9 @@
     <widget source="Event" render="Label" position="70,115" zPosition="1" size="1157,205" font="GraphDesc; 24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
-    <widget source="Event" render="Label" position="60,77" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
+    <widget source="Event" render="Label" position="60,77" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="left">
       <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">
-      </convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
     <widget source="Event" render="Label" position="132,77" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventTime">EndTime</convert>
