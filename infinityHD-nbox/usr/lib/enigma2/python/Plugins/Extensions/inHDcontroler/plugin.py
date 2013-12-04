@@ -74,7 +74,7 @@ config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
 				("fresh", _("Fresh"))
 				])
 config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choices = [
-				("bigpicon-classic", _("BigPicon Classic ")),
+				("bigpicon-classic", _("Big Picon Classic")),
 				("picon-classic", _("Picon Classic")),
 				("bigpicon-updown", _("Big Picon Up Down")),
 				("picon-updown", _("Picon Up Down")),
@@ -385,7 +385,7 @@ class inHDsetup(ConfigListScreen, Screen):
 		except:
 			self.session.open(MessageBox, _("Error creating Skin!"), MessageBox.TYPE_ERROR)
 			configfile.save()
-			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now ?"), MessageBox.TYPE_YESNO)
+			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now?"), MessageBox.TYPE_YESNO)
 			restartbox.setTitle(_("Restart GUI"))
 
 	def restartGUI(self, answer):

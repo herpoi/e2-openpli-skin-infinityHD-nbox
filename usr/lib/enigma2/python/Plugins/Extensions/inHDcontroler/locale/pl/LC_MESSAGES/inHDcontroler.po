@@ -1,0 +1,211 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: inHDcontroler 1.0.0\n"
+"Report-# msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-04 14:00+0100\n"
+"PO-Revision-Date: 2013-12-04 14:00+0100\n"
+"Last-Translator: mickey\n"
+"Language-Team: herpoi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Configuration tool for infinityHD-nbox"
+msgstr "Panel konfiguracyjny dla infinityHD-nbox"
+
+msgid "Classic"
+msgstr "Klasyczny"
+
+msgid "Fresh"
+msgstr "Świeży"
+
+# msgid "Big Picon Classic"
+# msgstr ""
+
+# msgid "Picon Classic"
+# msgstr ""
+
+# msgid "Big Picon Up Down"
+# msgstr ""
+
+# msgid "Picon Up Down"
+# msgstr ""
+
+# msgid "No Picon Classic"
+# msgstr ""
+
+# msgid "No Picon BigClock"
+# msgstr ""
+
+# msgid "No Picon Up Down"
+# msgstr ""
+
+msgid "Compact"
+msgstr "Kompaktowy"
+
+msgid "More EPG"
+msgstr "Więcej EPG"
+
+msgid "Right"
+msgstr "Prawo"
+
+msgid "Left"
+msgstr "Lewo"
+
+# msgid "Big Picon"
+# msgstr ""
+
+# msgid "No Picon"
+# msgstr ""
+
+# msgid "Picon Right"
+# msgstr ""
+
+# msgid "Big Picon Right"
+# msgstr ""
+
+# msgid "No Picon Right"
+# msgstr ""
+
+# msgid "Picon Left"
+# msgstr ""
+
+# msgid "Big Picon Left"
+# msgstr ""
+
+# msgid "No Picon Left"
+# msgstr ""
+
+# msgid "Picon Up"
+# msgstr ""
+
+# msgid "Big Picon Up"
+# msgstr ""
+
+# msgid "No Picon Up"
+# msgstr ""
+
+msgid "Center"
+msgstr "Środek"
+
+msgid "Top Left"
+msgstr "Góra Lewp"
+
+msgid "Top Right"
+msgstr "Góra Prawo"
+
+msgid "Bottom Left"
+msgstr "Dół Lewo"
+
+msgid "Bottom Right"
+msgstr "Dół Prawo"
+
+# msgid "CAID/Tuner/Signal"
+# msgstr ""
+
+# msgid "ECM/Tuner/Signal"
+# msgstr ""
+
+# msgid "ECM Only"
+# msgstr ""
+
+# msgid "Sat Info/Signal"
+# msgstr ""
+
+# msgid "ECM/Sat Info/Signal"
+# msgstr ""
+
+msgid "============ Fonts & colors ============"
+msgstr "=========== Czcionki i kolory ==========="
+
+msgid "Font:"
+msgstr "Czcionka:"
+
+# msgid "EPG font size on Channel Selection screen:"
+# msgstr ""
+
+# msgid "EPG font size on Second Infobar screen:"
+# msgstr ""
+
+# msgid "EPG font size on EPG Selection screen:"
+# msgstr ""
+
+# msgid "EPG font size on Event View screen:"
+# msgstr ""
+
+# msgid "EPG font size on GraphMultiEPG screen:"
+# msgstr ""
+
+msgid "Colors:"
+msgstr "Kolory:"
+
+# msgid "============ Infobar  ============"
+# msgstr ""
+
+# msgid "Infobar:"
+# msgstr ""
+
+# msgid "Infobar Footer:"
+# msgstr ""
+
+# msgid "============ Second Infobar  ============"
+# msgstr ""
+
+# msgid "Second Infobar:"
+# msgstr ""
+
+# msgid "Second Fnfobar Footer:"
+# msgstr ""
+
+# msgid "============ Channel Selection  ============"
+# msgstr ""
+
+# msgid "Channel Selection side:"
+# msgstr ""
+
+# msgid "Channel Selection picon:"
+# msgstr ""
+
+# msgid "Channel Selection rows:"
+# msgstr ""
+
+# msgid "How many next events to show on Channel Selection screen:"
+# msgstr ""
+
+msgid "============ Other  ============"
+msgstr "============= Inne ============="
+
+# msgid "EPG Selection:"
+# msgstr ""
+
+# msgid "Event View:"
+# msgstr ""
+
+# msgid "Number Zap:"
+# msgstr ""
+
+# msgid "Volume Bar:"
+# msgstr ""
+
+# msgid "Window Style:"
+# msgstr ""
+
+msgid "Do you really want to restart GUI now?"
+msgstr "Czy na pewno chcesz teraz zrestartować GUI?"
+
+msgid "Information"
+msgstr "Informacja"
+
+msgid "Successfully creating Skin!"
+msgstr "Tworzenie skórki zakończone powodzeniem!"
+
+msgid "Error creating Skin!"
+msgstr "Błąd przy tworzeniu skórki!"
+
+# msgid "GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now?"
+# msgstr ""
+
+msgid "Restart GUI"
+msgstr "Restart GUI"
+
