@@ -66,14 +66,10 @@
       <convert type="ServiceInfo">HasTelext</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1121,594" size="36,36" zPosition="2" transparent="1">
+    <ePixmap pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1121,594" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1121,594" size="36,36" zPosition="2" alphatest="on">
       <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">0,720</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1121,594" size="36,36" zPosition="2" transparent="1">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
+      <convert type="ValueRange">800,2000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1161,594" size="36,36" zPosition="1" alphatest="on" />

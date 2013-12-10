@@ -11,7 +11,7 @@ from Tools.Directories import fileExists, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, 
 from Components.config import config
 
 class inHDBigPicon(Renderer):
-	searchPaths = ('/media/hdd/BigPicon/%s/','/usr/share/enigma2/BigPicon/%s/','/media/hdd/XPicons/%s/','/media/img/XPicons/%s/','/media/usb/XPicons/%s/','/usr/share/enigma2/XPicons/%s/','/usr/share/enigma2/%s/', '/media/usb/%s/')
+	searchPaths = ('/media/hdd/BigPicon/%s/','/usr/share/enigma2/BigPicon/%s/','/media/usb/BigPicon/%s/','/media/hdd/XPicons/%s/','/media/img/XPicons/%s/','/media/usb/XPicons/%s/','/usr/share/enigma2/XPicons/%s/','/usr/share/enigma2/%s/', '/media/usb/%s/')
 
 	def __init__(self):
 		Renderer.__init__(self)

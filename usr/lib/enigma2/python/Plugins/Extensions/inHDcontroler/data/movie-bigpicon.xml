@@ -24,26 +24,22 @@
     <widget source="session.CurrentService" render="inHDBigPicon" position="53,568" size="220,132" zPosition="4" alphatest="blend" transparent="1">
       <convert type="inHDMovieReference">Reference</convert>
     </widget>
-    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1055,605" zPosition="3" size="36,36" alphatest="on">
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1055,605" zPosition="3" size="36,36" alphatest="blend">
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1100,605" size="36,36" zPosition="2" transparent="1">
+    <ePixmap pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1100,605" size="36,36" zPosition="1" alphatest="blend" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1100,605" size="36,36" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">0,720</convert>
+      <convert type="ValueRange">800,2000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1100,605" size="36,36" zPosition="2" transparent="1">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1190,605" size="36,36" zPosition="1" alphatest="on" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_dolby_kl.png" position="1190,605" size="36,36" zPosition="2" transparent="1">
+    <ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1190,605" size="36,36" zPosition="1" alphatest="blend" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_dolby_kl.png" position="1190,605" size="36,36" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsMultichannel</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1145,605" size="36,36" zPosition="1" alphatest="on" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_format_kl.png" position="1145,605" size="36,36" zPosition="2" transparent="1">
+    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1145,605" size="36,36" zPosition="1" alphatest="blend" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_format_kl.png" position="1145,605" size="36,36" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>

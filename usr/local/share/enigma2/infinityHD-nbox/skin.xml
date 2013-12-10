@@ -174,14 +174,10 @@
       <convert type="ServiceInfo">HasTelext</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1131,624" size="36,36" zPosition="2" transparent="1">
+    <ePixmap pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1131,624" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1131,624" size="36,36" zPosition="2" alphatest="on">
       <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">0,720</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1131,624" size="36,36" zPosition="2" transparent="1">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
+      <convert type="ValueRange">800,2000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1171,624" size="36,36" zPosition="1" alphatest="on" />
@@ -1031,6 +1027,13 @@ newwidth = wsize[0]
 self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3)))
 
 		</applet>
+  </screen>
+   <!-- Timeshift state -->
+  <screen name="TimeshiftState" position="60,125" zPosition="2" size="150,60" backgroundColor="BackTransparent" flags="wfNoBorder">
+  <widget name="state" position="0,0" size="150,30" font="Regular;25" halign="center" backgroundColor="BackTransparent" />
+  <widget source="session.CurrentService" render="Label" position="0,30" size="150,30" font="Regular;25" halign="center" foregroundColor="TextForeground" backgroundColor="BackTransparent">
+    <convert type="ServicePosition">Remaining</convert>
+  </widget>
   </screen>
   <!-- Common interface -->
   <screen name="MMIDialog" position="315,225" size="650,270">

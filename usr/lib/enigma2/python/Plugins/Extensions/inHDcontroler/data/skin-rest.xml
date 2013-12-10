@@ -423,6 +423,13 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 
 		</applet>
   </screen>
+  <!-- Timeshift state -->
+  <screen name="TimeshiftState" position="60,125" zPosition="2" size="150,60" backgroundColor="BackTransparent" flags="wfNoBorder">
+  <widget name="state" position="0,0" size="150,30" font="Regular;25" halign="center" backgroundColor="BackTransparent" />
+  <widget source="session.CurrentService" render="Label" position="0,30" size="150,30" font="Regular;25" halign="center" foregroundColor="TextForeground" backgroundColor="BackTransparent">
+    <convert type="ServicePosition">Remaining</convert>
+  </widget>
+  </screen>
   <!-- Common interface -->
   <screen name="MMIDialog" position="315,225" size="650,270">
     <widget name="title" position="10,10" size="630,26" font="Bold;24" />
