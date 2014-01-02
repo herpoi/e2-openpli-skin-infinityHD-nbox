@@ -1,0 +1,9 @@
+Package: enigma2-plugin-skins-infinityhd-nbox
+Version: 1.0
+Description: infinityHD-nbox Skin for OpenPLI images
+Section: extra
+Priority: optional
+Maintainer: herpoi <herpoi2006@gmail.com>
+Architecture: all
+OE: enigma2
+Homepage: https://github.com/herpoi
