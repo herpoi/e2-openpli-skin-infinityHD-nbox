@@ -4,7 +4,7 @@ Skórka infinityHD-nbox kompatybilna z image OpenPLi.
 
 Z poziomu kontrolera możliwa jest zmiana wyglądu poszczególnych ekranów.
 
-<strong>Ważna uwaga dla osób korzystających z różnej wielkości pikon na poszczególnych ekranach (np. dla tych którzy mają wybrane w kontrolrze Infobar BigPicon oraz Channel Selection Picon).</strong><br />
+<strong>Ważna uwaga dla osób korzystających z różnej wielkości pikon na poszczególnych ekranach (np. dla tych którzy mają wybrane w kontrolerze Infobar BigPicon oraz Channel Selection Picon).</strong><br />
 Na niektórych odbiornikach jest problem z prawidłowym skalowaniem pikon. Występują problemy z przeźroczystym tłem lub chwilowe migotanie obrazu.
 
 Jeśli zauważyłeś takie problemy to skorzystaj z dwóch rodzajów pikon:
@@ -13,7 +13,7 @@ Jeśli zauważyłeś takie problemy to skorzystaj z dwóch rodzajów pikon:
 
 Osoby, którym pikony skalują się prawidłowo lub nie przeszkadzają powyższe usterki, mogą wrzucić pikony do katalogu /usr/share/enigma2/picon/ (czyli tak jak to zwykle bywa w Enigmie).
 
-<strong><em>Miłego uzytkowania, herpoi</em></strong>
+<strong><em>Miłego użytkowania, herpoi</em></strong>
 
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/Infobar_BP_Classic.jpg)
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/ChannelSelection_BP_Right.jpg)
