@@ -22,12 +22,12 @@ from Renderer import Renderer
 from enigma import eCanvas, eRect, gFont
 from skin import parseColor, parseFont
 
-class DMCHDCaids(Renderer):
+class inHDDMCHDCaids(Renderer):
 	GUI_WIDGET = eCanvas
 
 	def __init__(self):
 		Renderer.__init__(self)
-		self.backgroundColor = parseColor("#ff000000")
+		self.backgroundColor = parseColor("#41000000")
 		self.nocColor = parseColor("#00aaaaaa")
 		self.emmColor = parseColor("#00aaaaaa")
 		self.ecmColor = parseColor("#0056c856")

@@ -114,23 +114,31 @@
     <widget name="timeline5" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
   </screen>
   <!-- GraphMultiEPG */-->
-  <!--/* VIRTUALZAP -->
+  <!--/* Vritual Zap -->
   <screen backgroundColor="Transparent" flags="wfNoBorder" name="VirtualZapNoPiP" position="center,0" size="1280,720" title="Virtual Zap">
-    <ePixmap position="0,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
-    <widget backgroundColor="Transparent" name="video" position="0,0" size="0,0" zPosition="1" />
-    <widget valign="bottom" halign="left" noWrap="1" backgroundColor="Black" font="Bold;33" name="NowChannel" position="300,530" size="620,40" zPosition="2" transparent="1" foregroundColor="TextHighlight" />
-    <widget font="Regular;28" halign="left" name="NowEPG" position="202,583" size="705,35" valign="bottom" noWrap="1" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" zPosition="2" />
-    <widget font="Regular;28" halign="left" name="NextEPG" position="202,624" size="705,35" valign="bottom" noWrap="1" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" zPosition="2" foregroundColor="TextDimmed" />
-    <widget font="Regular;28" valign="bottom" transparent="1" backgroundColor="BackTransparent" halign="right" name="NowTime" position="1051,583" size="145,35" zPosition="2" />
-    <widget font="Regular;28" valign="bottom" foregroundColor="TextDimmed" transparent="1" backgroundColor="BackTransparent" halign="right" name="NextTime" position="1051,624" size="145,35" zPosition="2" />
-    <widget source="global.CurrentTime" render="Label" position="75,530" size="110,40" font="Bold; 33" valign="bottom" halign="center" backgroundColor="Black" transparent="1" foregroundColor="TextDimmed">
+    <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
+    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="1002,530" size="197,40" font="Bold; 33" halign="right" backgroundColor="Black" transparent="1" valign="bottom" foregroundColor="TextDimmed">
-      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%A</convert>
     </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%d %B</convert>
+    </widget>
+    <widget backgroundColor="Transparent" name="video" position="0,0" size="0,0" zPosition="1" />
+    <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
+    <widget position="407,530" size="714,40" name="NowChannel" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
+	<eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <widget name="vzPicon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1" />
+    <widget font="Regular;28" halign="left" name="NowEPG" position="202,583" size="705,35" valign="bottom" noWrap="1" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" zPosition="2" />
+
+    <widget position="316,583" size="655,35" name="NowEPG" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
+    <widget position="976,583" size="145,35" name="NowTime" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
+    <widget position="316,624" size="655,35" name="NextEPG" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
+    <widget position="976,624" size="145,35" name="NextTime" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
   </screen>
-  <!-- VIRTUALZAP */-->
+  <!-- Vritual Zap */-->
   <!--/* MENU -->
   <screen flags="wfNoBorder" name="menu_mainmenu" position="0,0" size="1280,720" title="Main menu">
     <widget font="Bold;32" position="675,130" render="Label" size="485,35" source="title" transparent="1" zPosition="2" />

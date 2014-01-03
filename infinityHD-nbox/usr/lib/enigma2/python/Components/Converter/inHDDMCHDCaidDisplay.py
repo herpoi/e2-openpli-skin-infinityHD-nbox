@@ -23,7 +23,7 @@ from enigma import iServiceInformation, iPlayableService
 from Components.Element import cached
 from Poll import Poll
 
-class DMCHDCaidDisplay(Poll, Converter, object):
+class inHDDMCHDCaidDisplay(Poll, Converter, object):
 	ECMFull=0
 	ECMShort=1
 

@@ -45,8 +45,8 @@
       <convert type="ConditionalShowHide" />
     </widget>
     <!-- Footer - CAID -->
-    <widget source="session.CurrentService" render="DMCHDCaids" position="75,675" size="400,22" zPosition="3" font="Bold;18" transparent="1" ecmColor="KeyGreen" emmColor="TextHighlight" nocColor="TextDimmed" backgroundColor="BackTransparent">
-      <convert type="DMCHDCaidDisplay">Default</convert>
+    <widget source="session.CurrentService" render="inHDDMCHDCaids" position="75,675" size="400,22" zPosition="3" font="Bold;18" transparent="1" ecmColor="KeyGreen" emmColor="TextHighlight" nocColor="TextDimmed" backgroundColor="BackTransparent">
+      <convert type="inHDDMCHDCaidDisplay">Default</convert>
     </widget>
     <!-- FOOTER CAID TUNER SIGNAL */-->
   </screen>
