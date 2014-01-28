@@ -371,6 +371,8 @@ class inHDsetup(ConfigListScreen, Screen):
 				self.appendSkinFile(self.daten + "movie-picon.xml")
 			# Volume Bar
 			self.appendSkinFile(self.daten + "volumebar-" + config.plugins.inHD.VolumeBar.value + ".xml")
+			# Virtual Zap
+			self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + ".xml")
 			# Skin rest
 			self.appendSkinFile(self.daten + "skin-rest.xml")
 			
