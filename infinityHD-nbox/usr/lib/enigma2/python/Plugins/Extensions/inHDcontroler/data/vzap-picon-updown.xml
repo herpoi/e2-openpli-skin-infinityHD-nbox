@@ -14,7 +14,6 @@
     <ePixmap position="0,525" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
 	<widget position="175,30" size="125,50" name="NowNum" font="Bold; 45" valign="center" halign="center" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
     <widget position="305,30" size="570,50" name="NowChannel" font="Bold; 45" valign="center" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
-    <eLabel name="ProgressbarBack" position="172,613" size="890,1" backgroundColor="ProgressbarBack" zPosition="4" />
     <widget name="vzPicon" position="75,25" size="100,60" zPosition="4" alphatest="blend" transparent="1" />
     <widget position="67,570" size="836,35" name="NowEPG" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
     <widget position="921,570" size="145,35" name="NowTime" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
@@ -28,5 +27,8 @@
     <ePixmap pixmap="infinityHD-nbox/icons/i_txt_no_kl.png" position="1161,584" size="36,36" zPosition="1" alphatest="on" />
     <ePixmap pixmap="infinityHD-nbox/icons/i_hd_no_kl.png" position="1121,624" size="36,36" zPosition="1" alphatest="on" />
     <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1161,624" size="36,36" zPosition="1" alphatest="on" />
+    <eLabel name="ProgressbarBack" position="172,613" size="890,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <widget name="vzProgress" position="172,612" size="890,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5" />
   </screen>
   <!-- VIRTUAL ZAP PICON UP/DOWN */-->
+  

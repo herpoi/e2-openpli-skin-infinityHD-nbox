@@ -70,7 +70,7 @@
       <convert type="ServiceInfo">IsCrypted</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.Event_Now" render="Progress" position="314,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5">
+    <widget source="session.Event_Now" render="Progress" position="315,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5">
       <convert type="EventTime">Progress</convert>
     </widget>
     <eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />

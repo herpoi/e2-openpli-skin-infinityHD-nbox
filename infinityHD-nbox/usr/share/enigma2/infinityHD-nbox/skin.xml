@@ -185,7 +185,7 @@
       <convert type="ServiceInfo">IsCrypted</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.Event_Now" render="Progress" position="314,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5">
+    <widget source="session.Event_Now" render="Progress" position="315,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5">
       <convert type="EventTime">Progress</convert>
     </widget>
     <eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />
@@ -716,7 +716,7 @@
     <widget name="timeline5" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
   </screen>
   <!-- GraphMultiEPG */-->
-  <!--/* Vritual Zap -->
+  <!--/* VIRTUAL ZAP BIGPICON CLASSIC -->
   <screen backgroundColor="Transparent" flags="wfNoBorder" name="VirtualZapPiconNoPiP" position="center,0" size="1280,720" title="Virtual Zap">
     <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
     <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
@@ -732,19 +732,23 @@
     <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
 	<widget position="314,530" size="90,40" name="NowNum" font="Bold; 33" valign="bottom" halign="center" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
     <widget position="407,530" size="714,40" name="NowChannel" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
-	<eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />
     <widget name="vzPicon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1" />
     <widget position="316,583" size="655,35" name="NowEPG" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
     <widget position="976,583" size="145,35" name="NowTime" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
     <widget position="316,624" size="655,35" name="NextEPG" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
     <widget position="976,624" size="145,35" name="NextTime" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1131,544" zPosition="3" size="36,36" alphatest="on">
+      <convert type="ConditionalShowHide" />
+    </widget>
 	<ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1131,584" size="36,36" zPosition="1" alphatest="on" />
     <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1171,544" size="36,36" zPosition="1" alphatest="on" />
     <ePixmap pixmap="infinityHD-nbox/icons/i_txt_no_kl.png" position="1171,584" size="36,36" zPosition="1" alphatest="on" />
     <ePixmap pixmap="infinityHD-nbox/icons/i_hd_no_kl.png" position="1131,624" size="36,36" zPosition="1" alphatest="on" />
     <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1171,624" size="36,36" zPosition="1" alphatest="on" />
+    <eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <widget name="vzProgress" position="315,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5" />
   </screen>
-  <!-- Vritual Zap */-->
+  <!-- VIRTUAL ZAP BIGPICON CLASSIC */-->
   <!--/* MENU -->
   <screen flags="wfNoBorder" name="menu_mainmenu" position="0,0" size="1280,720" title="Main menu">
     <widget font="Bold;32" position="675,130" render="Label" size="485,35" source="title" transparent="1" zPosition="2" />
