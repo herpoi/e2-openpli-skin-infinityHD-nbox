@@ -44,7 +44,8 @@ from Components.Pixmap import Pixmap
 import urllib
 import gettext
 from enigma import ePicLoad
-from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+#from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from __init__ import _
 
 #############################################################
 
