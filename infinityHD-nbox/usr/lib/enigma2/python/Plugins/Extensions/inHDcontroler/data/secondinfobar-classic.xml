@@ -20,8 +20,7 @@
     <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1081,584" zPosition="3" size="36,36" alphatest="on">
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Label" position="202,530" size="90,40" font="Bold; 33" valign="bottom" halign="left" transparent="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" noWrap="1" foregroundColor="TextHighlight">
-      <convert type="ServiceName">Number</convert>
+    <widget source="session.CurrentService" render="ChannelNumber" position="202,530" size="90,40" font="Bold; 33" valign="bottom" halign="left" transparent="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" noWrap="1" foregroundColor="TextHighlight">
     </widget>
     <widget position="300,530" size="620,40" source="session.CurrentService" render="Label" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight">
       <convert type="ServiceName">Name</convert>
