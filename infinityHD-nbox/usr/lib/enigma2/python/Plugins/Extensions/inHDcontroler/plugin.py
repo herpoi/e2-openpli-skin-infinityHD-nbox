@@ -362,7 +362,7 @@ class inHDsetup(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + "eventview-" + config.plugins.inHD.Eventview.value + ".xml")
 			# NumberZap
 			self.appendSkinFile(self.daten + "numberzap-" + config.plugins.inHD.NumberZap.value + ".xml")
-			# Movie Player $ Movie Selection
+			# Movie Player & Movie Selection
 			if config.plugins.inHD.Infobar.value=="bigpicon-classic":
 				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
 			elif config.plugins.inHD.Infobar.value=="bigpicon-updown":
