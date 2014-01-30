@@ -1,0 +1,374 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: inHDcontroler GIT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-30 12:39+0100\n"
+"PO-Revision-Date: 2014-01-30 12:40+0100\n"
+"Last-Translator: herpoi <herpoi2006@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: plugin.py:74 plugin.py:87 plugin.py:98 plugin.py:214
+msgid "Classic"
+msgstr "Klasyczny"
+
+#: plugin.py:75
+msgid "Fresh"
+msgstr "Świeży"
+
+#: plugin.py:78
+msgid "Big Picon Classic"
+msgstr "Klasyczny - Big Picon"
+
+#: plugin.py:79 plugin.py:123
+msgid "Picon Classic"
+msgstr "Klasyczny - Picon"
+
+#: plugin.py:80
+msgid "Big Picon Up Down"
+msgstr "Góra Dół - Big Picon"
+
+#: plugin.py:81
+msgid "Picon Up Down"
+msgstr "Góra Dół - Picon"
+
+#: plugin.py:82
+msgid "No Picon Classic"
+msgstr "Klasyczny - bez pikon"
+
+#: plugin.py:83
+msgid "No Picon BigClock"
+msgstr "Duży zegar - bez pikon"
+
+#: plugin.py:84
+msgid "No Picon Up Down"
+msgstr "Góra Dół - bez pikon"
+
+#: plugin.py:88
+msgid "Compact"
+msgstr "Kompaktowy"
+
+#: plugin.py:89
+msgid "More EPG"
+msgstr "Więcej EPG"
+
+#: plugin.py:92
+msgid "Right"
+msgstr "Po prawej"
+
+#: plugin.py:93
+msgid "Left"
+msgstr "Po lewej"
+
+#: plugin.py:96 plugin.py:124
+msgid "Big Picon"
+msgstr ""
+
+#: plugin.py:97 plugin.py:125
+msgid "No Picon"
+msgstr "Bez pikon"
+
+#: plugin.py:101
+msgid "0"
+msgstr ""
+
+#: plugin.py:102
+msgid "1"
+msgstr ""
+
+#: plugin.py:103
+msgid "2"
+msgstr ""
+
+#: plugin.py:104
+msgid "3"
+msgstr ""
+
+#: plugin.py:107
+msgid "14"
+msgstr ""
+
+#: plugin.py:108
+msgid "16"
+msgstr ""
+
+#: plugin.py:109
+msgid "19"
+msgstr ""
+
+#: plugin.py:112
+msgid "Picon Right"
+msgstr "Po prawej - Picon"
+
+#: plugin.py:113
+msgid "Big Picon Right"
+msgstr "Po prawej - Big Picon"
+
+#: plugin.py:114
+msgid "No Picon Right"
+msgstr "Po prawej - bez pikon"
+
+#: plugin.py:115
+msgid "Picon Left"
+msgstr "Po lewej - bez pikon"
+
+#: plugin.py:116
+msgid "Big Picon Left"
+msgstr "Po lewei - Big Picon"
+
+#: plugin.py:117
+msgid "No Picon Left"
+msgstr "Po lewej - bez pikon"
+
+#: plugin.py:118
+msgid "Picon Up"
+msgstr "Na górze - Picon"
+
+#: plugin.py:119
+msgid "Big Picon Up"
+msgstr "Na górze - Big Picon"
+
+#: plugin.py:120
+msgid "No Picon Up"
+msgstr "Na górze - bez pikon"
+
+#: plugin.py:128
+msgid "Center"
+msgstr "Na środku"
+
+#: plugin.py:129
+msgid "Top Left"
+msgstr "Lewy górny róg"
+
+#: plugin.py:130
+msgid "Top Right"
+msgstr "Prawy górny róg"
+
+#: plugin.py:131
+msgid "Bottom Left"
+msgstr "Lewy dolny róg"
+
+#: plugin.py:132
+msgid "Bottom Right"
+msgstr "Prawy dolny róg"
+
+#: plugin.py:135 plugin.py:141
+msgid "CAID/Tuner/Signal"
+msgstr "CAID/Tuner/Sygnał"
+
+#: plugin.py:136 plugin.py:142
+msgid "ECM/Tuner/Signal"
+msgstr "ECM/Tuner/Sygnał"
+
+#: plugin.py:137 plugin.py:143
+msgid "ECM Only"
+msgstr "Tylko ECM"
+
+#: plugin.py:138 plugin.py:144
+msgid "Sat Info/Signal"
+msgstr "Sat Info/Sygnał"
+
+#: plugin.py:145
+msgid "ECM/Sat Info/Signal"
+msgstr "ECM/Sat Info/Sygnał"
+
+#: plugin.py:148
+msgid "Ubuntu"
+msgstr ""
+
+#: plugin.py:149
+msgid "Aller"
+msgstr ""
+
+#: plugin.py:150
+msgid "Roboto"
+msgstr ""
+
+#: plugin.py:151
+msgid "Cool"
+msgstr ""
+
+#: plugin.py:154 plugin.py:165 plugin.py:176 plugin.py:187 plugin.py:198
+msgid "80%"
+msgstr ""
+
+#: plugin.py:155 plugin.py:166 plugin.py:177 plugin.py:188 plugin.py:199
+msgid "85%"
+msgstr ""
+
+#: plugin.py:156 plugin.py:167 plugin.py:178 plugin.py:189 plugin.py:200
+msgid "90%"
+msgstr ""
+
+#: plugin.py:157 plugin.py:168 plugin.py:179 plugin.py:190 plugin.py:201
+msgid "95%"
+msgstr ""
+
+#: plugin.py:158 plugin.py:169 plugin.py:180 plugin.py:191 plugin.py:202
+msgid "100%"
+msgstr ""
+
+#: plugin.py:159 plugin.py:170 plugin.py:181 plugin.py:192 plugin.py:203
+msgid "105%"
+msgstr ""
+
+#: plugin.py:160 plugin.py:171 plugin.py:182 plugin.py:193 plugin.py:204
+msgid "110%"
+msgstr ""
+
+#: plugin.py:161 plugin.py:172 plugin.py:183 plugin.py:194 plugin.py:205
+msgid "115%"
+msgstr ""
+
+#: plugin.py:162 plugin.py:173 plugin.py:184 plugin.py:195 plugin.py:206
+msgid "120%"
+msgstr ""
+
+#: plugin.py:209
+msgid "Vertical"
+msgstr "Pionowy"
+
+#: plugin.py:210
+msgid "Horizontal"
+msgstr "Poziomy"
+
+#: plugin.py:213
+msgid "New"
+msgstr "Nowy"
+
+#: plugin.py:221
+msgid "Configuration tool for infinityHD-nbox"
+msgstr "Plugin konfiguracyjny infinityHD-nbox"
+
+#: plugin.py:247
+msgid "============ Fonts & colors ============"
+msgstr "============ Czcionki i kolory ============"
+
+#: plugin.py:248
+msgid "Font:"
+msgstr "Czcionka:"
+
+#: plugin.py:249
+msgid "EPG font size on Channel Selection screen:"
+msgstr "Wielkość opisów EPG na liście kanałów:"
+
+#: plugin.py:250
+msgid "EPG font size on Second Infobar screen:"
+msgstr "Wielkość opisów EPG na dodatkowym pasku info:"
+
+#: plugin.py:251
+msgid "EPG font size on EPG Selection screen:"
+msgstr "Wielkość opisów EPG na liście audycji:"
+
+#: plugin.py:252
+msgid "EPG font size on Event View screen:"
+msgstr "Wielkość opisów EPG w opisie audycji:"
+
+#: plugin.py:253
+msgid "EPG font size on GraphMultiEPG screen:"
+msgstr "Wielkość opisów EPG w GraphMultiEPG:"
+
+#: plugin.py:254
+msgid "Colors:"
+msgstr "Kolory:"
+
+#: plugin.py:255
+msgid "============ Infobar  ============"
+msgstr "============ Pasek info  ============"
+
+#: plugin.py:256
+msgid "Infobar:"
+msgstr "Pasek info:"
+
+#: plugin.py:257
+msgid "Infobar Footer:"
+msgstr "Stopka paska info:"
+
+#: plugin.py:258
+msgid "============ Second Infobar  ============"
+msgstr "============ Dodaktowy pasek info  ============"
+
+#: plugin.py:259
+msgid "Second Infobar:"
+msgstr "Dodatkowy pasek info:"
+
+#: plugin.py:260
+msgid "Second Infobar Footer:"
+msgstr "Stopka dodatkowego paska info:"
+
+#: plugin.py:261
+msgid "============ Channel Selection  ============"
+msgstr "============ Lista kanałów  ============"
+
+#: plugin.py:262
+msgid "Channel Selection side:"
+msgstr "Lista kanałów po stronie:"
+
+#: plugin.py:263
+msgid "Picon size:"
+msgstr "Rozmiar pikon:"
+
+#: plugin.py:264
+msgid "Channel Selection rows:"
+msgstr "Liczba wierszy na liście kanałów:"
+
+#: plugin.py:265
+msgid "How many next events to show on Channel Selection screen:"
+msgstr "Ilość następnych audycji do wyświetlenia:"
+
+#: plugin.py:266
+msgid "============ Other  ============"
+msgstr "============ Inne ustawienia  ============"
+
+#: plugin.py:267
+msgid "EPG Selection:"
+msgstr "Lista audycji:"
+
+#: plugin.py:268
+msgid "Event View:"
+msgstr "Opis audycji::"
+
+#: plugin.py:269
+msgid "Number Zap:"
+msgstr "Wybór kanału numerem:"
+
+#: plugin.py:270
+msgid "Volume Bar:"
+msgstr "Pasek głośności:"
+
+#: plugin.py:271
+msgid "Window Style:"
+msgstr "Styl okien:"
+
+#: plugin.py:312
+msgid "Do you really want to restart GUI now?"
+msgstr "Czy chcesz teraz wykonać restart GUI?"
+
+#: plugin.py:313 plugin.py:390
+msgid "Restart GUI"
+msgstr ""
+
+#: plugin.py:316
+msgid "Information"
+msgstr "Informacja"
+
+#: plugin.py:384
+msgid "Successfully creating Skin!"
+msgstr "Zakończono generowanie pliku skórki!"
+
+#: plugin.py:387
+msgid "Error creating Skin!"
+msgstr "Wystąpił błąd podczas tworzenia pliku skórki!"
+
+#: plugin.py:389
+msgid ""
+"GUI needs a restart to apply a new skin.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Aby załadować nowy wygląd skórki, należy wykonać restart GUI.\n"
+"Czy chcesz teraz wykonać restert GUI?"

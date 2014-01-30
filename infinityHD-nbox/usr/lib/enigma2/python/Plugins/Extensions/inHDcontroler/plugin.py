@@ -44,7 +44,8 @@ from Components.Pixmap import Pixmap
 import urllib
 import gettext
 from enigma import ePicLoad
-from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+#from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from __init__ import _
 
 #############################################################
 
@@ -74,7 +75,7 @@ config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
 				("fresh", _("Fresh"))
 				])
 config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choices = [
-				("bigpicon-classic", _("BigPicon Classic ")),
+				("bigpicon-classic", _("Big Picon Classic")),
 				("picon-classic", _("Picon Classic")),
 				("bigpicon-updown", _("Big Picon Up Down")),
 				("picon-updown", _("Picon Up Down")),
@@ -256,10 +257,10 @@ class inHDsetup(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
 		list.append(getConfigListEntry(_("============ Second Infobar  ============"), ))
 		list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
-		list.append(getConfigListEntry(_("Second Fnfobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
+		list.append(getConfigListEntry(_("Second Infobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
 		list.append(getConfigListEntry(_("============ Channel Selection  ============"), ))
 		list.append(getConfigListEntry(_("Channel Selection side:"), config.plugins.inHD.Side))
-		list.append(getConfigListEntry(_("Channel Selection picon:"), config.plugins.inHD.Picon))
+		list.append(getConfigListEntry(_("Picon size:"), config.plugins.inHD.Picon))
 		list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
 		list.append(getConfigListEntry(_("How many next events to show on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionNumberNext))
 		list.append(getConfigListEntry(_("============ Other  ============"), ))
@@ -387,7 +388,7 @@ class inHDsetup(ConfigListScreen, Screen):
 		except:
 			self.session.open(MessageBox, _("Error creating Skin!"), MessageBox.TYPE_ERROR)
 			configfile.save()
-			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now ?"), MessageBox.TYPE_YESNO)
+			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now?"), MessageBox.TYPE_YESNO)
 			restartbox.setTitle(_("Restart GUI"))
 
 	def restartGUI(self, answer):
