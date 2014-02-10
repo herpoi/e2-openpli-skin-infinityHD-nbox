@@ -600,7 +600,40 @@
 	<widget name="Volume" position="37,19" size="33,207" zPosition="1" pixmap="infinityHD-nbox/volume/volumebar_h_fore.png" transparent="1" orientation="orBottomToTop" alphatest="blend"  />
   </screen>
   <!-- VOLUME VERTICAL */-->
-    <!--/* GraphMultiEPG -->
+  <!--/* VIRTUAL ZAP BIGPICON CLASSIC -->
+  <screen backgroundColor="Transparent" flags="wfNoBorder" name="VirtualZapPiconNoPiP" position="center,0" size="1280,720" title="Virtual Zap">
+    <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
+    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%A</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%d %B</convert>
+    </widget>
+    <widget backgroundColor="Transparent" name="video" position="0,0" size="0,0" zPosition="1" />
+    <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
+	<widget position="314,530" size="90,40" name="NowNum" font="Bold; 33" valign="bottom" halign="center" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
+    <widget position="407,530" size="714,40" name="NowChannel" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
+    <widget name="vzPicon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1" />
+    <widget position="316,583" size="655,35" name="NowEPG" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
+    <widget position="976,583" size="145,35" name="NowTime" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
+    <widget position="316,624" size="655,35" name="NextEPG" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
+    <widget position="976,624" size="145,35" name="NextTime" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1131,544" zPosition="3" size="36,36" alphatest="on">
+      <convert type="ConditionalShowHide" />
+    </widget>
+	<ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1131,584" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1171,544" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_txt_no_kl.png" position="1171,584" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_hd_no_kl.png" position="1131,624" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1171,624" size="36,36" zPosition="1" alphatest="on" />
+    <eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <widget name="vzProgress" position="315,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5" />
+  </screen>
+  <!-- VIRTUAL ZAP BIGPICON CLASSIC */-->
+  <!--/* GraphMultiEPG -->
   <screen name="GraphMultiEPG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder">
     <eLabel position="60,25" size="605,35" text="Electronic Program Guide" halign="left" font="Bold; 28" transparent="1" zPosition="2" />
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
@@ -716,39 +749,34 @@
     <widget name="timeline5" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
   </screen>
   <!-- GraphMultiEPG */-->
-  <!--/* VIRTUAL ZAP BIGPICON CLASSIC -->
-  <screen backgroundColor="Transparent" flags="wfNoBorder" name="VirtualZapPiconNoPiP" position="center,0" size="1280,720" title="Virtual Zap">
-    <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
-    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
-      <convert type="ClockToText">Format:%H:%M</convert>
+  <!--/* CutListEditor -->
+  <screen name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor" flags="wfNoBorder" backgroundColor="Transparent">
+  <ePixmap position="0,559" zPosition="-3" size="1280,720" pixmap="infinityHD-nbox/infobar_2.png" />
+  <!--eLabel position="0,0" zPosition="3" size="1280,720" backgroundColor="Transparent" /-->
+  <widget name="SeekState" position="60,60" zPosition="1" size="120,30" halign="center" font="Regular;25" valign="center" />
+  <eLabel position="1005,25" size="250,555" zPosition="2" backgroundColor="BackTransparent" />
+  <widget source="cutlist" render="Listbox" position="1015,35" size="230,530" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1">
+    <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(size=(150, 20), text = 1, backcolor = MultiContentTemplateColor(3)),
+						MultiContentEntryText(pos=(150,0), size=(60, 20), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
+					],
+				 "fonts": [gFont("Bold", 20)],
+				 "itemHeight": 25
+				}
+			</convert>
+  </widget>
+  <!--widget name="Video" position="479,124" zPosition="-10" size="696,377" /-->
+  <widget source="session.CurrentService" render="Label" position="100,605" size="692,40" font="Bold; 33" halign="left" valign="bottom" noWrap="1" backgroundColor="Black" transparent="1" foregroundColor="TextHighlight">
+      <convert type="ServiceName">Name</convert>
+  </widget>
+    <widget source="session.CurrentService" render="Label" position="1075,645" size="150,35" font="Regular; 28" halign="right" valign="bottom" backgroundColor="BackTransparent" shadowColor="Black" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServicePosition">Position,Detailed</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
-      <convert type="inHDClockToText">Format:%A</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="844,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
-      <convert type="inHDClockToText">Format:%d %B</convert>
-    </widget>
-    <widget backgroundColor="Transparent" name="video" position="0,0" size="0,0" zPosition="1" />
-    <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
-	<widget position="314,530" size="90,40" name="NowNum" font="Bold; 33" valign="bottom" halign="center" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
-    <widget position="407,530" size="714,40" name="NowChannel" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
-    <widget name="vzPicon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1" />
-    <widget position="316,583" size="655,35" name="NowEPG" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
-    <widget position="976,583" size="145,35" name="NowTime" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
-    <widget position="316,624" size="655,35" name="NextEPG" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
-    <widget position="976,624" size="145,35" name="NextTime" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
-    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1131,544" zPosition="3" size="36,36" alphatest="on">
-      <convert type="ConditionalShowHide" />
-    </widget>
-	<ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1131,584" size="36,36" zPosition="1" alphatest="on" />
-    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1171,544" size="36,36" zPosition="1" alphatest="on" />
-    <ePixmap pixmap="infinityHD-nbox/icons/i_txt_no_kl.png" position="1171,584" size="36,36" zPosition="1" alphatest="on" />
-    <ePixmap pixmap="infinityHD-nbox/icons/i_hd_no_kl.png" position="1131,624" size="36,36" zPosition="1" alphatest="on" />
-    <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1171,624" size="36,36" zPosition="1" alphatest="on" />
-    <eLabel name="ProgressbarBack" position="315,573" size="807,1" backgroundColor="ProgressbarBack" zPosition="4" />
-    <widget name="vzProgress" position="315,572" size="807,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5" />
+  <widget name="Timeline" position="100,660" size="965,3" zPosition="5" backgroundColor="KeyRed" pointer="skin_default/position_arrow.png:3,5" foregroundColor="ClockCorner" />
+  <!--eLabel name="ProgressbarBack" position="300,661" size="660,1" backgroundColor="ProgressbarBack" zPosition="3" /-->
   </screen>
-  <!-- VIRTUAL ZAP BIGPICON CLASSIC */-->
+  <!-- CutListEditor */-->
   <!--/* MENU -->
   <screen flags="wfNoBorder" name="menu_mainmenu" position="0,0" size="1280,720" title="Main menu">
     <widget font="Bold;32" position="675,130" render="Label" size="485,35" source="title" transparent="1" zPosition="2" />
@@ -1789,32 +1817,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <widget source="menu" render="Listbox" position="10,55" size="580,450" scrollbarMode="showOnDemand" transparent="1">
       <convert type="StringList" />
     </widget>
-  </screen>
-  <screen name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor" flags="wfNoBorder">
-    <eLabel position="80,125" size="300,420" zPosition="1" backgroundColor="Grey" />
-    <eLabel position="81,126" size="298,418" zPosition="2" backgroundColor="Black" />
-    <widget source="cutlist" render="Listbox" position="90,135" size="280,400" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryText(size=(135, 20), text = 1, backcolor = MultiContentTemplateColor(3)),
-						MultiContentEntryText(pos=(135,0), size=(145, 20), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
-					],
-				 "fonts": [gFont("Bold", 18)],
-				 "itemHeight": 20
-				}
-			</convert>
-    </widget>
-    <eLabel position="479,124" zPosition="3" size="696,377" backgroundColor="Transparent" />
-    <widget name="Video" position="479,124" zPosition="-10" size="696,377" />
-    <widget source="session.CurrentService" render="Label" position="450,510" size="790,30" zPosition="3" font="Bold;24" halign="center" valign="center" backgroundColor="Black" transparent="1">
-      <convert type="ServiceName">Name</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="450,550" size="790,25" zPosition="3" font="Bold;20" halign="center" valign="center" backgroundColor="Black" transparent="1">
-      <convert type="ServicePosition">Position,Detailed</convert>
-    </widget>
-    <ePixmap pixmap="infinityHD-nbox/mp_buttons.png" position="100,582" size="300,50" zPosition="1" alphatest="on" />
-    <widget name="Timeline" position="479,587" size="696,20" zPosition="3" backgroundColor="Grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="Black" />
-    <eLabel text="OK = Menu" position="1060,630" size="140,22" zPosition="1" font="Bold;20" backgroundColor="Black" transparent="1" />
   </screen>
   <!-- */ Other Plugins -->
   <!--/* MYTUBE -->

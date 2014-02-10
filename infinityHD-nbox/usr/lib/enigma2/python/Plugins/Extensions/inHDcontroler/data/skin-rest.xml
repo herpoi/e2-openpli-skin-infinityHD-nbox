@@ -114,6 +114,34 @@
     <widget name="timeline5" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
   </screen>
   <!-- GraphMultiEPG */-->
+  <!--/* CutListEditor -->
+  <screen name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor" flags="wfNoBorder" backgroundColor="Transparent">
+  <ePixmap position="0,559" zPosition="-3" size="1280,720" pixmap="infinityHD-nbox/infobar_2.png" />
+  <!--eLabel position="0,0" zPosition="3" size="1280,720" backgroundColor="Transparent" /-->
+  <widget name="SeekState" position="60,60" zPosition="1" size="120,30" halign="center" font="Regular;25" valign="center" />
+  <eLabel position="1005,25" size="250,555" zPosition="2" backgroundColor="BackTransparent" />
+  <widget source="cutlist" render="Listbox" position="1015,35" size="230,530" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1">
+    <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(size=(150, 20), text = 1, backcolor = MultiContentTemplateColor(3)),
+						MultiContentEntryText(pos=(150,0), size=(60, 20), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
+					],
+				 "fonts": [gFont("Bold", 20)],
+				 "itemHeight": 25
+				}
+			</convert>
+  </widget>
+  <!--widget name="Video" position="479,124" zPosition="-10" size="696,377" /-->
+  <widget source="session.CurrentService" render="Label" position="100,605" size="692,40" font="Bold; 33" halign="left" valign="bottom" noWrap="1" backgroundColor="Black" transparent="1" foregroundColor="TextHighlight">
+      <convert type="ServiceName">Name</convert>
+  </widget>
+    <widget source="session.CurrentService" render="Label" position="1075,645" size="150,35" font="Regular; 28" halign="right" valign="bottom" backgroundColor="BackTransparent" shadowColor="Black" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServicePosition">Position,Detailed</convert>
+    </widget>
+  <widget name="Timeline" position="100,660" size="965,3" zPosition="5" backgroundColor="KeyRed" pointer="skin_default/position_arrow.png:3,5" foregroundColor="ClockCorner" />
+  <!--eLabel name="ProgressbarBack" position="300,661" size="660,1" backgroundColor="ProgressbarBack" zPosition="3" /-->
+  </screen>
+  <!-- CutListEditor */-->
   <!--/* MENU -->
   <screen flags="wfNoBorder" name="menu_mainmenu" position="0,0" size="1280,720" title="Main menu">
     <widget font="Bold;32" position="675,130" render="Label" size="485,35" source="title" transparent="1" zPosition="2" />
@@ -1154,32 +1182,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <widget source="menu" render="Listbox" position="10,55" size="580,450" scrollbarMode="showOnDemand" transparent="1">
       <convert type="StringList" />
     </widget>
-  </screen>
-  <screen name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor" flags="wfNoBorder">
-    <eLabel position="80,125" size="300,420" zPosition="1" backgroundColor="Grey" />
-    <eLabel position="81,126" size="298,418" zPosition="2" backgroundColor="Black" />
-    <widget source="cutlist" render="Listbox" position="90,135" size="280,400" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryText(size=(135, 20), text = 1, backcolor = MultiContentTemplateColor(3)),
-						MultiContentEntryText(pos=(135,0), size=(145, 20), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
-					],
-				 "fonts": [gFont("Bold", 18)],
-				 "itemHeight": 20
-				}
-			</convert>
-    </widget>
-    <eLabel position="479,124" zPosition="3" size="696,377" backgroundColor="Transparent" />
-    <widget name="Video" position="479,124" zPosition="-10" size="696,377" />
-    <widget source="session.CurrentService" render="Label" position="450,510" size="790,30" zPosition="3" font="Bold;24" halign="center" valign="center" backgroundColor="Black" transparent="1">
-      <convert type="ServiceName">Name</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="450,550" size="790,25" zPosition="3" font="Bold;20" halign="center" valign="center" backgroundColor="Black" transparent="1">
-      <convert type="ServicePosition">Position,Detailed</convert>
-    </widget>
-    <ePixmap pixmap="infinityHD-nbox/mp_buttons.png" position="100,582" size="300,50" zPosition="1" alphatest="on" />
-    <widget name="Timeline" position="479,587" size="696,20" zPosition="3" backgroundColor="Grey" pointer="skin_default/position_arrow.png:3,5" foregroundColor="Black" />
-    <eLabel text="OK = Menu" position="1060,630" size="140,22" zPosition="1" font="Bold;20" backgroundColor="Black" transparent="1" />
   </screen>
   <!-- */ Other Plugins -->
   <!--/* MYTUBE -->
