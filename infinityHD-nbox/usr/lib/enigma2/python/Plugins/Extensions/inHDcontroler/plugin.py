@@ -213,6 +213,10 @@ config.plugins.inHD.WindowStyle = ConfigSelection(default="new", choices = [
 				("new", _("New")),
 				("classic", _("Classic"))
 				])
+config.plugins.inHD.ShowFooter = ConfigSelection(default="true", choices = [
+				("True", _("Yes")),
+				("False", _("No"))
+				])
 				
 def main(session, **kwargs):
 	session.open(inHDsetup)
@@ -254,6 +258,7 @@ class inHDsetup(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
 		list.append(getConfigListEntry(_("============ Infobar  ============"), ))
 		list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
+		list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
 		list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
 		list.append(getConfigListEntry(_("============ Second Infobar  ============"), ))
 		list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
@@ -338,9 +343,15 @@ class inHDsetup(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-sidesc-" + config.plugins.inHD.SIDesc.value + ".xml")
 			self.appendSkinFile(self.daten + "fonts/skin-fonts-subtitles.xml")
 			# Infobar
-			self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml")
+			if config.plugins.inHD.ShowFooter=="True":
+				self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml")
+			else:
+				self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + "-nofooter.xml")
 			# Infobar Footer
-			self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml")
+			if config.plugins.inHD.ShowFooter=="True":
+				self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml")
+			else:
+				self.appendSkinFile(self.daten + "footer-infobar-dummy.xml")
 			# Second Infobar
 			if config.plugins.inHD.SecondInfobarFooter.value=="ecmsatsig":
 				self.appendSkinFile(self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + "-ecm.xml")
@@ -373,7 +384,10 @@ class inHDsetup(ConfigListScreen, Screen):
 			# Volume Bar
 			self.appendSkinFile(self.daten + "volumebar-" + config.plugins.inHD.VolumeBar.value + ".xml")
 			# Virtual Zap
-			self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + ".xml")
+			if config.plugins.inHD.ShowFooter=="True":
+				self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + ".xml")
+			else:
+				self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + "-nofooter.xml")
 			# Skin rest
 			self.appendSkinFile(self.daten + "skin-rest.xml")
 			

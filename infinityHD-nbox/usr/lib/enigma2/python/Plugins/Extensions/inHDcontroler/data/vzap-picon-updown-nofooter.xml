@@ -1,0 +1,34 @@
+  <!--/* VIRTUAL ZAP PICON UP/DOWN -->
+  <screen backgroundColor="Transparent" flags="wfNoBorder" name="VirtualZapPiconNoPiP" position="center,0" size="1280,720" title="Virtual Zap">
+    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%A</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="843,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%d.%m</convert>
+    </widget>
+    <widget backgroundColor="Transparent" name="video" position="0,0" size="0,0" zPosition="1" />
+    <ePixmap position="0,0" zPosition="-1" size="1280,120" pixmap="infinityHD-nbox/infobar_2up120.png" />
+    <ePixmap position="0,525" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
+	<widget position="175,30" size="125,50" name="NowNum" font="Bold; 45" valign="center" halign="center" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
+    <widget position="305,30" size="570,50" name="NowChannel" font="Bold; 45" valign="center" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight" />
+    <widget name="vzPicon" position="75,25" size="100,60" zPosition="4" alphatest="blend" transparent="1" />
+    <widget position="67,570" size="836,35" name="NowEPG" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
+    <widget position="921,570" size="145,35" name="NowTime" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
+    <widget position="67,624" size="836,35" name="NextEPG" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left" />
+    <widget position="921,624" size="145,35" name="NextTime" font="Regular; 28" valign="bottom" foregroundColor="TextDimmed" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1" />
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1081,584" zPosition="3" size="36,36" alphatest="on">
+      <convert type="ConditionalShowHide" />
+    </widget>
+	<ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1121,584" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1081,624" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_txt_no_kl.png" position="1161,584" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_hd_no_kl.png" position="1121,624" size="36,36" zPosition="1" alphatest="on" />
+    <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1161,624" size="36,36" zPosition="1" alphatest="on" />
+    <eLabel name="ProgressbarBack" position="172,613" size="890,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <widget name="vzProgress" position="172,612" size="890,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5" />
+  </screen>
+  <!-- VIRTUAL ZAP PICON UP/DOWN */-->
+  
