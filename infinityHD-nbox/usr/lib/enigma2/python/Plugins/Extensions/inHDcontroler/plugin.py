@@ -264,7 +264,7 @@ class inHDsetup(ConfigListScreen, Screen):
 									"yellow": self.reboot,
 									"blue": self.showInfo,
 									"green": self.save,
-									"cancel": self.exit}, -1)
+									"cancel": self.exit}, -2)
 
 	def keyLeft(self):	
 		ConfigListScreen.keyLeft(self)	
