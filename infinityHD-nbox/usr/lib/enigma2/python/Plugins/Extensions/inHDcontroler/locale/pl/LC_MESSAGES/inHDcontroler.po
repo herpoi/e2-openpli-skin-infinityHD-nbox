@@ -287,8 +287,8 @@ msgid "Colors:"
 msgstr "Kolory:"
 
 #: plugin.py:255
-msgid "============ Infobar  ============"
-msgstr "============ Pasek info  ============"
+msgid "============ Infobar ============"
+msgstr "============ Pasek info ============"
 
 #: plugin.py:256
 msgid "Infobar:"
@@ -299,8 +299,8 @@ msgid "Infobar Footer:"
 msgstr "Stopka paska info:"
 
 #: plugin.py:258
-msgid "============ Second Infobar  ============"
-msgstr "============ Dodaktowy pasek info  ============"
+msgid "============ Second Infobar ============"
+msgstr "============ Dodaktowy pasek info ============"
 
 #: plugin.py:259
 msgid "Second Infobar:"
@@ -311,8 +311,8 @@ msgid "Second Infobar Footer:"
 msgstr "Stopka dodatkowego paska info:"
 
 #: plugin.py:261
-msgid "============ Channel Selection  ============"
-msgstr "============ Lista kanałów  ============"
+msgid "============ Channel Selection ============"
+msgstr "============ Lista kanałów ============"
 
 #: plugin.py:262
 msgid "Channel Selection side:"
@@ -331,8 +331,8 @@ msgid "How many next events to show on Channel Selection screen:"
 msgstr "Ilość następnych audycji do wyświetlenia:"
 
 #: plugin.py:266
-msgid "============ Other  ============"
-msgstr "============ Inne ustawienia  ============"
+msgid "============ Other ============"
+msgstr "============ Inne ustawienia ============"
 
 #: plugin.py:267
 msgid "EPG Selection:"
@@ -381,3 +381,7 @@ msgid ""
 msgstr ""
 "Aby załadować nowy wygląd skórki, należy wykonać restart GUI.\n"
 "Czy chcesz teraz wykonać restert GUI?"
+
+#: plugin.py
+msgid "Show footer in Infobar:"
+msgstr "Pokaż stopkę paska info:"
