@@ -1,0 +1,76 @@
+  <!--/* INFOBAR PICON UP/DOWN NOFOOTER -->
+  <screen backgroundColor="Transparent" flags="wfNoBorder" name="InfoBar" position="center,center" size="1280,720" title="InfoBar">
+    <ePixmap position="0,0" zPosition="-1" size="1280,120" pixmap="infinityHD-nbox/infobar_2up120.png" />
+    <ePixmap position="0,560" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
+    <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1081,584" zPosition="3" size="36,36" alphatest="on">
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.CurrentService" render="ChannelNumber" position="175,30" size="125,50" font="Bold; 45" valign="center" halign="center" transparent="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" noWrap="1" foregroundColor="TextHighlight">
+    </widget>
+    <widget position="305,30" size="570,50" source="session.CurrentService" render="Label" font="Bold; 45" valign="center" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Picon" position="75,25" size="100,60" zPosition="4" alphatest="blend" transparent="1">
+      <convert type="ServiceName">Reference</convert>
+    </widget>
+    <widget position="67,605" size="90,35" source="session.Event_Now" render="Label" font="Bold; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="right">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget position="169,605" size="746,35" source="session.Event_Now" render="Label" font="Bold; 28" valign="bottom" noWrap="1" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget position="921,605" size="145,35" source="session.Event_Now" render="Label" font="Bold; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" halign="right" transparent="1">
+      <convert type="EventTime">Remaining</convert>
+      <convert type="RemainingToText">InMinutes</convert>
+    </widget>
+    <widget position="67,659" size="90,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1" halign="right">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget position="169,659" size="746,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" noWrap="1" backgroundColor="BackTransparent" foregroundColor="TextDimmed" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget position="921,659" size="145,35" source="session.Event_Next" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" foregroundColor="TextDimmed" halign="right" transparent="1">
+      <convert type="EventTime">Duration</convert>
+      <convert type="ClockToText">InMinutes</convert>
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_dolby_no_kl.png" position="1121,619" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_dolby_kl.png" position="1121,619" size="36,36" zPosition="2" alphatest="on">
+      <convert type="ServiceInfo">IsMultichannel</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_format_no_kl.png" position="1081,659" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_format_kl.png" position="1081,659" size="36,36" zPosition="2" alphatest="on">
+      <convert type="ServiceInfo">IsWidescreen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_txt_no_kl.png" position="1161,619" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_txt_kl.png" position="1162,619" size="36,36" zPosition="2" alphatest="on">
+      <convert type="ServiceInfo">HasTelext</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_sd_kl.png" position="1121,659" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_hd_kl.png" position="1121,659" size="36,36" zPosition="2" alphatest="on">
+      <convert type="ServiceInfo">VideoWidth</convert>
+      <convert type="ValueRange">800,2000</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <ePixmap pixmap="infinityHD-nbox/icons/i_crypt_no_kl.png" position="1161,659" size="36,36" zPosition="1" alphatest="on" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="infinityHD-nbox/icons/i_crypt_kl.png" position="1161,659" size="36,36" zPosition="2" alphatest="on">
+      <convert type="ServiceInfo">IsCrypted</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="session.Event_Now" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="172,647" size="890,3" transparent="1" backgroundColor="BackTransparent" zPosition="5">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <eLabel name="ProgressbarBack" position="172,648" size="890,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="844,30" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%A</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="843,53" size="210,26" font="Bold; 21" halign="right" backgroundColor="Black" transparent="1" valign="top" foregroundColor="BigDateInfobar">
+      <convert type="inHDClockToText">Format:%d.%m</convert>
+    </widget>

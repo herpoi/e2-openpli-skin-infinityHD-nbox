@@ -290,7 +290,7 @@ msgid "Colors:"
 msgstr ""
 
 #: plugin.py:255
-msgid "============ Infobar  ============"
+msgid "============ Infobar ============"
 msgstr ""
 
 #: plugin.py:256
@@ -302,7 +302,7 @@ msgid "Infobar Footer:"
 msgstr ""
 
 #: plugin.py:258
-msgid "============ Second Infobar  ============"
+msgid "============ Second Infobar ============"
 msgstr ""
 
 #: plugin.py:259
@@ -314,7 +314,7 @@ msgid "Second Infobar Footer:"
 msgstr ""
 
 #: plugin.py:261
-msgid "============ Channel Selection  ============"
+msgid "============ Channel Selection ============"
 msgstr ""
 
 #: plugin.py:262
@@ -334,7 +334,7 @@ msgid "How many next events to show on Channel Selection screen:"
 msgstr ""
 
 #: plugin.py:266
-msgid "============ Other  ============"
+msgid "============ Other ============"
 msgstr ""
 
 #: plugin.py:267
@@ -382,3 +382,8 @@ msgid ""
 "GUI needs a restart to apply a new skin.\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
+
+#: plugin.py
+msgid "Show footer in Infobar:"
+msgstr ""
+

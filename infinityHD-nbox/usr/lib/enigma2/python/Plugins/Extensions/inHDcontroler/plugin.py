@@ -44,30 +44,7 @@ from Components.Pixmap import Pixmap
 import urllib
 import gettext
 from enigma import ePicLoad
-#from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from __init__ import _
-
-#############################################################
-
-#lang = language.getLanguage()
-#environ["LANGUAGE"] = lang[:2]
-#gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-#gettext.textdomain("enigma2")
-#gettext.bindtextdomain("inHDcontroler", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/inHDcontroler/locale/"))
-
-#def _(txt):
-#	t = gettext.dgettext("inHDcontroler", txt)
-#	if t == txt:
-#		t = gettext.gettext(txt)
-#	return t
-
-#def translateBlock(block):
-#	for x in TranslationHelper:
-#		if block.__contains__(x[0]):
-#			block = block.replace(x[0], x[1])
-#	return block
-
-#############################################################
 
 config.plugins.inHD  = ConfigSubsection()
 config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
@@ -213,6 +190,10 @@ config.plugins.inHD.WindowStyle = ConfigSelection(default="new", choices = [
 				("new", _("New")),
 				("classic", _("Classic"))
 				])
+config.plugins.inHD.ShowFooter = ConfigSelection(default="true", choices = [
+				("True", _("Yes")),
+				("False", _("No"))
+				])
 				
 def main(session, **kwargs):
 	session.open(inHDsetup)
@@ -252,10 +233,11 @@ class inHDsetup(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("EPG font size on Event View screen:"), config.plugins.inHD.EvDesc))
 		list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen:"), config.plugins.inHD.GraphDesc))
 		list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
-		list.append(getConfigListEntry(_("============ Infobar  ============"), ))
+		list.append(getConfigListEntry(_("============ Infobar ============"), ))
 		list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
+		list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
 		list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
-		list.append(getConfigListEntry(_("============ Second Infobar  ============"), ))
+		list.append(getConfigListEntry(_("============ Second Infobar ============"), ))
 		list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
 		list.append(getConfigListEntry(_("Second Infobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
 		list.append(getConfigListEntry(_("============ Channel Selection  ============"), ))
@@ -263,7 +245,7 @@ class inHDsetup(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Picon size:"), config.plugins.inHD.Picon))
 		list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
 		list.append(getConfigListEntry(_("How many next events to show on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionNumberNext))
-		list.append(getConfigListEntry(_("============ Other  ============"), ))
+		list.append(getConfigListEntry(_("============ Other ============"), ))
 		list.append(getConfigListEntry(_("EPG Selection:"), config.plugins.inHD.EpgSelection))
 		list.append(getConfigListEntry(_("Event View:"), config.plugins.inHD.Eventview))
 		list.append(getConfigListEntry(_("Number Zap:"), config.plugins.inHD.NumberZap))
@@ -282,15 +264,7 @@ class inHDsetup(ConfigListScreen, Screen):
 									"yellow": self.reboot,
 									"blue": self.showInfo,
 									"green": self.save,
-									"cancel": self.exit}, -1)
-#		self.onLayoutFinish.append(self.UpdateComponents)
-
-#	def UpdateComponents(self):
-#		self.UpdatePicture()
-		#if not fileExists(self.datei + self.release):
-		#	system('cp -f ' + self.komponente + 'hardyPicon2.py /usr/lib/enigma2/python/Components/Renderer/hardyPicon2.py')
-		#	system("tar -xzvf " + self.komponente + "MetrixHD.tar.gz" + " -C /")
-		#	system("touch " + self.datei + self.release)
+									"cancel": self.exit}, -2)
 
 	def keyLeft(self):	
 		ConfigListScreen.keyLeft(self)	
@@ -299,14 +273,10 @@ class inHDsetup(ConfigListScreen, Screen):
 		ConfigListScreen.keyRight(self)
 	
 	def keyDown(self):
-		#print "key down"
 		self["config"].instance.moveSelection(self["config"].instance.moveDown)
-		#ConfigListScreen.keyDown(self)
 		
 	def keyUp(self):
-		#print "key up"
 		self["config"].instance.moveSelection(self["config"].instance.moveUp)
-		#ConfigListScreen.keyUp(self)
 	
 	def reboot(self):
 		restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("Do you really want to restart GUI now?"), MessageBox.TYPE_YESNO)
@@ -338,9 +308,15 @@ class inHDsetup(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-sidesc-" + config.plugins.inHD.SIDesc.value + ".xml")
 			self.appendSkinFile(self.daten + "fonts/skin-fonts-subtitles.xml")
 			# Infobar
-			self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml")
+			if config.plugins.inHD.ShowFooter=="True":
+				self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml")
+			else:
+				self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + "-nofooter.xml")
 			# Infobar Footer
-			self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml")
+			if config.plugins.inHD.ShowFooter=="True":
+				self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml")
+			else:
+				self.appendSkinFile(self.daten + "footer-infobar-dummy.xml")
 			# Second Infobar
 			if config.plugins.inHD.SecondInfobarFooter.value=="ecmsatsig":
 				self.appendSkinFile(self.daten + "secondinfobar-" + config.plugins.inHD.SecondInfobar.value + "-ecm.xml")
@@ -364,16 +340,17 @@ class inHDsetup(ConfigListScreen, Screen):
 			# NumberZap
 			self.appendSkinFile(self.daten + "numberzap-" + config.plugins.inHD.NumberZap.value + ".xml")
 			# Movie Player & Movie Selection
-			if config.plugins.inHD.Infobar.value=="bigpicon-classic":
-				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
-			elif config.plugins.inHD.Infobar.value=="bigpicon-updown":
+			if config.plugins.inHD.Infobar.value=="bigpicon-classic" or config.plugins.inHD.Infobar.value=="bigpicon-updown":
 				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
 			else:
 				self.appendSkinFile(self.daten + "movie-picon.xml")
 			# Volume Bar
 			self.appendSkinFile(self.daten + "volumebar-" + config.plugins.inHD.VolumeBar.value + ".xml")
 			# Virtual Zap
-			self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + ".xml")
+			if config.plugins.inHD.ShowFooter=="True":
+				self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + ".xml")
+			else:
+				self.appendSkinFile(self.daten + "vzap-" + config.plugins.inHD.Infobar.value + "-nofooter.xml")
 			# Skin rest
 			self.appendSkinFile(self.daten + "skin-rest.xml")
 			
@@ -382,7 +359,10 @@ class inHDsetup(ConfigListScreen, Screen):
 				xFile.writelines(xx)
 			xFile.close()
 			self.skin_lines = []
-#			system("rm -rf " + self.datei + "&& mv " + self.dateiTMP + " " + self.datei)
+			if config.plugins.inHD.Infobar.value=="bigpicon-classic" or config.plugins.inHD.Infobar.value=="bigpicon-updown":
+				system("rm -f /usr/share/enigma2/infinityHD-nbox/picon_default.png && ln -s /usr/share/enigma2/infinityHD-nbox/bigpicon_default.png /usr/share/enigma2/infinityHD-nbox/picon_default.png")
+			else:
+				system("rm -f /usr/share/enigma2/infinityHD-nbox/picon_default.png && ln -s /usr/share/enigma2/infinityHD-nbox/stdpicon_default.png /usr/share/enigma2/infinityHD-nbox/picon_default.png")
 			self.session.open(MessageBox, _("Successfully creating Skin!"), MessageBox.TYPE_INFO, timeout=5)
 
 		except:
