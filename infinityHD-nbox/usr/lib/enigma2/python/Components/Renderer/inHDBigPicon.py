@@ -48,9 +48,9 @@ class inHDBigPicon(Renderer):
 			if pngname == "": # no picon for service found
 				pngname = self.nameCache.get("default", "")
 				if pngname == "": # no default yet in cache..
-					pngname = self.findPicon("bigpicon_default")
+					pngname = self.findPicon("picon_default")
 					if pngname == "":
-						tmp = resolveFilename(SCOPE_CURRENT_SKIN, "bigpicon_default.png")
+						tmp = resolveFilename(SCOPE_CURRENT_SKIN, "picon_default.png")
 						if fileExists(tmp):
 							pngname = tmp
 						else:
