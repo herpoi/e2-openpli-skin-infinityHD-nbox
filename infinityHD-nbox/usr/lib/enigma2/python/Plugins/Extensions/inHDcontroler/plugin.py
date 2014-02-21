@@ -33,7 +33,7 @@ from Screens.Console import Console
 from Screens.Standby import TryQuitMainloop
 from Components.ActionMap import ActionMap
 from Components.AVSwitch import AVSwitch
-from Components.config import config, configfile, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigNumber, ConfigText, ConfigInteger
+from Components.config import config, configfile, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigNumber, ConfigText, ConfigInteger, ConfigBoolean, ConfigNothing, ConfigSlider
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.Language import language
@@ -203,7 +203,7 @@ def Plugins(**kwargs):
 
 #######################################################################
 
-class inHDsetup(ConfigListScreen, Screen):
+class inHDsetup(Screen, ConfigListScreen):
 	skin = """
     <screen name="inHDsetup" position="center,center" size="780,600" title="inHD Controler GIT">
       <ePixmap position="117,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="blend" transparent="1" />
@@ -217,44 +217,20 @@ class inHDsetup(ConfigListScreen, Screen):
     </screen>"""
 
 	def __init__(self, session, args = None):
-		self.release = "-git"
-		self.skin_lines = []
 		Screen.__init__(self, session)
 		self.session = session
+		self.onChangedEntry = [ ]
 		self.datei = "/usr/share/enigma2/infinityHD-nbox/skin.xml"
 		self.dateiTMP = "/usr/share/enigma2/infinityHD-nbox/skin.xml.tmp"
 		self.daten = "/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/"
-		list = []
-		list.append(getConfigListEntry(_("============ Fonts & colors ============"), ))
-		list.append(getConfigListEntry(_("Font:"), config.plugins.inHD.Font))
-		list.append(getConfigListEntry(_("EPG font size on Channel Selection screen:"), config.plugins.inHD.ChSelDesc))
-		list.append(getConfigListEntry(_("EPG font size on Second Infobar screen:"), config.plugins.inHD.SIDesc))
-		list.append(getConfigListEntry(_("EPG font size on EPG Selection screen:"), config.plugins.inHD.EPGSelDesc))
-		list.append(getConfigListEntry(_("EPG font size on Event View screen:"), config.plugins.inHD.EvDesc))
-		list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen:"), config.plugins.inHD.GraphDesc))
-		list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
-		list.append(getConfigListEntry(_("============ Infobar ============"), ))
-		list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
-		list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
-		list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
-		list.append(getConfigListEntry(_("============ Second Infobar ============"), ))
-		list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
-		list.append(getConfigListEntry(_("Second Infobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
-		list.append(getConfigListEntry(_("============ Channel Selection  ============"), ))
-		list.append(getConfigListEntry(_("Channel Selection side:"), config.plugins.inHD.Side))
-		list.append(getConfigListEntry(_("Picon size:"), config.plugins.inHD.Picon))
-		list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
-		list.append(getConfigListEntry(_("How many next events to show on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionNumberNext))
-		list.append(getConfigListEntry(_("============ Other ============"), ))
-		list.append(getConfigListEntry(_("EPG Selection:"), config.plugins.inHD.EpgSelection))
-		list.append(getConfigListEntry(_("Event View:"), config.plugins.inHD.Eventview))
-		list.append(getConfigListEntry(_("Number Zap:"), config.plugins.inHD.NumberZap))
-		list.append(getConfigListEntry(_("Volume Bar:"), config.plugins.inHD.VolumeBar))
-		list.append(getConfigListEntry(_("Window Style:"), config.plugins.inHD.WindowStyle))
-	
+		self.release = "-git"
+		self.skin_lines = []
 		
-		ConfigListScreen.__init__(self, list)
-		self["actions"] = ActionMap(["OkCancelActions","DirectionActions", "InputActions", "ColorActions"],
+		self.list = [ ]
+		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+		self.createSetup()
+
+		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions", "InputActions", "ColorActions"],
 									{
 									"left": self.keyLeft,
 									"down": self.keyDown,
@@ -266,11 +242,50 @@ class inHDsetup(ConfigListScreen, Screen):
 									"green": self.save,
 									"cancel": self.exit}, -2)
 
+	def createSetup(self):								
+		self.list = []
+		self.list.append(getConfigListEntry(_("============ Fonts & colors ============"), ))
+		self.list.append(getConfigListEntry(_("Font:"), config.plugins.inHD.Font))
+		self.list.append(getConfigListEntry(_("EPG font size on Channel Selection screen:"), config.plugins.inHD.ChSelDesc))
+		self.list.append(getConfigListEntry(_("EPG font size on Second Infobar screen:"), config.plugins.inHD.SIDesc))
+		self.list.append(getConfigListEntry(_("EPG font size on EPG Selection screen:"), config.plugins.inHD.EPGSelDesc))
+		self.list.append(getConfigListEntry(_("EPG font size on Event View screen:"), config.plugins.inHD.EvDesc))
+		self.list.append(getConfigListEntry(_("EPG font size on GraphMultiEPG screen:"), config.plugins.inHD.GraphDesc))
+		self.list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
+		self.list.append(getConfigListEntry(_("============ Infobar ============"), ))
+		self.list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
+		self.list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
+		if config.plugins.inHD.ShowFooter.value=="True":
+			self.list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
+		self.list.append(getConfigListEntry(_("============ Second Infobar ============"), ))
+		self.list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
+		self.list.append(getConfigListEntry(_("Second Infobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
+		self.list.append(getConfigListEntry(_("============ Channel Selection ============"), ))
+		self.list.append(getConfigListEntry(_("Channel Selection side:"), config.plugins.inHD.Side))
+		self.list.append(getConfigListEntry(_("Picon size:"), config.plugins.inHD.Picon))
+		self.list.append(getConfigListEntry(_("Channel Selection rows:"), config.plugins.inHD.Rows))
+		self.list.append(getConfigListEntry(_("How many next events to show on Channel Selection screen:"), config.plugins.inHD.ChannelSelectionNumberNext))
+		self.list.append(getConfigListEntry(_("============ Other ============"), ))
+		self.list.append(getConfigListEntry(_("EPG Selection:"), config.plugins.inHD.EpgSelection))
+		self.list.append(getConfigListEntry(_("Event View:"), config.plugins.inHD.Eventview))
+		self.list.append(getConfigListEntry(_("Number Zap:"), config.plugins.inHD.NumberZap))
+		self.list.append(getConfigListEntry(_("Volume Bar:"), config.plugins.inHD.VolumeBar))
+		self.list.append(getConfigListEntry(_("Window Style:"), config.plugins.inHD.WindowStyle))
+
+		self["config"].list = self.list
+		self["config"].l.setList(self.list)
+
+	def changedEntry(self):
+		for x in self.onChangedEntry:
+			x()
+			
 	def keyLeft(self):	
-		ConfigListScreen.keyLeft(self)	
+		ConfigListScreen.keyLeft(self)
+		self.createSetup()
 
 	def keyRight(self):
 		ConfigListScreen.keyRight(self)
+		self.createSetup()
 	
 	def keyDown(self):
 		self["config"].instance.moveSelection(self["config"].instance.moveDown)
@@ -308,12 +323,12 @@ class inHDsetup(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + "fonts/skin-fonts-" + config.plugins.inHD.Font.value + "-sidesc-" + config.plugins.inHD.SIDesc.value + ".xml")
 			self.appendSkinFile(self.daten + "fonts/skin-fonts-subtitles.xml")
 			# Infobar
-			if config.plugins.inHD.ShowFooter=="True":
+			if config.plugins.inHD.ShowFooter.value=="True":
 				self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + ".xml")
 			else:
 				self.appendSkinFile(self.daten + "infobar-" + config.plugins.inHD.Infobar.value + "-nofooter.xml")
 			# Infobar Footer
-			if config.plugins.inHD.ShowFooter=="True":
+			if config.plugins.inHD.ShowFooter.value=="True":
 				self.appendSkinFile(self.daten + "footer-infobar-" + config.plugins.inHD.InfobarFooter.value + ".xml")
 			else:
 				self.appendSkinFile(self.daten + "footer-infobar-dummy.xml")
