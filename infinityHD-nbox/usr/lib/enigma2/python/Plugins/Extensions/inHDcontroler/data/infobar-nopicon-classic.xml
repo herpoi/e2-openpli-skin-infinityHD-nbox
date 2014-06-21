@@ -66,5 +66,5 @@
     <widget source="session.Event_Now" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="81,572" size="980,3" transparent="1" backgroundColor="BackTransparent" zPosition="5">
       <convert type="EventTime">Progress</convert>
     </widget>
-    <eLabel name="ProgressbarBack" position="81,573" size="890,1" backgroundColor="ProgressbarBack" zPosition="4" />
+    <eLabel name="ProgressbarBack" position="81,573" size="980,1" backgroundColor="ProgressbarBack" zPosition="4" />
     <eLabel position="67,665" size="1144,2" backgroundColor="Stripe" />
