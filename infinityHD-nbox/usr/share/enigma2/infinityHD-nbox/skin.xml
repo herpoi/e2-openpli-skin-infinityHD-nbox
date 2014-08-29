@@ -634,7 +634,7 @@
   </screen>
   <!-- VIRTUAL ZAP BIGPICON CLASSIC */-->
   <!--/* GraphMultiEPG -->
-  <screen name="GraphMultiEPG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder">
+  <screen name="GraphMultiEPG" position="fill" title="Electronic Program Guide" flags="wfNoBorder">
     <eLabel position="60,25" size="605,35" text="Electronic Program Guide" halign="left" font="Bold; 28" transparent="1" zPosition="2" />
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
     <eLabel position="60,331" size="1177,2" backgroundColor="Stripe" />
@@ -643,30 +643,8 @@
       <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
     </widget>
     <widget name="timeline_text" position="60,342" size="1177,30" transparent="1" backgroundColor="BackTransparent" font="Bold; 22" />
-    <widget name="list" position="60,372" size="1177,252" transparent="1"
-    itemHeight="42"
-    EntryFont="Regular; 22"
-    ServiceFont="Bold; 22"
-    ServiceNamePadding="3"
-    EventNamePadding="8"
-    EventBorderWidth="1"
-    ServiceBorderWidth="0"
-    ServiceForegroundColorSelected="TextHighlight2"
-    ServiceForegroundColor="TextHighlight2"
-    EntryForegroundColorSelected="#F3F3F3"
-    EntryForegroundColor="#F3F3F3"
-    ServiceBackgroundColor="BackTransparent"
-    ServiceBackgroundColorSelected="#12474747"
-    ServiceBackgroundColorRecording="BackTransparent"
-    ServiceForegroundColorRecording="TextHighlight2"
-    EntryForegroundColorNow="#F3F3F3"
-    EntryBorderColor="BackTransparent"
-    ServiceBorderColor="BackTransparent"
-    EntryBackgroundColorSelected="#141C1C62"
-    EntryBackgroundColor="#12474747"
-    EntryBackgroundColorNow="#122C2C2C"
-    />
-    <widget name="timeline_now" position="60,372" zPosition="2" size="1,252" pixmap="infinityHD-nbox/timeline-now.png" alphatest="on" />
+    <widget name="list" position="60,372" size="1177,252" transparent="1" EntryFont="Regular; 22" ServiceFont="Bold; 22" ServiceNamePadding="3" EventNamePadding="8" EventBorderWidth="1" ServiceBorderWidth="1" EntryForegroundColorNow="#ffffff" EntryForegroundColor="TextLightDimmed" EntryForegroundColorSelected="#ffffff" ServiceForegroundColorRecording="#ffffff" />
+    <widget name="timeline_now" position="60,372" zPosition="2" size="4,252" pixmap="infinityHD-nbox/timeline-now.png" alphatest="on" />
     <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
     <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
     <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
@@ -675,12 +653,12 @@
     <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
     <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
     <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
-    <widget name="timeline0" position="0,372" zPosition="1" size="0,252" pixmap="skin_default/timeline.png" />
-    <widget name="timeline1" position="0,372" zPosition="1" size="0,252" pixmap="skin_default/timeline.png" />
-    <widget name="timeline2" position="0,372" zPosition="1" size="0,252" pixmap="skin_default/timeline.png" />
-    <widget name="timeline3" position="0,372" zPosition="1" size="0,252" pixmap="skin_default/timeline.png" />
-    <widget name="timeline4" position="0,372" zPosition="1" size="0,252" pixmap="skin_default/timeline.png" />
-    <widget name="timeline5" position="0,372" zPosition="1" size="0,252" pixmap="skin_default/timeline.png" />
+    <widget name="timeline0" position="0,372" zPosition="1" size="0,252" pixmap="infinityHD-nbox/timeline.png" />
+    <widget name="timeline1" position="0,372" zPosition="1" size="0,252" pixmap="infinityHD-nbox/timeline.png" />
+    <widget name="timeline2" position="0,372" zPosition="1" size="0,252" pixmap="infinityHD-nbox/timeline.png" />
+    <widget name="timeline3" position="0,372" zPosition="1" size="0,252" pixmap="infinityHD-nbox/timeline.png" />
+    <widget name="timeline4" position="0,372" zPosition="1" size="0,252" pixmap="infinityHD-nbox/timeline.png" />
+    <widget name="timeline5" position="0,372" zPosition="1" size="0,252" pixmap="infinityHD-nbox/timeline.png" />
     <widget source="Event" render="Label" position="383,77" zPosition="1" size="850,30" font="Bold; 24" valign="center" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1" noWrap="1">
       <convert type="EventName">Name</convert>
     </widget>
@@ -698,7 +676,6 @@
     <widget source="Event" render="Progress" position="229,90" size="142,3" pixmap="infinityHD-nbox/progressnbox.png" transparent="1" zPosition="5">
       <convert type="EventTime">Progress</convert>
     </widget>
-
     <eLabel name="ProgressbarBack" position="229,91" size="142,1" backgroundColor="ProgressbarBack" zPosition="4" />
   </screen>
   <screen name="GraphMultiEPGList" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder">
@@ -708,31 +685,20 @@
     <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold; 28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="TextHighlight2">
       <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
     </widget>
+    <widget source="Event" render="Label" position="230,580" zPosition="1" size="850,30" font="Bold; 24" valign="center" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1" noWrap="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="Event" render="Label" position="60,580" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="left">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="Event" render="Label" position="132,580" zPosition="1" size="90,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format:- %H:%M</convert>
+    </widget>
     <widget name="timeline_text" position="60,75" size="1177,30" transparent="1" backgroundColor="BackTransparent" font="Bold; 22" />
-    <widget name="list" position="60,110" size="1177,504" transparent="1"
-    itemHeight="42"
-    EntryFont="Regular; 22"
-    ServiceFont="Bold; 22"
-    ServiceNamePadding="3"
-    EventNamePadding="8"
-    EventBorderWidth="1"
-    ServiceBorderWidth="0"
-    ServiceForegroundColorSelected="TextHighlight2"
-    ServiceForegroundColor="TextHighlight2"
-    EntryForegroundColorSelected="#F3F3F3"
-    EntryForegroundColor="#F3F3F3"
-    ServiceBackgroundColor="BackTransparent"
-    ServiceBackgroundColorSelected="#12474747"
-    ServiceBackgroundColorRecording="BackTransparent"
-    ServiceForegroundColorRecording="TextHighlight2"
-    EntryForegroundColorNow="#F3F3F3"
-    EntryBorderColor="BackTransparent"
-    ServiceBorderColor="BackTransparent"
-    EntryBackgroundColorSelected="#141C1C62"
-    EntryBackgroundColor="#12474747"
-    EntryBackgroundColorNow="#122C2C2C"
-    />
-    <widget name="timeline_now" position="60,110" zPosition="2" size="1,504" pixmap="infinityHD-nbox/timeline-now.png" alphatest="on" />
+    <widget name="list" position="60,110" size="1177,460" transparent="1" EntryFont="Regular; 22" ServiceFont="Bold; 22" ServiceNamePadding="3" EventNamePadding="8" EventBorderWidth="1" ServiceBorderWidth="1" EntryForegroundColorNow="#ffffff" EntryForegroundColor="TextLightDimmed" EntryForegroundColorSelected="#ffffff" ServiceForegroundColorRecording="#ffffff" />
+    <widget name="timeline_now" position="60,110" zPosition="2" size="4,460" pixmap="infinityHD-nbox/timeline-now.png" alphatest="on" />
     <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
     <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
     <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
@@ -741,12 +707,12 @@
     <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
     <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
     <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
-    <widget name="timeline0" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
-    <widget name="timeline1" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
-    <widget name="timeline2" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
-    <widget name="timeline3" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
-    <widget name="timeline4" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
-    <widget name="timeline5" position="0,110" zPosition="1" size="0,504" pixmap="skin_default/timeline.png" />
+    <widget name="timeline0" position="0,110" zPosition="1" size="0,460" pixmap="infinityHD-nbox/timeline.png" alphatest="on" />
+    <widget name="timeline1" position="0,110" zPosition="1" size="0,460" pixmap="infinityHD-nbox/timeline.png" alphatest="on" />
+    <widget name="timeline2" position="0,110" zPosition="1" size="0,460" pixmap="infinityHD-nbox/timeline.png" alphatest="on" />
+    <widget name="timeline3" position="0,110" zPosition="1" size="0,460" pixmap="infinityHD-nbox/timeline.png" alphatest="on" />
+    <widget name="timeline4" position="0,110" zPosition="1" size="0,460" pixmap="infinityHD-nbox/timeline.png" alphatest="on" />
+    <widget name="timeline5" position="0,110" zPosition="1" size="0,460" pixmap="infinityHD-nbox/timeline.png" alphatest="on" />
   </screen>
   <!-- GraphMultiEPG */-->
   <!--/* CutListEditor -->
