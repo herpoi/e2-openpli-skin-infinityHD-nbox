@@ -1,12 +1,12 @@
   <!--/* MUTE -->
-  <screen name="Mute" zPosition="1" position="0,0" size="109,75" title="Mute" backgroundColor="Transparent" flags="wfNoBorder">
-	<ePixmap position="0,0" size="109,75" pixmap="infinityHD-nbox/volume/mute_new.png" alphatest="on" />
-  </screen>
+<screen name="Mute" zPosition="1" position="0,0" size="130,100" title="Mute" backgroundColor="BackTransparent" flags="wfNoBorder">
+  <ePixmap position="0,0" size="130,100" pixmap="infinityHD-nbox/volume/mute50.png" alphatest="blend" transparent="1" />
+</screen>
   <!-- MUTE */-->
   <!--/* VOLUME VERTICAL -->
-  <screen name="Volume" position="0,184" size="109,293" title="Volume" flags="wfNoBorder" zPosition="10" backgroundColor="Transparent">
-	<ePixmap position="0,0" zPosition="-1" size="109,293" pixmap="infinityHD-nbox/volume/volumebar_h_back.png" alphatest="on" />
-	<widget name="Volume" position="37,19" size="33,207" zPosition="1" pixmap="infinityHD-nbox/volume/volumebar_h_fore.png" transparent="1" orientation="orBottomToTop" alphatest="blend"  />
-  </screen>
+<screen name="Volume" position="0,210" size="130,300" title="Volume" flags="wfNoBorder" zPosition="10" backgroundColor="BackTransparent">
+  <ePixmap position="0,0" zPosition="-1" size="130,300" pixmap="infinityHD-nbox/volume/volumebar50_back.png" alphatest="blend" transparent="1" />
+  <widget name="Volume" position="37,24" size="59,200" zPosition="1" pixmap="infinityHD-nbox/volume/volumebar50_over.png" transparent="1" orientation="orBottomToTop" alphatest="blend" />
+</screen>
   <!-- VOLUME VERTICAL */-->
   
