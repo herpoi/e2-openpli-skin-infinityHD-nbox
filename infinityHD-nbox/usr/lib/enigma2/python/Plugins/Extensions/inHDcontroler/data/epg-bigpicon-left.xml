@@ -20,7 +20,7 @@
     <widget source="Service" render="Label" position="737,80" zPosition="1" size="270,60" font="Bold; 24" halign="left" valign="top">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="737,159" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="left">
+    <widget source="Event" render="Label" position="737,159" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>

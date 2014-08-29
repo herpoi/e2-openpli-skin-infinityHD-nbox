@@ -11,7 +11,7 @@
     <widget source="Event" render="Label" position="60,325" zPosition="1" size="1177,30" font="Bold; 24" valign="top" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="Event" render="Label" position="60,358" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="left">
+    <widget source="Event" render="Label" position="60,358" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>

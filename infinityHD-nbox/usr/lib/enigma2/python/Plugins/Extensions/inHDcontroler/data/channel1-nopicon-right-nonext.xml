@@ -13,7 +13,7 @@
     <widget source="ServiceEvent" render="Label" position="63,153" zPosition="1" size="500,32" font="Bold; 24" valign="top" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="63,114" zPosition="1" size="70,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
+    <widget source="ServiceEvent" render="Label" position="63,114" zPosition="1" size="75,30" font="Bold; 24" backgroundColor="BackTransparent" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
