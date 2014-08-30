@@ -1,7 +1,12 @@
-  <!--/* NUMBERZAP -->
+  <!--/* NumberZap/NumberZapExt Bottom Left -->
   <screen name="NumberZap" position="25,560" size="400,135" flags="wfNoBorder">
     <widget name="number" position="16,13" size="200,60" font="Bold; 55" halign="left" valign="center" />
-    <widget name="servicename" position="15,82" size="360,33" font="Bold; 31" valign="center" halign="left" foregroundColor="TextHighlight">
-    </widget>
+    <widget name="servicename" position="15,82" size="360,36" font="Bold; 31" valign="center" halign="left" foregroundColor="TextHighlight" />
   </screen>
-  <!-- NUMBERZAP */-->
+<screen name="NumberZapExt" position="25,530" size="650,165" flags="wfNoBorder">
+  <widget name="chPicon" position="20,17" size="220,132" transparent="1" zPosition="1" alphatest="blend" />
+  <widget name="chNum" position="260,17" size="200,40" halign="left" font="Bold; 36" transparent="1" />
+  <widget name="chName" position="260,62" size="360,36" halign="left" font="Bold; 31" noWrap="1" transparent="1" foregroundColor="TextHighlight" />
+  <widget name="chBouq" position="260,110" size="360,36" halign="left" font="Bold; 31" noWrap="1" transparent="1" foregroundColor="TextHighlight2" />
+</screen>
+  <!-- NumberZap/NumberZapExt Bottom Left */-->
