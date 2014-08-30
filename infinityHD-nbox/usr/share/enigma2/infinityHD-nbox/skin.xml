@@ -489,13 +489,18 @@
     <widget name="channel" position="60,25" size="605,35" font="Bold; 28" halign="left" transparent="1" zPosition="2" />
   </screen>
   <!-- EVENTVIEW NOPICON */-->
-  <!--/* NUMBERZAP CENTER -->
+  <!--/* NumberZap/NumberZapExt Center -->
   <screen name="NumberZap" position="440,242" size="400,135" flags="wfNoBorder">
     <widget name="number" position="96,13" size="200,60" font="Bold; 55" halign="center" valign="center" />
-    <widget name="servicename" position="15,82" size="360,33" font="Bold; 31" valign="center" halign="center" foregroundColor="TextHighlight">
-    </widget>
+    <widget name="servicename" position="15,82" size="360,36" font="Bold; 31" valign="center" halign="center" foregroundColor="TextHighlight" />
   </screen>
-  <!-- NUMBERZAP CENTER */-->
+<screen name="NumberZapExt" position="315,277" size="650,165" flags="wfNoBorder">
+  <widget name="chPicon" position="20,17" size="220,132" transparent="1" zPosition="1" alphatest="blend" />
+  <widget name="chNum" position="260,17" size="200,40" halign="left" font="Bold; 36" transparent="1" />
+  <widget name="chName" position="260,62" size="360,36" halign="left" font="Bold; 31" noWrap="1" transparent="1" foregroundColor="TextHighlight" />
+  <widget name="chBouq" position="260,110" size="360,36" halign="left" font="Bold; 31" noWrap="1" transparent="1" foregroundColor="TextHighlight2" />
+</screen>
+  <!-- NumberZap/NumberZapExt Center */--> 
   <!--/* MoviePlayer BigPicon -->
   <screen name="MoviePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
     <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
