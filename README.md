@@ -26,5 +26,6 @@ Osoby, którym pikony skalują się prawidłowo lub nie przeszkadzają powyższe
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/Volumebar_Vertical.jpg)
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/Mute_Vertical.jpg)
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/NumberZapExt.jpg)
+![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/EPGSearch.jpg)
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/WindowStyle_New.jpg)
 ![Screenshot](https://raw.github.com/herpoi/infinityHD-nbox/master/Screenshots/inHDcontroler.jpg)

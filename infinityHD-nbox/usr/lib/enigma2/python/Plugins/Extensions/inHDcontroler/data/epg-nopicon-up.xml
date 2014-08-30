@@ -36,4 +36,52 @@
     <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
     <widget position="60,76" size="1177,240" name="list" transparent="1" itemHeight="30" zPosition="2" scrollbarMode="showOnDemand" />
   </screen>
+     <!-- EPG Search -->
+  <screen name="EPGSearch" title="EPG Search" position="0,0" flags="wfNoBorder">
+    <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
+    <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
+    <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold;28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
+      <convert type="inHDClockToText">Format:%A - %d.%m.%Y - %H:%M</convert>
+    </widget>
+    <eLabel position="60,25" size="605,35" text="EPG Search" halign="left" font="Bold; 28" transparent="1" zPosition="2" />
+    <widget source="Event" render="Label" position="60,325" zPosition="1" size="1177,30" font="Bold;24" valign="top" foregroundColor="TextHighlight" backgroundColor="BackTransparent" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="Event" render="Label" position="60,358" zPosition="1" size="75,30" font="Bold;24" backgroundColor="BackTransparent" transparent="1" halign="right">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="Event" render="Label" position="133,358" zPosition="1" size="90,30" font="Bold;24" backgroundColor="BackTransparent" transparent="1">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format:- %H:%M</convert>
+    </widget>
+    <widget source="Event" render="Label" position="60,391" zPosition="1" size="1177,224" font="EPGSelDesc;24" foregroundColor="TextLightDimmed" backgroundColor="BackTransparent" transparent="1" valign="top">
+      <convert type="EventName">FullDescription</convert>
+    </widget>
+    <widget source="Event" render="Progress" pixmap="infinityHD-nbox/progressnbox.png" position="228,370" zPosition="3" size="1000,3" transparent="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <eLabel name="ProgressbarBack" position="228,371" size="1000,1" backgroundColor="ProgressbarBack" zPosition="2" />
+    <ePixmap position="240,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_red.png" alphatest="on" zPosition="2" />
+    <ePixmap position="440,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_green.png" alphatest="on" zPosition="2" />
+    <ePixmap position="640,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_yellow.png" alphatest="on" zPosition="2" />
+    <ePixmap position="840,640" size="200,60" pixmap="infinityHD-nbox/buttons/button_200x60_blue.png" alphatest="on" zPosition="2" />
+    <widget position="240,640" size="200,36" name="key_red" font="Bold;19" halign="center" valign="center" backgroundColor="KeyRedBack" transparent="1" zPosition="3" />
+    <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
+    <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
+    <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
+    <widget position="60,76" size="1177,240" name="list" transparent="1" itemHeight="30" zPosition="2" scrollbarMode="showOnDemand" />
+  </screen>
+  <!-- EPG Search Setup -->
+  <screen name="EPGSearchSetup" title="EPGSearch Setup" position="center,center" size="560,500">
+	<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
+	<widget render="Label" source="key_red" position="0,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+	<widget render="Label" source="key_green" position="140,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+    <widget source="help" render="Label" position="20,350" size="520,140" backgroundColor="background" transparent="1" font="Regular;20" />
+    <widget name="config" position="20,50" size="520,290" scrollbarMode="showOnDemand" />
+  </screen>
+  <!-- EPG Search */-->
   <!-- EPG SELECTION NOPICON UP */-->
