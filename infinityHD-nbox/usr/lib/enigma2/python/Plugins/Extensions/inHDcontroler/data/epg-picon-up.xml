@@ -40,7 +40,7 @@
     <widget position="210,76" size="1027,240" name="list" transparent="1" itemHeight="30" zPosition="2" scrollbarMode="showOnDemand" />
   </screen>
       <!-- EPG Search -->
-  <screen name="EPGSearch" title="EPG Search" position="0,0" flags="wfNoBorder">
+  <screen name="EPGSearch" title="EPG Search" position="0,0" size="1280,720" flags="wfNoBorder">
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
     <ePixmap position="1220,35" size="14,14" pixmap="infinityHD-nbox/icons/clock.png" alphatest="on" zPosition="2" />
     <widget source="global.CurrentTime" render="Label" position="718,25" zPosition="0" size="493,35" font="Bold;28" halign="right" transparent="1" backgroundColor="BackTransparent" foregroundColor="ClockCorner">
