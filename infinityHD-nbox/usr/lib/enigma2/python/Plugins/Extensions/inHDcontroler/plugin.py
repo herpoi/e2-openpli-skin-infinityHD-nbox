@@ -190,7 +190,7 @@ config.plugins.inHD.WindowStyle = ConfigSelection(default="new", choices = [
 				("new", _("New")),
 				("classic", _("Classic"))
 				])
-config.plugins.inHD.ShowFooter = ConfigSelection(default="true", choices = [
+config.plugins.inHD.ShowFooter = ConfigSelection(default="True", choices = [
 				("True", _("Yes")),
 				("False", _("No"))
 				])
