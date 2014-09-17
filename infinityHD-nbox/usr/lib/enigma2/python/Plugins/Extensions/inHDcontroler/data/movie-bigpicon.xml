@@ -77,7 +77,7 @@
   </widget>
   <eLabel position="680,225" size="557,2" backgroundColor="Stripe" zPosition="2" />
   <widget position="680,237" size="557,319" source="Service" render="Label" valign="top" transparent="1" zPosition="3" font="Regular; 24" foregroundColor="TextLightDimmed">
-    <convert type="EventName">ExtendedDescription</convert>
+    <convert type="EventName">FullDescription</convert>
   </widget>
   <widget position="1053,562" size="185,30" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="right" foregroundColor="TextHighlight">
     <convert type="MovieInfo">FileSize</convert>
