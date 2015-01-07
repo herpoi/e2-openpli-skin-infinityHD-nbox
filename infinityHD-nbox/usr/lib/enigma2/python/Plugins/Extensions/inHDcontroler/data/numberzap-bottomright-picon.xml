@@ -1,0 +1,13 @@
+  <!-- NumberZap/NumberZapExt Bottom Right Picon -->
+<screen name="NumberZap" position="615,523" size="640,172" flags="wfNoBorder">
+    <widget name="number" position="20,31" size="360,60" font="Bold; 55" halign="center" valign="center" />
+    <widget name="servicename" position="20,104" size="360,36" font="Bold; 31" valign="center" halign="center" foregroundColor="TextHighlight" />
+    <widget name="picon"  position="400,20" size="220,132" zPosition="100" alphatest="blend" transparent="1" />
+</screen>
+<screen name="NumberZapExt" position="605,530" size="650,165" flags="wfNoBorder">
+  <widget name="chPicon" position="410,17" size="220,132" transparent="1" zPosition="1" alphatest="blend" />
+  <widget name="chNum" position="190,17" size="200,40" halign="right" font="Bold; 36" transparent="1" />
+  <widget name="chName" position="30,62" size="360,36" halign="right" font="Bold; 31" noWrap="1" transparent="1" foregroundColor="TextHighlight" />
+  <widget name="chBouq" position="30,110" size="360,36" halign="right" font="Bold; 31" noWrap="1" transparent="1" foregroundColor="TextHighlight2" />
+</screen>
+  <!-- NumberZap/NumberZapExt Bottom Right Picon -->
