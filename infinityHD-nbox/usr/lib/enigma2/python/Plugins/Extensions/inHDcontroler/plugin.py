@@ -53,6 +53,7 @@ config.plugins.inHD.Colors = ConfigSelection(default="classic", choices = [
 				])
 config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choices = [
 				("bigpicon-classic", _("Big Picon Classic")),
+				("bigpicon-classic-lite", _("Big Picon Classic Lite")),
 				("picon-classic", _("Picon Classic")),
 				("bigpicon-updown", _("Big Picon Up Down")),
 				("picon-updown", _("Picon Up Down")),
@@ -103,10 +104,15 @@ config.plugins.inHD.Eventview = ConfigSelection(default="nopicon", choices = [
 				])
 config.plugins.inHD.NumberZap = ConfigSelection(default="center", choices = [
 				("center", _("Center")),
+				("center-picon", _("BigPicon Center")),
 				("topleft", _("Top Left")),
+				("topleft-picon", _("BigPicon Top Left")),
 				("topright", _("Top Right")),
+				("topright-picon", _("BigPicon Top Right")),
 				("bottomleft", _("Bottom Left")),
+				("bottomleft-picon", _("BigPicon Bottom Left")),
 				("bottomright", _("Bottom Right"))
+				("bottomright-picon", _("BigPicon Bottom Right"))
 				])        				
 config.plugins.inHD.InfobarFooter = ConfigSelection(default="ctsig", choices = [
 				("ctsig", _("CAID/Tuner/Signal")),
@@ -254,9 +260,11 @@ class inHDsetup(Screen, ConfigListScreen):
 		self.list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
 		self.list.append(getConfigListEntry(_("============ Infobar ============"), ))
 		self.list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
-		self.list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
-		if config.plugins.inHD.ShowFooter.value=="True":
-			self.list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
+		if config.plugins.inHD.Infobar.value != "bigpicon-classic-lite":
+			config.plugins.inHD.ShowFooter.setValue(False)
+			self.list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
+			if config.plugins.inHD.ShowFooter.value=="True":
+				self.list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
 		self.list.append(getConfigListEntry(_("============ Second Infobar ============"), ))
 		self.list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
 		self.list.append(getConfigListEntry(_("Second Infobar Footer:"), config.plugins.inHD.SecondInfobarFooter))
