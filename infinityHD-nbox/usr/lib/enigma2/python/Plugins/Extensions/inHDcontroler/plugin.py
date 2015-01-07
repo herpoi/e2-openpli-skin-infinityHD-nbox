@@ -59,7 +59,7 @@ config.plugins.inHD.Infobar = ConfigSelection(default="bigpicon-classic", choice
 				("picon-updown", _("Picon Up Down")),
 				("nopicon-classic", _("No Picon Classic")),
 				("nopicon-bigclock", _("No Picon BigClock")),
-				("nopicon-updown", _("No Picon Up Down"))		
+				("nopicon-updown", _("No Picon Up Down"))
 				])
 config.plugins.inHD.SecondInfobar = ConfigSelection(default="moreepg", choices = [
 				("classic", _("Classic")),
@@ -111,7 +111,7 @@ config.plugins.inHD.NumberZap = ConfigSelection(default="center", choices = [
 				("topright-picon", _("BigPicon Top Right")),
 				("bottomleft", _("Bottom Left")),
 				("bottomleft-picon", _("BigPicon Bottom Left")),
-				("bottomright", _("Bottom Right"))
+				("bottomright", _("Bottom Right")),
 				("bottomright-picon", _("BigPicon Bottom Right"))
 				])        				
 config.plugins.inHD.InfobarFooter = ConfigSelection(default="ctsig", choices = [
@@ -212,14 +212,14 @@ def Plugins(**kwargs):
 class inHDsetup(Screen, ConfigListScreen):
 	skin = """
     <screen name="inHDsetup" position="center,center" size="980,650" title="inHD Controler GIT">
-      <ePixmap position="117,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="blend" transparent="1" />
+      <ePixmap position="217,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="blend" transparent="1" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="49,570" size="120,26" text="Cancel" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="209,570" size="120,26" text="Save" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="369,570" size="120,26" text="Restart GUI" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/red.png" position="10,567" size="30,30" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/green.png" position="170,567" size="30,30" />      
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/yellow.png" position="330,567" size="30,30" />      
-      <widget name="config" position="15,187" scrollbarMode="showOnDemand" size="950,400" />
+      <widget name="config" position="15,187" scrollbarMode="showOnDemand" size="950,350" />
     </screen>"""
 
 	def __init__(self, session, args = None):
@@ -260,10 +260,11 @@ class inHDsetup(Screen, ConfigListScreen):
 		self.list.append(getConfigListEntry(_("Colors:"), config.plugins.inHD.Colors))
 		self.list.append(getConfigListEntry(_("============ Infobar ============"), ))
 		self.list.append(getConfigListEntry(_("Infobar:"), config.plugins.inHD.Infobar))
-		if config.plugins.inHD.Infobar.value != "bigpicon-classic-lite":
-			config.plugins.inHD.ShowFooter.setValue(False)
+		if config.plugins.inHD.Infobar.value == "bigpicon-classic-lite":
+			config.plugins.inHD.ShowFooter.value = "False"
+		else:
 			self.list.append(getConfigListEntry(_("Show footer in Infobar:"), config.plugins.inHD.ShowFooter))
-			if config.plugins.inHD.ShowFooter.value=="True":
+			if config.plugins.inHD.ShowFooter.value == "True":
 				self.list.append(getConfigListEntry(_("Infobar Footer:"), config.plugins.inHD.InfobarFooter))
 		self.list.append(getConfigListEntry(_("============ Second Infobar ============"), ))
 		self.list.append(getConfigListEntry(_("Second Infobar:"), config.plugins.inHD.SecondInfobar))
@@ -365,6 +366,8 @@ class inHDsetup(Screen, ConfigListScreen):
 			# Movie Player & Movie Selection
 			if config.plugins.inHD.Infobar.value=="bigpicon-classic" or config.plugins.inHD.Infobar.value=="bigpicon-updown":
 				self.appendSkinFile(self.daten + "movie-bigpicon.xml")
+			elif config.plugins.inHD.Infobar.value=="bigpicon-classic-lite":
+				self.appendSkinFile(self.daten + "movie-bigpicon-lite.xml")
 			else:
 				self.appendSkinFile(self.daten + "movie-picon.xml")
 			# Volume Bar
