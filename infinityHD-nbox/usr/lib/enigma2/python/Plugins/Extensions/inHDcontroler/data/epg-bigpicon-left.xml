@@ -1,7 +1,7 @@
   <!--/* EPG SELECTION BIGPICON LEFT -->
   <screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder">
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <widget alphatest="blend" position="1017,80" render="inHDBigPicon" size="220,132" source="Event" transparent="1" zPosition="1">
+    <widget alphatest="blend" position="1017,80" render="Picon" size="220,132" source="Event" transparent="1" zPosition="1">
       <convert type="inHDRefString">CurrentRef</convert>
     </widget>
     <widget source="Service" render="Label" position="60,25" size="605,35" font="Bold; 28" noWrap="1" backgroundColor="BackTransparent" transparent="1" halign="left" zPosition="1">

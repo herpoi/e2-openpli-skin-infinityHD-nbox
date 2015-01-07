@@ -18,7 +18,7 @@
     <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
     <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
     <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
-    <widget source="ServiceEvent" render="inHDBigPicon" position="1017,80" size="220,132" zPosition="10" alphatest="blend" transparent="1">
+    <widget source="ServiceEvent" render="Picon" position="1017,80" size="220,132" zPosition="10" alphatest="blend" transparent="1">
       <!--  <convert type="ServiceName">Name</convert>-->
       <convert type="inHDRefString">ServicelistRef</convert>
     </widget>

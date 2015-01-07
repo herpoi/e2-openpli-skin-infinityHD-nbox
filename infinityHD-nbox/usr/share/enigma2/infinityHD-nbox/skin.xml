@@ -134,7 +134,7 @@
     <widget position="407,530" size="714,40" source="session.CurrentService" render="Label" font="Bold; 33" valign="bottom" halign="left" noWrap="1" backgroundColor="Black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="TextHighlight">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="session.CurrentService" render="inHDBigPicon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1">
+    <widget source="session.CurrentService" render="Picon" position="78,529" size="220,132" zPosition="4" alphatest="blend" transparent="1">
       <convert type="ServiceName">Reference</convert>
     </widget>
     <widget position="316,583" size="85,35" source="session.Event_Now" render="Label" font="Regular; 28" valign="bottom" backgroundColor="BackTransparent" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" halign="left">
@@ -364,7 +364,7 @@
     <widget position="440,640" size="200,36" name="key_green" font="Bold;19" halign="center" valign="center" backgroundColor="KeyGreenBack" transparent="1" zPosition="3" />
     <widget position="640,640" size="200,36" name="key_yellow" font="Bold;19" halign="center" valign="center" backgroundColor="KeyYellowBack" transparent="1" zPosition="3" />
     <widget position="840,640" size="200,36" name="key_blue" font="Bold;19" halign="center" valign="center" backgroundColor="KeyBlueBack" transparent="1" zPosition="3" />
-    <widget source="ServiceEvent" render="inHDBigPicon" position="63,80" size="220,132" zPosition="10" alphatest="blend" transparent="1">
+    <widget source="ServiceEvent" render="Picon" position="63,80" size="220,132" zPosition="10" alphatest="blend" transparent="1">
       <!--  <convert type="ServiceName">Name</convert>-->
       <convert type="inHDRefString">ServicelistRef</convert>
     </widget>
@@ -426,7 +426,7 @@
   <!--/* EPG SELECTION BIGPICON RIGHT -->
   <screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder">
     <eLabel position="60,65" size="1177,2" backgroundColor="TextForeground" zPosition="2" />
-    <widget alphatest="blend" position="63,80" render="inHDBigPicon" size="220,132" source="Event" transparent="1" zPosition="1">
+    <widget alphatest="blend" position="63,80" render="Picon" size="220,132" source="Event" transparent="1" zPosition="1">
       <convert type="inHDRefString">CurrentRef</convert>
     </widget>
     <widget source="Service" render="Label" position="60,25" size="605,35" font="Bold; 28" noWrap="1" backgroundColor="BackTransparent" transparent="1" halign="left" zPosition="1">
@@ -573,7 +573,7 @@
       <convert type="ServicePosition">Length,ShowHours</convert>
     </widget>
     <!-- Picon /-->
-    <widget source="session.CurrentService" render="inHDBigPicon" position="53,568" size="220,132" zPosition="4" alphatest="blend" transparent="1">
+    <widget source="session.CurrentService" render="Picon" position="53,568" size="220,132" zPosition="4" alphatest="blend" transparent="1">
       <convert type="inHDMovieReference">Reference</convert>
     </widget>
     <widget source="session.RecordState" render="Pixmap" pixmap="infinityHD-nbox/icons/i_rec_kl.png" position="1055,605" zPosition="3" size="36,36" alphatest="on">
@@ -635,7 +635,7 @@
     <convert type="MovieInfo">FileSize</convert>
   </widget>
   <widget position="817,600" size="420,26" name="freeDiskSpace" font="Bold; 24" halign="right" backgroundColor="BackTransparent" transparent="1" zPosition="3" />
-  <widget source="Service" render="inHDBigPicon" position="695,81" zPosition="4" size="220,132" transparent="1" alphatest="blend">
+  <widget source="Service" render="Picon" position="695,81" zPosition="4" size="220,132" transparent="1" alphatest="blend">
     <convert type="inHDMovieReference" />
   </widget>
 <widget position="932,85" size="305,94" source="Service" render="Label" transparent="1" zPosition="3" font="Bold; 26" halign="left" foregroundColor="TextHighlight" valign="top">

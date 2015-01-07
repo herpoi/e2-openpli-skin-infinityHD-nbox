@@ -17,7 +17,7 @@
     </widget>
     <widget name="datetime" position="315,80" zPosition="1" size="450,35" font="Bold; 28" backgroundColor="BackTransparent" transparent="1" foregroundColor="TextHighlight" />
     <widget name="channel" position="60,25" size="605,35" font="Bold; 28" halign="left" transparent="1" zPosition="2" />
-    <widget alphatest="blend" position="63,80" render="inHDBigPicon" size="220,132" source="Title" transparent="1" zPosition="1">
+    <widget alphatest="blend" position="63,80" render="Picon" size="220,132" source="Title" transparent="1" zPosition="1">
       <convert type="inHDRefString">CurrentRef</convert>
     </widget>
   </screen>
