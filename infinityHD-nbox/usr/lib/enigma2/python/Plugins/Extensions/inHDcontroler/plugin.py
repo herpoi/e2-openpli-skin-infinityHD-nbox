@@ -211,7 +211,7 @@ def Plugins(**kwargs):
 
 class inHDsetup(Screen, ConfigListScreen):
 	skin = """
-    <screen name="inHDsetup" position="center,center" size="780,600" title="inHD Controler GIT">
+    <screen name="inHDsetup" position="center,center" size="980,650" title="inHD Controler GIT">
       <ePixmap position="117,0" size="546,202" pixmap="infinityHD-nbox/menu/infinityHD-nbox-logo.png" alphatest="blend" transparent="1" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="49,570" size="120,26" text="Cancel" />
       <eLabel font="Regular;22" foregroundColor="foreground" halign="left" position="209,570" size="120,26" text="Save" />
@@ -219,7 +219,7 @@ class inHDsetup(Screen, ConfigListScreen):
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/red.png" position="10,567" size="30,30" />
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/green.png" position="170,567" size="30,30" />      
       <ePixmap alphatest="on" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/inHDcontroler/data/buttons/yellow.png" position="330,567" size="30,30" />      
-      <widget name="config" position="15,187" scrollbarMode="showOnDemand" size="750,350" />
+      <widget name="config" position="15,187" scrollbarMode="showOnDemand" size="950,400" />
     </screen>"""
 
 	def __init__(self, session, args = None):
