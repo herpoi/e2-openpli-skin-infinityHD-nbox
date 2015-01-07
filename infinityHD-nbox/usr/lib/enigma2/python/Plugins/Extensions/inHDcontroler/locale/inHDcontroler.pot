@@ -29,6 +29,9 @@ msgstr ""
 msgid "Big Picon Classic"
 msgstr ""
 
+msgid "Big Picon Classic Lite"
+msgstr ""
+
 #: plugin.py:79 plugin.py:123
 msgid "Picon Classic"
 msgstr ""
@@ -153,20 +156,35 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
+msgid "BigPicon Center"
+msgstr ""
+
 #: plugin.py:129
 msgid "Top Left"
+msgstr ""
+
+msgid "BigPicon Top Left"
 msgstr ""
 
 #: plugin.py:130
 msgid "Top Right"
 msgstr ""
 
+msgid "BigPicon Top Right"
+msgstr ""
+
 #: plugin.py:131
 msgid "Bottom Left"
 msgstr ""
 
+msgid "BigPicon Bottom Left"
+msgstr ""
+
 #: plugin.py:132
 msgid "Bottom Right"
+msgstr ""
+
+msgid "BigPicon Bottom Right"
 msgstr ""
 
 #: plugin.py:135 plugin.py:141

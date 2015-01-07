@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: inHDcontroler GIT\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-30 21:38+0100\n"
-"PO-Revision-Date: 2014-02-21 22:53+0100\n"
+"PO-Revision-Date: 2015-01-07 15:12+0100\n"
 "Last-Translator: herpoi <herpo2006@gmail.com>\n"
 "Language-Team: \n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -25,6 +25,9 @@ msgstr "Świeży"
 #: plugin.py:78
 msgid "Big Picon Classic"
 msgstr "Klasyczny - Big Picon"
+
+msgid "Big Picon Classic Lite"
+msgstr "Uproszczony Klasyczny - Big Picon"
 
 #: plugin.py:79 plugin.py:123
 msgid "Picon Classic"
@@ -150,21 +153,36 @@ msgstr ""
 msgid "Center"
 msgstr "Na środku"
 
+msgid "BigPicon Center"
+msgstr "Na środku - Big Picon"
+
 #: plugin.py:129
 msgid "Top Left"
 msgstr "Lewy górny róg"
+
+msgid "BigPicon Top Left"
+msgstr "Lewy górny róg - Big Picon"
 
 #: plugin.py:130
 msgid "Top Right"
 msgstr "Prawy górny róg"
 
+msgid "BigPicon Top Right"
+msgstr "Prawy górny róg - Big Picon"
+
 #: plugin.py:131
 msgid "Bottom Left"
 msgstr "Lewy dolny róg"
 
+msgid "BigPicon Bottom Left"
+msgstr "Lewy dolny róg - Big Picon"
+
 #: plugin.py:132
 msgid "Bottom Right"
 msgstr "Prawy dolny róg"
+
+msgid "BigPicon Bottom Right"
+msgstr "Prawy dolny róg - Big Picon"
 
 #: plugin.py:135 plugin.py:141
 msgid "CAID/Tuner/Signal"
