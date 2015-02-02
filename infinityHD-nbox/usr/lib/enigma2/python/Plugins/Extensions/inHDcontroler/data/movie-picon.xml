@@ -1,5 +1,5 @@
   <!--/* MoviePlayer Picon -->
-  <screen name="MoviePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
+  <screen name="MoviePlayer" position="0,0" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="0">
   <ePixmap position="0,539" zPosition="-3" size="1280,720" pixmap="infinityHD-nbox/infobar_2.png" />
   <widget source="session.CurrentService" render="Label" position="200,610" size="790,40" font="Bold; 33" halign="left" valign="bottom" noWrap="1" backgroundColor="Black" transparent="1" foregroundColor="TextHighlight">
     <convert type="ServiceName">Name</convert>

@@ -1147,7 +1147,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
   </screen>
   <!-- */ Other Plugins -->
   <!--/* MYTUBE -->
-  <screen name="MyTubePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
+  <screen name="MyTubePlayer" position="0,0" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder">
     <ePixmap position="center,485" zPosition="-1" size="1280,295" pixmap="infinityHD-nbox/infobar_2.png" />
     <widget source="session.CurrentService" render="Label" position="300,560" size="700,32" font="Bold;30" halign="center" valign="top" noWrap="1" backgroundColor="Black" transparent="1">
       <convert type="ServiceName">Name</convert>

@@ -1,5 +1,5 @@
   <!--/* MoviePlayer BigPicon Lite -->
-  <screen name="MoviePlayer" position="0,4" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="-2">
+  <screen name="MoviePlayer" position="0,0" size="1280,720" title="InfoBar" backgroundColor="Transparent" flags="wfNoBorder" zPosition="0">
     <eLabel position="899,21" size="321,66" backgroundColor="BackTransparent" zPosition="-1" />
     <widget source="global.CurrentTime" render="Label" position="1010,21" size="200,70" font="Bold; 55" valign="top" halign="right" backgroundColor="Black" transparent="1" foregroundColor="ClockInfobar">
       <convert type="ClockToText">Format:%H:%M</convert>
